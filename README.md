@@ -1,5 +1,7 @@
 # Drydock
 
+> A starter project for Jekyll that uses modern front-end tooling.
+
 ## Prerequisites
 
 To install this project, you'll need the following things installed on your machine.
@@ -62,7 +64,7 @@ As this is just a Jekyll project, you can use any of the commands listed in thei
 ## What's inside the Drydock
 
 - [gulp](http://gulpjs.com/)
-- [Sass](http://sass-lang.com/)
+- [Sass](http://sass-lang.com/) 
 - [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [PostCSS](http://postcss.org/)
 - [Bourbon](http://bourbon.io/)/[Neat](http://neat.bourbon.io/)/[Bitters](http://bitters.bourbon.io/)
