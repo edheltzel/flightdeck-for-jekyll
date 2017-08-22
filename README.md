@@ -11,6 +11,10 @@ To install this project, you'll need the following things installed on your mach
 3. [Yarn](https://yarnpkg.com/en/) - `brew install yarn` _**(Optional)**_
   4. [CloudCanoon](https://docs.cloudcannon.com/) - Give the client an interface to manage their site with a simple CMS. _**(Suggested for Clients)**_
 
+>### Optional Editor settings
+>
+>Although your editor is a very personal thing - we'd suggest that you'd consider using [Visual Studio Code](https://code.visualstudio.com/) with the [Jekyll Snippets Extension](https://marketplace.visualstudio.com/items?itemName=ginfuru.vscode-jekyll-snippets) - with the power of IntelliSense you'll get snippets to speed up your Jekyll work development as well as syntax highlighting for Liquid.
+
 ## Local Development & Installation
 
 1. Clone this repo, or download it into a directory of your choice.
