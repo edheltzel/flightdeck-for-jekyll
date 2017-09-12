@@ -15,11 +15,12 @@
 # in the templates via {{ site.myvariable }}.
 title: "Drydock: A Scaffold for Jekyll"
 email: your-email@domain.com
-description: Drydock is a scaffold and starter project for Jekyll that uses modern front-end tooling.
+description: >
+  Drydock is a scaffold and starter project for Jekyll that uses an opinionated modern front-end workflow.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: ginfuru
-github_username:  ginfuru
+twitter_username: portsideio
+github_username:  portsideio
 
 # Build settings
 markdown: kramdown

@@ -19,12 +19,12 @@ To install this project, you'll need the following things installed on your mach
 
 1. Clone this repo, or download it into a directory of your choice.
     
-      ```shell
+    ```shell
     git clone https://github.com/ginfuru/drydock.git
     ```
 2. Inside the directory, run `yarn install` -> **FYI** you can use `npm` in place of `yarn`
      
-      ```shell
+    ```shell
     cd drydock
     yarn install
     ```
@@ -33,7 +33,7 @@ To install this project, you'll need the following things installed on your mach
 
 **Note:** If you are having trouble with the commands, prepending `bundle exec` to you command should solve the issues:
 
-    ```shell
+  ```shell
   bundle exec yarn start
   ```
 
@@ -45,10 +45,16 @@ This will give you file watching, browser synchronisation, auto-rebuild, CSS inj
   yarn start
   ```
 
+#### Seeing Warnings
+
+If you're seeing JSON warnings ref [issue #1](https://github.com/PortsideIO/drydock/issues/1) on what should be done to fix this. 
+
+
 ### Build for Production
 
 This will set the `JEKYLL_ENV` to `production` and use the production config file(s) set in `drydock.config.js` to override default setting.
 You can easily deploy your site build with the command
+
 ```shell
 yarn run build
 ```
