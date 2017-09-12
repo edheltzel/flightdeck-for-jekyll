@@ -20,7 +20,7 @@ To install this project, you'll need the following things installed on your mach
 1. Clone this repo, or download it into a directory of your choice.
     
     ```shell
-    git clone https://github.com/ginfuru/drydock.git
+    git clone https://github.com/PortsideIO/drydock.git
     ```
 2. Inside the directory, run `yarn install` -> **FYI** you can use `npm` in place of `yarn`
      
