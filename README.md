@@ -1,4 +1,4 @@
-# Drydock
+# Drydock [![GitHub release](https://img.shields.io/github/release/PortsideIO/drydock.svg)](https://github.com/PortsideIO/drydock/releases)
 
 > A starter project for Jekyll that uses modern front-end tooling.
 
