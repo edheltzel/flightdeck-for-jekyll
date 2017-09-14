@@ -1,58 +1,29 @@
 {
   "name": "drydock",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Drydock is a starter project for Jekyll that uses modern front-end tooling.",
   "main": "gulpfile.js",
-  "scripts": {
-    "preinstall": "bundle install",
-    "start": "gulp",
-    "test": "gulp test",
-    "build": "gulp build --production",
-    "imagemin": "gulp imagemin",
-    "production": "gulp --production",
-    "sass": "gulp sass",
-    "server": "gulp server",
-    "server-production": "gulp server --production"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ginfuru/drydocksco.git"
-  },
-  "keywords": [
-    "Autoprefixer",
-    "Bitters",
-    "Bourbon",
-    "Browsersync",
-    "gulp",
-    "imagemin",
-    "Jekyll",
-    "Neat",
-    "PostCSS",
-    "Sass",
-    "Webpack"
-  ],
-  "author": "Kite",
+  "repository": "git@github.com:PortsideIO/drydock.git",
+  "author": "Ed Heltzel <ed@portside.io>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ginfuru/drydock/issues"
-  },
-  "homepage": "https://github.com/ginfuru",
-  "devDependencies": {
-    "autoprefixer": "^7.1.2",
-    "browser-sync": "^2.18.13",
-    "eslint-config-google": "^0.9.1",
-    "gulp": "^3.9.1",
-    "gulp-eslint": "^4.0.0",
-    "gulp-imagemin": "^3.3.0",
-    "gulp-newer": "^1.3.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^7.0.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0",
-    "gulp-watch": "^4.3.11",
-    "imagemin-pngquant": "^5.0.1",
-    "vinyl-named": "^1.1.0",
-    "webpack-stream": "^3.2.0",
-    "yargs": "^8.0.2"
+  "private": null,
+  "dependencies": {
+    "autoprefixer": "7.1.2",
+    "browser-sync": "2.18.13",
+    "eslint-config-google": "0.9.1",
+    "gulp": "3.9.1",
+    "gulp-eslint": "4.0.0",
+    "gulp-imagemin": "3.3.0",
+    "gulp-newer": "1.3.0",
+    "gulp-plumber": "1.1.0",
+    "gulp-postcss": "7.0.0",
+    "gulp-sass": "3.1.0",
+    "gulp-sourcemaps": "2.6.1",
+    "gulp-uglify": "3.0.0",
+    "gulp-watch": "4.3.11",
+    "imagemin-pngquant": "5.0.1",
+    "vinyl-named": "1.1.0",
+    "webpack-stream": "3.2.0",
+    "yargs": "8.0.2"
   }
 }
