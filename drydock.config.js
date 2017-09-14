@@ -29,7 +29,7 @@ module.exports = {
   },
 
   sass: {
-    outputStyle: "compressed",
+    outputStyle: "compressed", // options: expanded, nested, compacted, compressed
   },
 
   autoprefixer: {
