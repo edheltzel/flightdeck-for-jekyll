@@ -46,9 +46,10 @@ Object.keys(config.tasks).forEach(function (key) {
 
 /**
  * Paths
+ * updated 10-02-2017
  */
 Object.keys(config.paths).forEach(function (key) {
-  if (key != 'assets') {
+  if (key != 'assets') || (key != 'dest'){
     if (config.paths.assets === '') {
       paths[key] = './' + config.paths[key];
     } else {
