@@ -36,6 +36,7 @@ exclude:
   - LICENSE
   - node_modules
   - npm-debug.log
+  - yarn.lock # for those that use yarn
   - package.json
-  - package-lock.json
+  - package-lock.json # for those that use npm
   - README.md

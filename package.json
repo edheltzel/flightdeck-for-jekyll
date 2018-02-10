@@ -3,7 +3,7 @@
   "version": "0.1.3",
   "description": "Drydock is a starter project for Jekyll that uses modern front-end tooling.",
   "main": "gulpfile.js",
-  "repository": "git@github.com:PortsideIO/drydock.git",
+  "repository": "https://github.com:PortsideIO/drydock.git",
   "author": "Ed Heltzel <ed@portside.io>",
   "license": "MIT",
   "private": null,
