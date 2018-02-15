@@ -4,7 +4,7 @@
     "**/_site/": true
   },
   "files.associations": {
-    "*.html": "liquid"
+    "*.html": "jekyll"
   },
   "search.exclude": {
     "**/.sass-cache/": true,
