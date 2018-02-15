@@ -1,0 +1,20 @@
+
+Tasks:
+  Jekyll Includes:
+    ☐ set up particles for _includes dir
+    ☐ consider using ITCSS for _includes
+    ☐ Research possible create_react_app scaffold
+  Styling:
+    ☐ migrate to ITCSS
+      #reference - https://github.com/xfiveco/generator-chisel/tree/master/generators/app/templates/styles/itcss
+    ☐ change main.css to app.css
+    Folders:
+      #reference - https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
+      ☐ components
+      ☐ elements
+      ☐ generic
+      ☐ objects
+      ☐ settings
+      ☐ tools
+      ☐ utilities
+
