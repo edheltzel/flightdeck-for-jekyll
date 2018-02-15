@@ -1,30 +1,60 @@
 {
-  "name": "drydock",
-  "version": "0.1.3",
-  "description": "Drydock is a starter project for Jekyll that uses modern front-end tooling.",
+  "name": "dry-dock",
+  "version": "0.1.4",
+  "description": "Drydock is an opinionated starter project for Jekyll that uses modern front-end tooling.",
   "main": "gulpfile.js",
-  "repository": "https://github.com:PortsideIO/drydock.git",
-  "author": "Ed Heltzel <ed@portside.io>",
-  "license": "MIT",
-  "private": null,
-  "dependencies": {
-    "autoprefixer": "7.1.2",
-    "browser-sync": "2.18.13",
-    "eslint-config-google": "0.9.1",
-    "gulp": "3.9.1",
-    "gulp-eslint": "4.0.0",
-    "gulp-imagemin": "3.3.0",
-    "gulp-newer": "1.3.0",
-    "gulp-plumber": "1.1.0",
-    "gulp-postcss": "7.0.0",
-    "gulp-sass": "3.1.0",
-    "gulp-sourcemaps": "2.6.1",
-    "gulp-uglify": "3.0.0",
-    "gulp-watch": "4.3.11",
-    "imagemin-pngquant": "5.0.1",
-    "vinyl-named": "1.1.0",
-    "webpack-stream": "3.2.0",
-    "yargs": "8.0.2"
+  "scripts": {
+    "preinstall": "bundle install --path vendor/bundle",
+    "start": "bundle exec gulp",
+    "test": "bundle exec gulp test",
+    "browsersync": "bundle exec gulp browsersync",
+    "browsersync-production": "bundle exec gulp browsersync --production",
+    "build": "bundle exec gulp build --production",
+    "eslint": "bundle exec gulp eslint",
+    "imagemin": "bundle exec gulp imagemin",
+    "production": "bundle exec gulp --production",
+    "sass": "bundle exec gulp sass",
+    "watch": "bundle exec gulp watch"
   },
-  "devDependencies": {}
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PortsideIO/drydock.git"
+  },
+  "keywords": [
+    "Autoprefixer",
+    "Browsersync",
+    "gulp",
+    "imagemin",
+    "Jekyll",
+    "PostCSS",
+    "Sass",
+    "Webpack"
+  ],
+  "author": "Portside",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PortsideIO/drydock/issues"
+  },
+  "homepage": "https://github.com/PortsideIO/drydock",
+  "devDependencies": {
+    "autoprefixer": "^8.0.0",
+    "browser-sync": "^2.23.6",
+    "eslint-config-google": "^0.9.1",
+    "eslint-loader": "^1.9.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^4.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^5.0.0",
+    "imagemin-pngquant": "^5.0.1",
+    "require-dir": "^1.0.0",
+    "vinyl-named": "^1.1.0",
+    "webpack": "^3.11.0",
+    "webpack-stream": "^4.0.1",
+    "yargs": "^11.0.0"
+  }
 }

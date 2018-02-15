@@ -1,13 +1,13 @@
-# Drydock [![GitHub release](https://img.shields.io/github/release/PortsideIO/drydock.svg)](https://github.com/PortsideIO/drydock/releases)
+# Drydock [![GitHub release](https://img.shields.io/github/release/PortsideIO/drydock.svg)](https://github.com/PortsideIO/drydock/releases) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/PortsideIO/drydock/blob/master/LICENSE)
 
-> A starter project for Jekyll that uses modern front-end tooling.
+> An opinionated starter project for Jekyll that uses modern front-end tooling.
 
 ## Prerequisites
 
 To install this project, you'll need the following things installed on your machine.
 
 1. [Jekyll](http://jekyllrb.com/) & [Bundler](https://bundler.io/) - `$ gem install jekyll bundler` 
-2. [NodeJS](http://nodejs.org) - use the installer. 
+2. [NodeJS](http://nodejs.org) - use the installer, Homebrew, etc. 
 3. [Yarn](https://yarnpkg.com/en/) - `brew install yarn` _**(Optional)**_
   4. [CloudCanoon](https://docs.cloudcannon.com/) - Give the client an interface to manage their site with a simple CMS. _**(Suggested for Clients)**_
 
@@ -31,11 +31,7 @@ To install this project, you'll need the following things installed on your mach
 
 ## Usage
 
-**Note:** If you are having trouble with the commands, prepending `bundle exec` to you command should solve the issues:
-
-  ```shell
-  bundle exec yarn start
-  ```
+**Note:** you can replace `yarn` with `npm`
 
 ### Start Development
 
@@ -50,18 +46,18 @@ This will give you file watching, browser synchronisation, auto-rebuild, CSS inj
 If you're seeing JSON warnings ref [issue #1](https://github.com/PortsideIO/drydock/issues/1) on what should be done to fix this. 
 
 
-### Build for Production
+### Production Build
 
 This will set the `JEKYLL_ENV` to `production` and use the production config file(s) set in `drydock.config.js` to override default setting.
-You can easily deploy your site build with the command
+You can easily deploy your site build with the command.
 
 ```shell
 yarn run build
 ```
 
-## See More Commands
+## Want more?
 
-This will display all available commands.
+To display all available commands just run:
 
 ```shell
 yarn run
