@@ -1,6 +1,6 @@
 const argv        = require('yargs').argv;
 const browsersync = require('browser-sync').create();
-const config      = require('../frasco.config.js');
+const config      = require('../drydock.config.js');
 const cp          = require('child_process');
 const gulp        = require('gulp');
 

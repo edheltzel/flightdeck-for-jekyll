@@ -1,5 +1,5 @@
 const autoprefixer = require('autoprefixer');
-const config       = require('../frasco.config.js');
+const config       = require('../drydock.config.js');
 const gulp         = require('gulp');
 const postcss      = require('gulp-postcss');
 const sass         = require('gulp-sass');

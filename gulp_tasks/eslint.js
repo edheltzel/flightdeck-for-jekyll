@@ -1,4 +1,4 @@
-const config = require('../frasco.config.js');
+const config = require('../drydock.config.js');
 const eslint = require('gulp-eslint');
 const gulp   = require('gulp');
 
