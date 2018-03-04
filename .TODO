@@ -3,7 +3,8 @@ Tasks:
   Jekyll Includes:
     ☐ set up particles for _includes dir
     ☐ consider using ITCSS for _includes
-    ☐ Research possible create_react_app scaffold
+    ✔ Research possible create_react_app scaffold @done (3/3/2018, 8:57:02 AM)
+    ☐ Create a Yeoman generator for scaffolding
   Styling:
     ☐ migrate to ITCSS
       #reference - https://github.com/xfiveco/generator-chisel/tree/master/generators/app/templates/styles/itcss

@@ -1,6 +1,6 @@
 # Drydock [![GitHub release](https://img.shields.io/github/release/PortsideIO/drydock.svg)](https://github.com/PortsideIO/drydock/releases) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/PortsideIO/drydock/blob/master/LICENSE)
 
-> An opinionated starter project for Jekyll that uses modern front-end tooling.
+> An opinionated starter project for [Jekyll](http://jekyllrb.com/) that uses modern front-end tooling.
 
 ## Prerequisites
 
