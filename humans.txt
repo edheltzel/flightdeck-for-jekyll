@@ -1,0 +1,28 @@
+  ___  ___  ___ _____ ___ ___ ___  ___   _
+ | _ \/ _ \| _ \_   _/ __|_ _|   \| __| (_)___
+ |  _/ (_) |   / | | \__ \| || |) | _| _| / _ \
+ |_|  \___/|_|_\ |_| |___/___|___/|___(_)_\___/
+
+
+Portside LTD would like to acknowledge the
+following contributions:
+
+/***** PORT AUTHORITY *****/
+
+Designer: Ed Heltzel - ed[at]portside.io
+Site: portside.io
+Github: @ginfuru
+Twitter: @ginfuru
+Location: Gem City - Dayton Ohio
+
+Developer: Ed Heltzel - ed[at]portside.io
+Site: portside.io
+Github: @ginfuru
+Twitter: @ginfuru
+Location: Gem City - Dayton Ohio
+
+
+Some Info:
+
+Standards: HTML5, CSS3 via SCSS, JavaScript via ES6
+Software: Jekyll, Git, Visual Studio Code, iTerm2

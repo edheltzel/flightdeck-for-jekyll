@@ -1,5 +1,5 @@
 module.exports = {
-  port: 6969,
+  port: 2018,
 
   tasks: {
     browsersync: true,
@@ -47,7 +47,7 @@ module.exports = {
       development: '_config_development.yml',
       production:  '',
     },
-    dest:     '_site', // Used for rsync deployment
+    dest:     '_site', // Used with Deploy also
     includes: '_inclues',
     layouts:  '_layouts',
     posts:    'posts',

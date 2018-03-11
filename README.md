@@ -71,9 +71,8 @@ As this is just a Jekyll project, you can use any of the commands listed in thei
 
 - [gulp](http://gulpjs.com/)
 - [Sass](http://sass-lang.com/) 
-- [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [PostCSS](http://postcss.org/)
-- [Bourbon](http://bourbon.io/)/[Neat](http://neat.bourbon.io/)/[Bitters](http://bitters.bourbon.io/)
+  - [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [Webpack](https://webpack.github.io/)
 - [UglifyJS](https://github.com/mishoo/UglifyJS2)
 - [imagemin](https://github.com/imagemin/imagemin)
@@ -85,7 +84,7 @@ You can change the configurations by editing `drydock.config.js`.
 
 - ### port
 
-    default: `4000`  
+    default: `2018`  
     options: integer  
 
 - ### tasks
