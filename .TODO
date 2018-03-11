@@ -1,5 +1,11 @@
 
 Tasks:
+  Gulp Tasks:
+    ☐ add `gulp-sourcemaps`
+    ☐ add `gulp-rsync` for deployments
+      ✔ update package.json for deploy @done (3/10/2018, 7:19:11 PM)
+    ☐ testing if new plugins are working
+
   Jekyll Includes:
     ☐ set up particles for _includes dir
     ☐ consider using ITCSS for _includes

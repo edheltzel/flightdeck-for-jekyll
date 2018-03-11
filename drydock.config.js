@@ -8,6 +8,7 @@ module.exports = {
     sass:        true,
     watch:       true,
     webpack:     true,
+    deploy:      true,
   },
 
   assets: './assets',
@@ -46,7 +47,7 @@ module.exports = {
       development: '_config_development.yml',
       production:  '',
     },
-    dest:     '_site',
+    dest:     '_site', // Used for rsync deployment
     includes: '_inclues',
     layouts:  '_layouts',
     posts:    'posts',
@@ -77,5 +78,15 @@ module.exports = {
     module: {
       rules: [],
     },
+  },
+
+  deploy: {
+    remote: 'serverName',
+    root: '/var/www/',
+    exclude: [
+      // Excluding files/folders inside of the _site folder
+      '.DS_Store'
+    ],
+    dryrun: false,
   },
 }

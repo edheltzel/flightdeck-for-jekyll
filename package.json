@@ -14,7 +14,9 @@
     "imagemin": "bundle exec gulp imagemin",
     "production": "bundle exec gulp --production",
     "sass": "bundle exec gulp sass",
-    "watch": "bundle exec gulp watch"
+    "watch": "bundle exec gulp watch",
+    "deploy": "bundle exec gulp deploy"
+
   },
   "repository": {
     "type": "git",
