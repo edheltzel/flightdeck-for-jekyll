@@ -81,12 +81,12 @@ module.exports = {
   },
 
   deploy: {
-    remote: 'serverName',
-    root: '/var/www/',
+    remote: 'rclients',
+    root: '/srv/users/serverpilot/apps/weston',
     exclude: [
       // Excluding files/folders inside of the _site folder
       '.DS_Store'
     ],
-    dryrun: false,
+    dryrun: true,
   },
 }
