@@ -1,5 +1,5 @@
 const argv          = require('yargs').argv;
-const config        = require('../drydock.config.js')
+const config        = require('../flightdeck.config.js')
 const gulp          = require('gulp');
 const named         = require('vinyl-named');
 const plumber       = require('gulp-plumber');

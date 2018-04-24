@@ -1,6 +1,6 @@
 'use strict';
 
-const config     = require('./drydock.config.js');
+const config     = require('./flightdeck.config.js');
 const gulp       = require('gulp');
 const requireDir = require('require-dir');
 

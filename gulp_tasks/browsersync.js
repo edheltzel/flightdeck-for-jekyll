@@ -1,6 +1,6 @@
 const argv        = require('yargs').argv;
 const browsersync = require('browser-sync').create();
-const config      = require('../drydock.config.js');
+const config      = require('../flightdeck.config.js');
 const cp          = require('child_process');
 const gulp        = require('gulp');
 

@@ -1,4 +1,4 @@
-const config = require('../drydock.config.js');
+const config = require('../flightdeck.config.js');
 const eslint = require('gulp-eslint');
 const gulp   = require('gulp');
 

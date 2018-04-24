@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-## Drydock is an opinionated starter project for Jekyll that uses modern front-end tooling.
+## Flight Deck is an opinionated starter project for Jekyll that uses modern front-end tooling.
 The base Jekyll theme, Minima is used to kick-start your project. You can find out more about customing your Jekyll project with the Jekyll documentation over at [jekyllrb.com](https://jekyllrb.com/)
 
 If you're wanting more info about Minima specifically, you can find the source code at Github: 

@@ -1,4 +1,4 @@
-# Drydock [![GitHub release](https://img.shields.io/github/release/PortsideIO/drydock.svg)](https://github.com/PortsideIO/drydock/releases) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/PortsideIO/drydock/blob/master/LICENSE)
+# Flight Deck [![GitHub release](https://img.shields.io/github/release/PortsideIO/flightdeck.svg)](https://github.com/PortsideIO/flightdeck/releases) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/PortsideIO/flightdeck/blob/master/LICENSE)
 
 > An opinionated starter project for [Jekyll](http://jekyllrb.com/) that uses modern front-end tooling.
 
@@ -20,12 +20,12 @@ To install this project, you'll need the following things installed on your mach
 1. Clone this repo, or download it into a directory of your choice.
     
     ```shell
-    git clone https://github.com/PortsideIO/drydock.git
+    git clone https://github.com/PortsideIO/flightdeck.git
     ```
 2. Inside the directory, run `yarn install` -> **FYI** you can use `npm` in place of `yarn`
      
     ```shell
-    cd drydock
+    cd flightdeck
     yarn install
     ```
 
@@ -43,12 +43,12 @@ This will give you file watching, browser synchronisation, auto-rebuild, CSS inj
 
 #### Seeing Warnings
 
-If you're seeing JSON warnings ref [issue #1](https://github.com/PortsideIO/drydock/issues/1) on what should be done to fix this. 
+If you're seeing JSON warnings ref [issue #1](https://github.com/PortsideIO/flightdeck/issues/1) on what should be done to fix this. 
 
 
 ### Production Build
 
-This will set the `JEKYLL_ENV` to `production` and use the production config file(s) set in `drydock.config.js` to override default setting.
+This will set the `JEKYLL_ENV` to `production` and use the production config file(s) set in `flightdeck.config.js` to override default setting.
 You can easily deploy your site build with the command.
 
 ```shell
@@ -67,7 +67,7 @@ yarn run
 
 As this is just a Jekyll project, you can use any of the commands listed in their [docs](https://jekyllrb.com/docs/usage/)
 
-## What's inside the Drydock
+## What's inside the Flight Deck
 
 - [gulp](http://gulpjs.com/)
 - [Sass](http://sass-lang.com/) 
@@ -80,7 +80,7 @@ As this is just a Jekyll project, you can use any of the commands listed in thei
 
 ## Configurations and Defaults
 
-You can change the configurations by editing `drydock.config.js`.
+You can change the configurations by editing `flightdeck.config.js`.
 
 - ### port
 

@@ -1,7 +1,7 @@
 {
   "name": "dry-dock",
   "version": "0.1.4",
-  "description": "Drydock is an opinionated starter project for Jekyll that uses modern front-end tooling.",
+  "description": "Flight Deck is an opinionated starter project for Jekyll that uses modern front-end tooling.",
   "main": "gulpfile.js",
   "scripts": {
     "preinstall": "bundle install --path vendor/bundle",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/PortsideIO/drydock.git"
+    "url": "https://github.com/PortsideIO/flightdeck.git"
   },
   "keywords": [
     "Autoprefixer",
@@ -34,9 +34,9 @@
   "author": "Portside",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PortsideIO/drydock/issues"
+    "url": "https://github.com/PortsideIO/flightdeck/issues"
   },
-  "homepage": "https://github.com/PortsideIO/drydock",
+  "homepage": "https://github.com/PortsideIO/flightdeck",
   "devDependencies": {
     "autoprefixer": "^8.0.0",
     "browser-sync": "^2.23.6",

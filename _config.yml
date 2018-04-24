@@ -13,10 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: "Drydock: A Scaffold for Jekyll"
+title: "Flight Deck: A Scaffold for Jekyll"
 email: client-email@client_domain.com
 description: >
-  Drydock is a scaffold and starter project for Jekyll that uses an opinionated modern front-end workflow.
+  Flight Deck is a scaffold and starter project for Jekyll that uses an opinionated modern front-end workflow.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: portsideio
@@ -35,7 +35,7 @@ plugins:
 exclude:
   - Gemfile
   - Gemfile.lock
-  - drydock.config.js
+  - flightdeck.config.js
   - gulp_tasks
   - gulpfile.js
   - LICENSE
