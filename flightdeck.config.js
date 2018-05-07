@@ -50,14 +50,14 @@ module.exports = {
     dest:     '_site', // Used with Deploy also
     includes: '_inclues',
     layouts:  '_layouts',
-    posts:    'posts',
+    posts:    '_posts',
   },
 
   js: {
     src:   '_js',
     dest:  'js',
     entry: [
-      'main.js',
+      'bundle.js',
     ],
   },
 
@@ -75,6 +75,7 @@ module.exports = {
   },
 
   webpack: {
+    mode: 'production',
     module: {
       rules: [],
     },
