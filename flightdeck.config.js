@@ -83,7 +83,8 @@ module.exports = {
 
   deploy: {
     remote: 'rclients',
-    root: '/srv/users/serverpilot/apps/weston',
+    root: '',
+    //root: '/srv/users/serverpilot/apps/APP_NAME',
     exclude: [
       // Excluding files/folders inside of the _site folder
       '.DS_Store'
