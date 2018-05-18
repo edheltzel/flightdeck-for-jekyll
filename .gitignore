@@ -28,3 +28,6 @@ doc/
 .DS_Store
 .idea
 .secret
+# Gem Yarn NPM
+*.lock
+*-lock.json
