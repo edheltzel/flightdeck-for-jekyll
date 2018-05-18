@@ -82,13 +82,15 @@ module.exports = {
   },
 
   deploy: {
-    remote: 'rclients',
-    root: '',
-    //root: '/srv/users/serverpilot/apps/APP_NAME',
+    remote: 'rclients', // ServerName
+    root: '', // Path to web root
+    //root: '/srv/users/serverpilot/apps/APP_NAME/public',
     exclude: [
       // Excluding files/folders inside of the _site folder
-      '.DS_Store'
+      '.DS_Store',
+      '*.lock',
+      '.git'
     ],
-    dryrun: true,
+    dryrun: true, // set to false if you want to deploy to your remote server
   },
 }
