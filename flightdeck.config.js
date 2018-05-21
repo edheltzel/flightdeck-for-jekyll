@@ -8,7 +8,7 @@ module.exports = {
     sass:        true,
     watch:       true,
     webpack:     true,
-    deploy:      true,
+    deploy:      false, //dryrun is set
   },
 
   assets: './assets',
