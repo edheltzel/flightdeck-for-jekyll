@@ -8,7 +8,7 @@ module.exports = {
     sass:        true,
     watch:       true,
     webpack:     true,
-    deploy:      false, //dryrun is set
+    deploy:      false,
   },
 
   assets: './assets',
@@ -82,9 +82,8 @@ module.exports = {
   },
 
   deploy: {
-    remote: 'rclients', // ServerName
-    root: '', // Path to web root
-    //root: '/srv/users/serverpilot/apps/APP_NAME/public',
+    remote: '', // Server IP ie: root@192.168.0.1 OR ServerName if you use agentforwarding
+    root: '', // Path to web root ie: /var/www/html
     exclude: [
       // Excluding files/folders inside of the _site folder
       '.DS_Store',

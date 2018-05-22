@@ -10,6 +10,7 @@
     "browsersync": "bundle exec gulp browsersync",
     "browsersync-production": "bundle exec gulp browsersync --jekyllEnv='production'",
     "build": "bundle exec gulp build --jekyllEnv='production'",
+    "deploy": "bundle exec gulp deploy",
     "eslint": "bundle exec gulp eslint",
     "imagemin": "bundle exec gulp imagemin",
     "production": "bundle exec gulp --jekyllEnv='production'",
