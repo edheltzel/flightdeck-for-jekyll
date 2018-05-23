@@ -33,19 +33,16 @@ plugins:
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
 exclude:
+  - flightdeck.config.js
   - Gemfile
   - Gemfile.lock
-  - flightdeck.config.js
   - gulp_tasks
   - gulpfile.js
   - LICENSE
   - node_modules
   - npm-debug.log
-  - package.json
   - package-lock.json # for those that use npm
+  - package.json
   - README.md
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/rub/
+  - vendor
   - yarn.lock # for those that use yarn
