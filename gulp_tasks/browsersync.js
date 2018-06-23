@@ -4,7 +4,7 @@ const config      = require('../flightdeck.config.js');
 const cp          = require('child_process');
 const gulp        = require('gulp');
 
-let browser = (config.browsersync.browsers[0] === null) ? config.browsersync.browsers : 'default';
+let browser = (config.browsersync.browsers[0] != null) ? config.browsersync.browsers : 'default';
 
 /**
  * Wait for jekyll-build, then launch the Server
