@@ -14,7 +14,7 @@ Tasks:
   Styling:
     ☐ migrate to ITCSS
       #reference - https://github.com/xfiveco/generator-chisel/tree/master/generators/app/templates/styles/itcss
-    ☐ change main.css to app.css
+    ✔ change main.css to app.css
     Folders:
       #reference - https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
       ☐ components
