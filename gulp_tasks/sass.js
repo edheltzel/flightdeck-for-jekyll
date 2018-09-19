@@ -6,7 +6,7 @@ const sass         = require('gulp-sass');
 const sourcemaps   = require('gulp-sourcemaps');
 
 gulp.task('sass', function () {
-  return gulp.src(config.assets + '/' + config.sass.src + '/**/*')
+  return gulp.src(config.assets + '/' + config.sass.src + '/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: config.sass.outputStyle}).on('error', sass.logError))
     .pipe(postcss([
