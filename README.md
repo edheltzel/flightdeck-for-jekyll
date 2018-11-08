@@ -6,8 +6,8 @@
 
 To install this project, you'll need the following things installed on your machine.
 
-1. [Jekyll](http://jekyllrb.com/) & [Bundler](https://bundler.io/) - `$ gem install jekyll bundler` 
-2. [NodeJS](http://nodejs.org) - use the installer, Homebrew, etc. 
+1. [Jekyll](http://jekyllrb.com/) & [Bundler](https://bundler.io/) - `$ gem install jekyll bundler`
+2. [NodeJS](http://nodejs.org) - use the installer, Homebrew, etc.
 3. [Yarn](https://yarnpkg.com/en/) - `brew install yarn` _**(Optional)**_
   4. [CloudCanoon](https://docs.cloudcannon.com/) - Give the client an interface to manage their site with a simple CMS. _**(Suggested for Clients)**_
 
@@ -18,32 +18,32 @@ To install this project, you'll need the following things installed on your mach
 ## Local Development & Installation
 
 1. Clone this repo, or download it into a directory of your choice.
-    
+
     ```shell
     git clone https://github.com/PortsideIO/flightdeck.git
     ```
-2. Inside the directory, run `yarn install` -> **FYI** you can use `npm` in place of `yarn`
-     
+2. Inside the directory, run `npm install` -> **FYI** you can use `yarn` in place of `npm`
+
     ```shell
     cd flightdeck
-    yarn install
+    npm install
     ```
 
 ## Usage
 
-**Note:** you can replace `yarn` with `npm`
+**Note:** you can replace `npm` with `yarn`
 
 ### Start Development
 
 This will give you file watching, browser synchronisation, auto-rebuild, CSS injecting etc.
 
   ```shell
-  yarn start
+  npm start
   ```
 
 #### Seeing Warnings
 
-If you're seeing JSON warnings ref [issue #1](https://github.com/PortsideIO/flightdeck/issues/1) on what should be done to fix this. 
+If you're seeing JSON warnings ref [issue #1](https://github.com/PortsideIO/flightdeck/issues/1) on what should be done to fix this.
 
 
 ### Production Build
@@ -52,7 +52,15 @@ This will set the `JEKYLL_ENV` to `production` and use the production config fil
 You can easily deploy your site build with the command.
 
 ```shell
-yarn run build
+npm run build
+```
+
+### Deploy
+
+You can set your server deployment options inside of `flightdeck.config.js` If you wish to deploy after the build process has completed.
+
+```shell
+npm run deploy
 ```
 
 ## Want more?
@@ -60,7 +68,7 @@ yarn run build
 To display all available commands just run:
 
 ```shell
-yarn run
+npm run
 ```
 
 ### Jekyll
@@ -70,7 +78,7 @@ As this is just a Jekyll project, you can use any of the commands listed in thei
 ## What's inside the Flight Deck
 
 - [gulp](http://gulpjs.com/)
-- [Sass](http://sass-lang.com/) 
+- [Sass](http://sass-lang.com/)
 - [PostCSS](http://postcss.org/)
   - [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [Webpack](https://webpack.github.io/)
@@ -84,8 +92,8 @@ You can change the configurations by editing `flightdeck.config.js`.
 
 - ### port
 
-    default: `2018`  
-    options: integer  
+    default: `2018`
+    options: integer
 
 - ### tasks
 
@@ -95,28 +103,28 @@ You can change the configurations by editing `flightdeck.config.js`.
 
         To minify images.
 
-        default: `true`  
+        default: `true`
         options: boolean (`true` / `false`)
 
     - #### sass
 
         To compile Sass.
 
-        default: `true`  
+        default: `true`
         options: boolean (`true` / `false`)
 
     - #### server
 
         To compile sources via Jekyll and to keep browsers in sync with file changes via Browsersync.
 
-        default: `true`  
+        default: `true`
         options: boolean (`true` / `false`)
 
     - #### webpack
 
         To bundle JavaScript files.
 
-        default: `true`  
+        default: `true`
         options: boolean (`true` / `false`)
 
 - ### paths
@@ -127,70 +135,70 @@ You can change the configurations by editing `flightdeck.config.js`.
 
         The destination directory for the whole project.
 
-        default: `"_site"`  
+        default: `"_site"`
         options: string
 
     - #### posts
 
         The directory of posts source files.
 
-        default: `"_posts"`  
+        default: `"_posts"`
         options: string
 
     - #### assets
 
         The directory to gather all assets.
 
-        default: `"./assets"`  
-        options: string  
+        default: `"./assets"`
+        options: string
         example: `"./"` (directly under the theme direcotry)
 
     - #### css
 
         The CSS destination directory for Sass.
 
-        default: `"css"`  
-        options: string  
+        default: `"css"`
+        options: string
         example: `"stylesheets"`
 
     - #### js
 
         The JavaScript destination directory for Browserify.
 
-        default: `"js"`  
-        options: string  
+        default: `"js"`
+        options: string
         example: `"javascripts"`
 
     - #### images
 
         The destination directory of compressed image files for imagemin.
 
-        default: `"images"`  
-        options: string  
+        default: `"images"`
+        options: string
         example: `"img"`
 
     - #### sass
 
         The directory of Sass files.
 
-        default: `"_sass"`  
-        options: string  
+        default: `"_sass"`
+        options: string
         example: `"src/sass"`
 
     - #### jsSrc
 
         The directory of JavaScript source files to bundle up by Browserify.
 
-        default: `"_js"`  
-        options: string  
+        default: `"_js"`
+        options: string
         example: `"src/js`"
 
     - #### imagesSrc
 
         The directory of image source files to compress.
 
-        default: `"_images"`  
-        options: string  
+        default: `"_images"`
+        options: string
         example: `"src/images"`
 
 - ### jekyll
@@ -205,24 +213,24 @@ You can change the configurations by editing `flightdeck.config.js`.
 
             The default Jekyll config file(s).
 
-            default: `"_config.yml"`  
-            options: string (`"FILE1[,FILE2,...]"`)  
+            default: `"_config.yml"`
+            options: string (`"FILE1[,FILE2,...]"`)
             example: `"_config1.yml,_config2.yml"`
 
         - ##### development
 
             Development mode config file(s) to override default settings.
 
-            default: `""`  
-            options: string (`"FILE1[,FILE2,...]"`)  
+            default: `""`
+            options: string (`"FILE1[,FILE2,...]"`)
             example: `"_config_development"`
 
         - ##### production
 
             Production mode config file(s) to override default settings.
 
-            default: `""`  
-            options: string (`"FILE1[,FILE2,...]"`)  
+            default: `""`
+            options: string (`"FILE1[,FILE2,...]"`)
             example: `"_config_production"`
 
 - ### sass
@@ -233,7 +241,7 @@ You can change the configurations by editing `flightdeck.config.js`.
 
         The output style of Sass.
 
-        default: `"compressed"`  
+        default: `"compressed"`
         options: `"expanded"`, `"nested"`, `"compact"`, `"compressed"`
 
 - ### autoprefixer
@@ -244,8 +252,8 @@ You can change the configurations by editing `flightdeck.config.js`.
 
         List of browsers, which are supported in your theme.
 
-        default: `["> 1%", "last 2 versions", "Firefox ESR"]`  
-        options: array. See [Browserslist docs](https://github.com/ai/browserslist#queries) for available queries.  
+        default: `["> 1%", "last 2 versions", "Firefox ESR"]`
+        options: array. See [Browserslist docs](https://github.com/ai/browserslist#queries) for available queries.
         example: `["> 5%", "last 2 versions", "IE 8"]`
 
 - ### js
@@ -256,6 +264,6 @@ You can change the configurations by editing `flightdeck.config.js`.
 
         File name(s) of JavaScript entry points.
 
-        default: `["main.js"]`  
-        options: array  
+        default: `["main.js"]`
+        options: array
         example: `["pluginA.js", "pluginB.js", "main.js"]`
