@@ -127,6 +127,13 @@ You can change the configurations by editing `flightdeck.config.js`.
         default: `true`
         options: boolean (`true` / `false`)
 
+    - #### deploly
+
+        Deploys using `gulp-rsync` to chosen server.
+
+        default: `flase`
+        options: boolean (`true` / `false`)
+
 - ### paths
 
     Settings about paths.
@@ -267,3 +274,23 @@ You can change the configurations by editing `flightdeck.config.js`.
         default: `["main.js"]`
         options: array
         example: `["pluginA.js", "pluginB.js", "main.js"]`
+
+- ### deploy
+
+    Deployment settings.
+
+    uses any of the [`gulp-rsync`](https://www.npmjs.com/package/gulp-rsync) parameters
+    - #### remote
+
+        server IP or ServerName _(if using ssh agentforwarding)_
+    - #### root
+
+        path to web root index of your choosen webserver
+    - #### exlude
+
+        excluding files/folder inside of the `_site` folder - this is editable with the Jekyll settings
+    - #### dryrun
+
+        does a dryrun to make sure there are no configuration errors - set to `false` to deploy to your production _(remote)_ server.
+
+        default: `true`  options: `true` or `false`
