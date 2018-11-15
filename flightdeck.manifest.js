@@ -3,12 +3,12 @@ module.exports = {
 
   tasks: {
     browsersync: true,
-    eslint:      true,
-    imagemin:    true,
-    sass:        true,
-    watch:       true,
-    webpack:     true,
-    deploy:      false,
+    eslint: true,
+    imagemin: true,
+    sass: true,
+    watch: true,
+    webpack: true,
+    deploy: false,
   },
 
   assets: './assets',
@@ -28,49 +28,43 @@ module.exports = {
   },
 
   eslintLoader: {
-    enforce: "pre",
+    enforce: 'pre',
     test: /\.js$/,
     exclude: /node_modules/,
-    loader: "eslint-loader",
+    loader: 'eslint-loader',
   },
 
   imagemin: {
-    src:         '_images',
-    dest:        'images',
+    src: '_images',
+    dest: 'images',
     progressive: true,
     svgoPlugins: [{removeViewBox: false}],
   },
 
   jekyll: {
     config: {
-      default:     '_config.yml',
+      default: '_config.yml',
       development: '_config_development.yml',
-      production:  '',
+      production: '',
     },
-    dest:     '_site', // Used with Deploy also
+    dest: '_site', // Used with Deploy also
     includes: '_includes',
-    layouts:  '_layouts',
-    posts:    '_posts',
+    layouts: '_layouts',
+    posts: '_posts',
   },
 
   js: {
-    src:   '_js',
-    dest:  'js',
-    entry: [
-      'bundle.js',
-    ],
+    src: '_js',
+    dest: 'js',
+    entry: ['bundle.js'],
   },
 
   sass: {
-    src:          '_sass',
-    dest:         'css',
-    outputStyle:  'compressed',
+    src: '_sass',
+    dest: 'css',
+    outputStyle: 'compressed',
     autoprefixer: {
-      browsers: [
-        '> 1%',
-        'last 2 versions',
-        'Firefox ESR',
-      ],
+      browsers: ['> 1%', 'last 2 versions', 'Firefox ESR'],
     },
   },
 
@@ -88,8 +82,8 @@ module.exports = {
       // Excluding files/folders inside of the _site folder
       '.DS_Store',
       '*.lock',
-      '.git'
+      '.git',
     ],
     dryrun: true, // set to false if you want to deploy to your remote server
   },
-}
+};

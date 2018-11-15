@@ -48,7 +48,7 @@ If you're seeing JSON warnings ref [issue #1](https://github.com/PortsideIO/flig
 
 ### Production Build
 
-This will set the `JEKYLL_ENV` to `production` and use the production config file(s) set in `flightdeck.config.js` to override default setting.
+This will set the `JEKYLL_ENV` to `production` and use the production config file(s) set in `flightdeck.manifest.js` to override default setting.
 You can easily deploy your site build with the command.
 
 ```shell
@@ -57,7 +57,7 @@ npm run build
 
 ### Deploy
 
-You can set your server deployment options inside of `flightdeck.config.js` If you wish to deploy after the build process has completed.
+You can set your server deployment options inside of `flightdeck.manifest.js` If you wish to deploy after the build process has completed.
 
 ```shell
 npm run deploy
@@ -88,7 +88,7 @@ As this is just a Jekyll project, you can use any of the commands listed in thei
 
 ## Configurations and Defaults
 
-You can change the configurations by editing `flightdeck.config.js`.
+You can change the configurations by editing `flightdeck.manifest.js`.
 
 - ### port
 

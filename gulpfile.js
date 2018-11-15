@@ -1,15 +1,15 @@
 'use strict';
 
-const config     = require('./flightdeck.config.js');
-const gulp       = require('gulp');
+const config = require('./flightdeck.manifest.js');
+const gulp = require('gulp');
 const requireDir = require('require-dir');
 
 requireDir('./gulp_tasks', {recurse: true});
 
 const tasks = [];
-Object.keys(config.tasks).forEach(function (key) {
+Object.keys(config.tasks).forEach(function(key) {
   if (config.tasks[key] && key != 'eslint') {
-    tasks.push((key == 'webpack' && config.tasks.watch) ? '_' + key : key);
+    tasks.push(key == 'webpack' && config.tasks.watch ? '_' + key : key);
   }
 });
 
@@ -18,4 +18,4 @@ Object.keys(config.tasks).forEach(function (key) {
  * compile the sass, bundle the js, launch BrowserSync, and
  * watch files.
  */
-gulp.task('default', tasks);
+gulp.task('default', ['browsersync']);
