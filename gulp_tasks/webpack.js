@@ -1,11 +1,11 @@
-const argv          = require('yargs').argv;
-const config        = require('../flightdeck.config.js')
-const gulp          = require('gulp');
-const named         = require('vinyl-named');
-const plumber       = require('gulp-plumber');
-const uglify        = require('gulp-uglify');
+const argv = require('yargs').argv;
+const config = require('../flightdeck.manifest.js');
+const gulp = require('gulp');
+const named = require('vinyl-named');
+const plumber = require('gulp-plumber');
+const uglify = require('gulp-uglify');
 const webpackStream = require('webpack-stream');
-const webpack       = require('webpack');
+const webpack = require('webpack');
 
 const entry = [];
 for (var i = 0; i <= config.js.entry.length - 1; i++) {
@@ -17,8 +17,9 @@ if (config.tasks.eslint) config.webpack.module.rules.push(config.eslintLoader);
 config.webpack.watch = argv.watch;
 config.webpack.mode = argv.mode || config.webpack.mode;
 
-gulp.task('webpack', function () {
-  return gulp.src(entry)
+gulp.task('webpack', function() {
+  return gulp
+    .src(entry)
     .pipe(plumber())
     .pipe(named())
     .pipe(webpackStream(config.webpack, webpack))
@@ -27,7 +28,7 @@ gulp.task('webpack', function () {
 });
 
 // For internal use only
-gulp.task('_webpack', function () {
+gulp.task('_webpack', function() {
   config.webpack.watch = config.tasks.watch;
   gulp.start('webpack');
 });

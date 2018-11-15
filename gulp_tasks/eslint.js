@@ -1,9 +1,10 @@
-const config = require('../flightdeck.config.js');
+const config = require('../flightdeck.manifest.js');
 const eslint = require('gulp-eslint');
-const gulp   = require('gulp');
+const gulp = require('gulp');
 
 gulp.task('eslint', function() {
-  return gulp.src([config.assets + '/' + config.js.src + '/**/*.js', '!node_modules/**'])
+  return gulp
+    .src([config.assets + '/' + config.js.src + '/**/*.js', '!node_modules/**'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failOnError());
