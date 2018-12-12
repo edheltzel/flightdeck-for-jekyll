@@ -70,6 +70,7 @@ module.exports = {
 
   webpack: {
     mode: 'production',
+    devtool: 'source-map', // makes debugging JS easier - https://webpack.js.org/configuration/devtool/
     module: {
       rules: [],
     },
