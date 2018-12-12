@@ -3,7 +3,6 @@ const config = require('../flightdeck.manifest.js');
 const gulp = require('gulp');
 const named = require('vinyl-named');
 const plumber = require('gulp-plumber');
-const uglify = require('gulp-uglify');
 const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
 
@@ -23,7 +22,6 @@ gulp.task('webpack', function() {
     .pipe(plumber())
     .pipe(named())
     .pipe(webpackStream(config.webpack, webpack))
-    .pipe(uglify())
     .pipe(gulp.dest(config.assets + '/' + config.js.dest));
 });
 
