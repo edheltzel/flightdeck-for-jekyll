@@ -24,6 +24,7 @@ github_username: portsideio
 
 # SEO
 #image: /assets/images/open_graph_image.png
+google_analytics: # https://minimalanalytics.com/
 
 # Build settings
 markdown: kramdown
