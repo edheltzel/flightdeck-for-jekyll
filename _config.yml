@@ -21,6 +21,9 @@ baseurl: '' # the subpath of your site, e.g. /blog
 url: '' # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: portsideio
 github_username: portsideio
+
+# SEO
+#image: /assets/images/open_graph_image.png
 google_analytics: # https://minimalanalytics.com/
 
 # Build settings
@@ -34,7 +37,7 @@ plugins:
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
 exclude:
-  - flightdeck.config.js
+  - flightdeck.manifest.js
   - Gemfile
   - Gemfile.lock
   - gulp_tasks
