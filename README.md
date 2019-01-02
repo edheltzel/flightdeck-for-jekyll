@@ -1,4 +1,4 @@
-# Flight Deck [![GitHub release](https://img.shields.io/github/release/PortsideIO/flightdeck.svg)](https://github.com/PortsideIO/flightdeck/releases) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/PortsideIO/flightdeck/blob/master/LICENSE)
+# Flightdeck [![GitHub release](https://img.shields.io/github/release/PortsideIO/flightdeck.svg)](https://github.com/PortsideIO/flightdeck/releases) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/PortsideIO/flightdeck/blob/master/LICENSE)
 
 > An opinionated starter project for [Jekyll](http://jekyllrb.com/) that uses modern front-end tooling.
 
@@ -75,7 +75,7 @@ npm run
 
 As this is just a Jekyll project, you can use any of the commands listed in their [docs](https://jekyllrb.com/docs/usage/)
 
-## What's inside the Flight Deck
+## What's inside the Flightdeck
 
 - [gulp](http://gulpjs.com/)
 - [Sass](http://sass-lang.com/)
