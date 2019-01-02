@@ -1,7 +1,7 @@
 # Flightdeck [![GitHub release](https://img.shields.io/github/release/PortsideIO/flightdeck.svg)](https://github.com/PortsideIO/flightdeck/releases) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/PortsideIO/flightdeck/blob/master/LICENSE)
 > An opinionated starter project for [Jekyll](http://jekyllrb.com/) that uses modern front-end tooling.
 
-![Flightdeck Logo](https://d.pr/free/i/spHnBP+)
+<p style="text-align: center;"><img src="https://d.pr/free/i/FDUErn+" alt="Flightdeck Logo"></p>
 
 
 ## Prerequisites
