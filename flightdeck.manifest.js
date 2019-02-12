@@ -1,5 +1,5 @@
 module.exports = {
-  port: 2018,
+  port: 4000,
 
   tasks: {
     browsersync: true,
@@ -38,7 +38,7 @@ module.exports = {
     src: '_images',
     dest: 'images',
     progressive: true,
-    svgoPlugins: [{removeViewBox: false}],
+    svgoPlugins: [{ removeViewBox: false }],
   },
 
   jekyll: {
@@ -47,7 +47,7 @@ module.exports = {
       development: '_config_development.yml',
       production: '',
     },
-    dest: '_site', // Used with Deploy also
+    dest: '_site',
     includes: '_includes',
     layouts: '_layouts',
     posts: '_posts',
@@ -70,21 +70,25 @@ module.exports = {
 
   webpack: {
     mode: 'production',
-    devtool: 'source-map', // makes debuggin easier - options found -> https://webpack.js.org/configuration/devtool/
+    // makes debuggin easier - options found -> https://webpack.js.org/configuration/devtool/
+    devtool: 'source-map',
     module: {
       rules: [],
     },
   },
 
   deploy: {
-    remote: '', // Server IP ie: root@192.168.0.1 OR ServerName if you use agentforwarding
-    root: '', // Path to web root ie: /var/www/html
+    // Server IP ie: root@192.168.0.1 OR ServerName if you use agentforwarding
+    remote: '',
+    // Path to web root ie: /var/www/html
+    root: '',
     exclude: [
       // Excluding files/folders inside of the _site folder
       '.DS_Store',
       '*.lock',
       '.git',
     ],
-    dryrun: true, // set to false if you want to deploy to your remote server
+    // set to false if deploying to production
+    dryrun: true,
   },
 };
