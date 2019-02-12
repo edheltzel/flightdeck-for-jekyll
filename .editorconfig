@@ -1,12 +1,20 @@
 root = true
 
 [*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
 indent_style = space
 indent_size = 2
-end_of_line = lf
-charset = utf-8
-trim_trailing_whitespace = true
-insert_final_newline = true
 
-[*.md]
+[*.{md,markdown}]
 trim_trailing_whitespace = false
+
+[*.html]
+indent_style = tab
+indent_size = 2
+
+[*.{css,scss}]
+indent_style = tab
+indent_size = 2

@@ -1,7 +1,8 @@
 language: node_js
 node_js:
   - '8'
-  - '6'
+  - '10'
+  - '11'
 
 branches:
   only:
@@ -20,7 +21,7 @@ install:
   - gem install html-proofer
 
 script:
-  - jekyll build
+  - bundle exec jekyll build
   - npm test
   - htmlproofer --url-ignore "/talk.jekyllrb.com/" ./_site
 
