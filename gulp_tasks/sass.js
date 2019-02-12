@@ -7,10 +7,10 @@ const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('sass', function() {
   return gulp
-    .src(config.assets + '/' + config.sass.src + '/**/*.scss')
+    .src(config.assets + '/' + config.sass.src + '/**/*')
     .pipe(sourcemaps.init())
     .pipe(
-      sass({outputStyle: config.sass.outputStyle}).on('error', sass.logError)
+      sass({ outputStyle: config.sass.outputStyle }).on('error', sass.logError)
     )
     .pipe(
       postcss([

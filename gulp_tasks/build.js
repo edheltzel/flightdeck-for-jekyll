@@ -1,18 +1,25 @@
 const argv = require('yargs').argv;
+const browsersync = require('browser-sync').create();
 const config = require('../flightdeck.manifest.js');
 const cp = require('child_process');
 const gulp = require('gulp');
 
-const jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
-const build = Object.keys(config.tasks).filter(
-  key => ['browsersync', 'watch'].includes(key) === false
-);
+let jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
+
+let build = [];
+Object.keys(config.tasks).forEach(function(key) {
+  if (config.tasks[key] && key != 'browsersync' && key != 'watch') {
+    build.push(key);
+  }
+});
+build.push('jekyll-build');
+
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', build, function(done) {
+gulp.task('jekyll-build', function(done) {
   let jekyllConfig = config.jekyll.config.default;
-  if (argv.jekyllEnv === 'production') {
+  if (argv.jekyllEnv == 'production') {
     process.env.JEKYLL_ENV = 'production';
     jekyllConfig += config.jekyll.config.production
       ? ',' + config.jekyll.config.production
@@ -34,7 +41,7 @@ gulp.task('jekyll-build', build, function(done) {
  * Build task, this will minify the images, compile the sass,
  * bundle the js, but not launch BrowserSync and watch files.
  */
-gulp.task('build', ['jekyll-build']);
+gulp.task('build', build);
 
 /**
  * Test task, this use the build task.

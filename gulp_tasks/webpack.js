@@ -1,4 +1,5 @@
 const argv = require('yargs').argv;
+const babel = require('gulp-babel');
 const config = require('../flightdeck.manifest.js');
 const gulp = require('gulp');
 const named = require('vinyl-named');
@@ -21,6 +22,7 @@ gulp.task('webpack', function() {
     .src(entry)
     .pipe(plumber())
     .pipe(named())
+    .pipe(babel())
     .pipe(webpackStream(config.webpack, webpack))
     .pipe(gulp.dest(config.assets + '/' + config.js.dest));
 });

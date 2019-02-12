@@ -85,7 +85,6 @@ As this is just a Jekyll project, you can use any of the commands listed in thei
 - [PostCSS](http://postcss.org/)
   - [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [Webpack](https://webpack.github.io/)
-- [UglifyJS](https://github.com/mishoo/UglifyJS2)
 - [imagemin](https://github.com/imagemin/imagemin)
 - [Browsersync](https://www.browsersync.io/)
 
