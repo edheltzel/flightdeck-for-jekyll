@@ -1,8 +1,15 @@
-# Flightdeck [![GitHub release](https://img.shields.io/github/release/PortsideIO/flightdeck.svg)](https://github.com/PortsideIO/flightdeck/releases) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/PortsideIO/flightdeck/blob/master/LICENSE)
-> An opinionated starter project for [Jekyll](http://jekyllrb.com/) that uses modern front-end tooling.
+<div align="center">
+<p><img src="https://d.pr/free/i/FDUErn+" alt="Flightdeck Logo"></p>
+<h1>Flightdeck<br><small style="font-size: 1rem">An opinionated starter project for <a href="http://jekyllrb.com/">Jekyll</a> that uses modern front-end tooling.</small></h1>
+
+</div>
+
+
+[![release](https://img.shields.io/github/release/ginfuru/Flightdeck.svg?style=for-the-badge&logo=github&logoColor=white&colorA=101119&colorB=6D57FF)](https://github.com/ginfuru/Flightdeck/releases/latest)  [![jekyll](https://img.shields.io/badge/Jekyll-v3.36+-373277.svg?style=for-the-badge&logo=jekyll&logoColor=white&colorA=101119&colorB=7273D6)](https://github.com/jekyll/jekyll/releases/latest)  [![license](https://img.shields.io/badge/License-MIT-373277.svg?style=for-the-badge&l&logoColor=white&colorA=101119&colorB=42557B)](https://github.com/jekyll/jekyll/releases/latest)
+
+
 ---
 
-<p align="center"><img src="https://d.pr/free/i/FDUErn+" alt="Flightdeck Logo"></p>
 
 
 ## Prerequisites
