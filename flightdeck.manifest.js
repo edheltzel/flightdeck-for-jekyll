@@ -62,7 +62,7 @@ module.exports = {
     dest: 'css',
     outputStyle: 'compressed',
     autoprefixer: {
-      browsers: ['> 1%', 'last 2 versions', 'Firefox ESR'],
+      browsers: ['> 1%', 'last 4 versions', 'Firefox ESR'],
     },
   },
 
