@@ -5,7 +5,7 @@ const postcss = require('gulp-postcss');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('sass', function() {
+gulp.task('sass', function () {
   return gulp
     .src(config.assets + '/' + config.sass.src + '/**/*')
     .pipe(sourcemaps.init())
@@ -13,10 +13,7 @@ gulp.task('sass', function() {
       sass({ outputStyle: config.sass.outputStyle }).on('error', sass.logError)
     )
     .pipe(
-      postcss([
-        autoprefixer({
-          browsers: config.sass.autoprefixer.browsers,
-        }),
+      postcss([autoprefixer(),
       ])
     )
     .pipe(sourcemaps.write('.'))

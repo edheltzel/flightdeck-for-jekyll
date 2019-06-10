@@ -17,6 +17,11 @@
     "sass": "bundle exec gulp sass",
     "watch": "bundle exec gulp watch"
   },
+  "browserslist": [
+    "> 1%",
+    "last 4 versions",
+    "Firefox ESR"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ginfuru/Flightdeck.git"
@@ -42,6 +47,7 @@
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.6",
+    "browserslist": "^4.6.2",
     "cryptiles": ">=4.1.2",
     "eslint-config-google": "^0.9.1",
     "eslint-loader": "^2.1.0",
