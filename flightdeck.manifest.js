@@ -61,9 +61,6 @@ module.exports = {
     src: '_sass',
     dest: 'css',
     outputStyle: 'compressed',
-    autoprefixer: {
-      browsers: ['> 1%', 'last 4 versions', 'Firefox ESR'],
-    },
   },
 
   webpack: {
