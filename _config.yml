@@ -26,6 +26,15 @@ github_username: ginfuru
 #image: /assets/images/open_graph_image.png
 google_analytics: # UA-XXXXXXXX-XX -> https://minimalanalytics.com/
 
+collections:
+  locations:
+
+maps:
+  google-api-key: AIzaSyBVtjoQre9mpj50VdAtOqWWnhs137kB5N8
+  lat: 39.7586478
+  long: -84.1916069
+  zoom: 6
+
 # Build settings
 markdown: kramdown
 incremental: true
