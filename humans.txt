@@ -1,9 +1,9 @@
 The Humans behind this project:
 
 /***** THE TEAM *****/
-Designer: Ed Heltzel
-Github: @ginfuru
-Twitter: @ginfuru
+Designer:
+Github:
+Twitter:
 Location:
 
 Developer:
