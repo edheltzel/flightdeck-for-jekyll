@@ -1,17 +1,11 @@
 const argv = require('yargs').argv;
-const browsersync = require('browser-sync').create();
 const config = require('../flightdeck.manifest.js');
 const cp = require('child_process');
 const gulp = require('gulp');
 
-let jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
+const jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
-let build = [];
-Object.keys(config.tasks).forEach(function(key) {
-  if (config.tasks[key] && key != 'browsersync' && key != 'watch') {
-    build.push(key);
-  }
-});
+const build = Object.keys(config.tasks).filter((key) => config.tasks[key] && ![ 'browsersync', 'watch' ].includes(key));
 build.push('jekyll-build');
 
 /**
@@ -21,19 +15,12 @@ gulp.task('jekyll-build', function(done) {
   let jekyllConfig = config.jekyll.config.default;
   if (argv.jekyllEnv == 'production') {
     process.env.JEKYLL_ENV = 'production';
-    jekyllConfig += config.jekyll.config.production
-      ? ',' + config.jekyll.config.production
-      : '';
+    jekyllConfig += config.jekyll.config.production ? ',' + config.jekyll.config.production : '';
   } else {
-    jekyllConfig += config.jekyll.config.development
-      ? ',' + config.jekyll.config.development
-      : '';
+    jekyllConfig += config.jekyll.config.development ? ',' + config.jekyll.config.development : '';
   }
   return cp
-    .spawn(jekyll, ['build', '--config', jekyllConfig], {
-      stdio: 'inherit',
-      env: process.env,
-    })
+    .spawn(jekyll, [ 'build', '--config', jekyllConfig ], { stdio: 'inherit', env: process.env })
     .on('close', done);
 });
 
