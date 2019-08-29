@@ -60,7 +60,7 @@ module.exports = {
   sass: {
     src: '_sass',
     dest: 'css',
-    outputStyle: 'compressed',
+    outputStyle: 'compressed', //nested, expanded, compact, compressed
   },
 
   webpack: {
