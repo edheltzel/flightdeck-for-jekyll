@@ -2,15 +2,15 @@ const config = require('../flightdeck.manifest.js');
 const gulp = require('gulp');
 const watch = require('gulp-watch');
 
-gulp.task('watch', function () {
+gulp.task('watch', function() {
   if (config.tasks.imagemin) {
-    watch(config.assets + '/' + config.imagemin.src + '/**/*', function () {
+    watch(config.assets + '/' + config.imagemin.src + '/**/*', function() {
       gulp.start('imagemin');
     });
   }
 
   if (config.tasks.sass) {
-    watch(config.assets + '/' + config.sass.src + '/**/*', function () {
+    watch(config.assets + '/' + config.sass.src + '/**/*', function() {
       gulp.start('sass');
     });
   }
@@ -28,9 +28,9 @@ gulp.task('watch', function () {
         config.jekyll.data + '/**/*',
         config.assets + '/' + config.sass.dest + '/**/*',
         config.assets + '/' + config.js.dest + '/**/*',
-        config.assets + '/' + config.imagemin.dest + '/**/*',
+        config.assets + '/' + config.imagemin.dest + '/**/*'
       ],
-      function () {
+      function() {
         gulp.start('browser-reload');
       }
     );

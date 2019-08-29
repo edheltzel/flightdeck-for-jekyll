@@ -1,6 +1,7 @@
 {
   "name": "flightdeck",
-  "version": "0.9.0",
+
+  "version": "0.9.1",
   "description": "Flight Deck is an opinionated starter project for Jekyll that uses modern front-end tooling.",
   "main": "gulpfile.js",
   "scripts": {
@@ -17,20 +18,12 @@
     "sass": "bundle exec gulp sass",
     "watch": "bundle exec gulp watch"
   },
+  "browserslist": [ "> 1%", "last 4 versions", "Firefox ESR" ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ginfuru/Flightdeck.git"
   },
-  "keywords": [
-    "Autoprefixer",
-    "Browsersync",
-    "gulp",
-    "imagemin",
-    "Jekyll",
-    "PostCSS",
-    "Sass",
-    "Webpack"
-  ],
+  "keywords": [ "Autoprefixer", "Browsersync", "gulp", "imagemin", "Jekyll", "PostCSS", "Sass", "Webpack" ],
   "author": "Ginfuru",
   "license": "MIT",
   "bugs": {
