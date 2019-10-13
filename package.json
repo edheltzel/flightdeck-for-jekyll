@@ -1,6 +1,5 @@
 {
   "name": "flightdeck",
-
   "version": "0.9.1",
   "description": "Flight Deck is an opinionated starter project for Jekyll that uses modern front-end tooling.",
   "main": "gulpfile.js",
@@ -18,12 +17,25 @@
     "sass": "bundle exec gulp sass",
     "watch": "bundle exec gulp watch"
   },
-  "browserslist": [ "> 1%", "last 4 versions", "Firefox ESR" ],
+  "browserslist": [
+    "> 1%",
+    "last 4 versions",
+    "Firefox ESR"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ginfuru/Flightdeck.git"
   },
-  "keywords": [ "Autoprefixer", "Browsersync", "gulp", "imagemin", "Jekyll", "PostCSS", "Sass", "Webpack" ],
+  "keywords": [
+    "Autoprefixer",
+    "Browsersync",
+    "gulp",
+    "imagemin",
+    "Jekyll",
+    "PostCSS",
+    "Sass",
+    "Webpack"
+  ],
   "author": "Ginfuru",
   "license": "MIT",
   "bugs": {
@@ -31,30 +43,31 @@
   },
   "homepage": "https://github.com/ginfuru/Flightdeck/",
   "devDependencies": {
-    "autoprefixer": "^9.4.8",
+    "autoprefixer": "^9.6.4",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.6",
-    "browserslist": "^4.6.2",
+    "browserslist": "^4.7.0",
     "cryptiles": ">=4.1.2",
-    "eslint-config-google": "^0.9.1",
-    "eslint-loader": "^2.1.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-loader": "^3.0.2",
     "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.1",
-    "gulp-eslint": "^5.0.0",
-    "gulp-imagemin": "^4.1.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-imagemin": "^6.1.1",
     "gulp-newer": "^1.4.0",
     "gulp-plumber": "^1.2.0",
-    "gulp-postcss": "^7.0.1",
+    "gulp-postcss": "^8.0.0",
     "gulp-rsync": "^0.0.8",
     "gulp-sass": "^4.0.1",
     "gulp-watch": "^5.0.0",
-    "imagemin-pngquant": "^6.0.0",
+    "imagemin-pngquant": "^8.0.0",
     "natives": "^1.1.6",
     "require-dir": "^1.0.0",
     "vinyl-named": "^1.1.0",
-    "webpack": "^4.29.5",
+    "webpack": "^4.41.1",
     "webpack-stream": "^5.0.0",
-    "yargs": "^12.0.1"
-  }
+    "yargs": "^14.2.0"
+  },
+  "dependencies": {}
 }
