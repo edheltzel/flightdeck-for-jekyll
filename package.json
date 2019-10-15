@@ -43,6 +43,7 @@
   },
   "homepage": "https://github.com/ginfuru/Flightdeck/",
   "devDependencies": {
+    "@babel/core": "^7.6.4",
     "autoprefixer": "^9.6.4",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",

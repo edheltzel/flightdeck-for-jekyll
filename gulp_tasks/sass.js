@@ -3,19 +3,11 @@ const config = require('../flightdeck.manifest.js');
 const gulp = require('gulp');
 const postcss = require('gulp-postcss');
 const sass = require('gulp-sass');
-const sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('sass', function () {
+gulp.task('sass', function() {
   return gulp
     .src(config.assets + '/' + config.sass.src + '/**/*')
-    .pipe(sourcemaps.init())
-    .pipe(
-      sass({ outputStyle: config.sass.outputStyle }).on('error', sass.logError)
-    )
-    .pipe(
-      postcss([autoprefixer(),
-      ])
-    )
-    .pipe(sourcemaps.write('.'))
+    .pipe(sass({ outputStyle: config.sass.outputStyle }).on('error', sass.logError))
+    .pipe(postcss([ autoprefixer() ]))
     .pipe(gulp.dest(config.assets + '/' + config.sass.dest));
 });
