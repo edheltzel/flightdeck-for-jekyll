@@ -2,6 +2,7 @@
 	"files.exclude": {
     "**/.sass-cache/": true,
     "**/.jekyll-cache/": true,
+    "**/.jekyll-cache/": true,
     "**/_site/": true,
     ".bundle/": true
   },
@@ -10,6 +11,7 @@
   },
   "search.exclude": {
     "**/.sass-cache/": true,
+    "**/.jekyll-cache/": true,
     "**/.jekyll-cache/": true,
     "_site/**": true,
     ".vscode/**": true,
