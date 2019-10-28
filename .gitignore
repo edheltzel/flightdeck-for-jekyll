@@ -14,7 +14,6 @@ _site/
 
 # Node.js
 node_modules/
-
 # Logfiles and tempfiles
 *.log
 /log/*
