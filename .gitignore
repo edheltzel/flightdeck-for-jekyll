@@ -1,14 +1,14 @@
 # Sass
-.sass-cache
 *.scssc
 
 # Sublime Text
 sftp-config.json
 
 # Jekyll
-_site
+_site/
+.sass-cache/
+.jekyll-cache/
 .jekyll-metadata
-.jekyll-cache
 /.bundle
 /vendor
 
