@@ -49,7 +49,4 @@ $on-laptop: 800px !default;
 }
 
 // Import partials.
-@import "minima/base", "minima/layout", "minima/syntax-highlighting";
-.test {
-  transition: all .5s;
-}
+@import "cockpit/components/base", "cockpit/components/layout", "cockpit/helpers/syntax-highlighting", "cockpit/shame";

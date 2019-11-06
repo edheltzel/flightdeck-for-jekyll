@@ -1,0 +1,11 @@
+/* Animate */
+
+.animate {
+  transition: .6s;
+  opacity: 0;
+  transform: scale(.98);
+  &.idle {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
