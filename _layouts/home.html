@@ -1,34 +1,17 @@
 ---
 layout: default
 ---
+<div class="content-main animate">
+  <div class="container">
+    <section class="center count-down animate" data-countdown-year="2019" data-countdown-month="12" data-countdown-day="01">
+    <h1 class="brand font-size-90">
+      <img src="{{site.logo}}" alt="{{site.title}} logo">
+    </h1>
+    <h2 class="opacity-60">Better get it while you can!</h2>
+    </section>
+  </div>
+</div>
 
-<div class="home test">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
-
-  {{ content }}
-
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-  {%- endif -%}
-
+<div class="background-wrapper">
+  <div id="background-content"></div>
 </div>
