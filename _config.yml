@@ -29,10 +29,7 @@ gaCode: # UA-XXXXXXXX-XX
 # Build settings
 markdown: kramdown
 incremental: true
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
+# plugins:
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
