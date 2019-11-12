@@ -1,6 +1,6 @@
 The Humans behind this project:
 
-/* TEAM */
+/***** THE TEAM *****/
 Designer:
 Github:
 Twitter:
@@ -11,11 +11,7 @@ Github:
 Twitter:
 Location:
 
-/* SPECAIL THANKS */
-Name: Ed Heltzel https://github.com/ginfuru
+Some Info:
 
-/* SITE */
-Standards: https://rdmcrew.d.pr/TTqS93
-Tools: https://rdmcrew.d.pr/TTqS93
-Software: Git, Visual Studio Code, iTerm2
-Packages: run `npm list --depth=0`
+Standards: HTML, CSS - SCSS flavor, JavaScript
+Software: Jekyll, Git, VIM/Visual Studio Code, iTerm2
