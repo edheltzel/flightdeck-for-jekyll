@@ -3,12 +3,9 @@
 <h1>Flightdeck</h1>
 <h4>An opinionated starter project for <a href="http://jekyllrb.com/">Jekyll</a> that uses modern front-end tooling.</h4>
 
-[![release](https://img.shields.io/github/release/ginfuru/Flightdeck.svg?style=for-the-badge&logo=github&logoColor=white&colorA=101119&colorB=6D57FF)](https://github.com/ginfuru/Flightdeck/releases/latest)  [![jekyll](https://img.shields.io/badge/Jekyll-v3.36+-373277.svg?style=for-the-badge&logo=jekyll&logoColor=white&colorA=101119&colorB=7273D6)](https://github.com/jekyll/jekyll/releases/latest)  [![license](https://img.shields.io/badge/License-MIT-373277.svg?style=for-the-badge&l&logoColor=white&colorA=101119&colorB=42557B)](https://github.com/ginfuru/Flightdeck/blob/master/LICENSE)
+[![release](https://img.shields.io/github/release/ginfuru/Flightdeck.svg?style=for-the-badge&logo=github&logoColor=white&colorA=101119&colorB=6D57FF)](https://github.com/ginfuru/Flightdeck/releases/latest) [![jekyll](https://img.shields.io/badge/Jekyll-v3.36+-373277.svg?style=for-the-badge&logo=jekyll&logoColor=white&colorA=101119&colorB=7273D6)](https://github.com/jekyll/jekyll/releases/latest) [![license](https://img.shields.io/badge/License-MIT-373277.svg?style=for-the-badge&l&logoColor=white&colorA=101119&colorB=42557B)](https://github.com/ginfuru/Flightdeck/blob/master/LICENSE)
 
 </div>
-
-
-
 
 ## Prerequisites
 
@@ -16,26 +13,26 @@ To install this project, you'll need the following things installed on your mach
 
 1. [Jekyll](http://jekyllrb.com/) & [Bundler](https://bundler.io/) - `$ gem install jekyll bundler`
 2. [NodeJS](http://nodejs.org) - use the installer, Homebrew, etc.
-3. [Yarn](https://yarnpkg.com/en/) - `brew install yarn` _**(Optional)**_
-  4. [CloudCanoon](https://docs.cloudcannon.com/) - Give the client an interface to manage their site with a simple CMS. _**(Suggested for Clients)**_
+3. [CloudCanoon](https://docs.cloudcannon.com/) - Give the client an interface to manage their site with a simple CMS. _**(Suggested for Clients)**_
 
->### Optional Editor settings
+> ### Optional Editor settings
 >
->Although your editor is a very personal thing - we'd suggest that you'd consider using [Visual Studio Code](https://code.visualstudio.com/) with the [Jekyll Snippets Extension](https://marketplace.visualstudio.com/items?itemName=ginfuru.vscode-jekyll-snippets) - with the power of IntelliSense you'll get snippets to speed up your Jekyll work development as well as syntax highlighting for Liquid.
+> Although your editor is a very personal thing - we'd suggest that you'd consider using [Visual Studio Code](https://code.visualstudio.com/) with the [Jekyll Snippets Extension](https://marketplace.visualstudio.com/items?itemName=ginfuru.vscode-jekyll-snippets) - with the power of IntelliSense you'll get snippets to speed up your Jekyll work development as well as syntax highlighting for Liquid.
 
 ## Local Development & Installation
 
 1. Clone this repo, or download it into a directory of your choice.
 
-    ```shell
-    git clone https://github.com/PortsideIO/flightdeck.git
-    ```
+   ```shell
+   git clone https://github.com/ginfuru/Flightdeck.git
+   ```
+
 2. Inside the directory, run `npm install` -> **FYI** you can use `yarn` in place of `npm`
 
-    ```shell
-    cd flightdeck
-    npm install
-    ```
+   ```shell
+   cd flightdeck
+   npm install
+   ```
 
 ## Usage
 
@@ -45,14 +42,13 @@ To install this project, you'll need the following things installed on your mach
 
 This will give you file watching, browser synchronisation, auto-rebuild, CSS injecting etc.
 
-  ```shell
-  npm start
-  ```
+```shell
+npm start
+```
 
 #### Seeing Warnings
 
-If you're seeing JSON warnings ref [issue #1](https://github.com/PortsideIO/flightdeck/issues/1) on what should be done to fix this.
-
+If you're seeing JSON warnings ref [issue #1](https://github.com/ginfuru/Flightdeck/issues/1) on what should be done to fix this.
 
 ### Production Build
 
@@ -99,205 +95,209 @@ You can change the configurations by editing `flightdeck.manifest.js`.
 
 - ### port
 
-    default: `2018`
-    options: integer
+  default: `4000`
+  options: integer
 
 - ### tasks
 
-    Tasks to run when you exec `yarn start` or `gulp` commands.
+  Tasks to run when you exec `yarn start` or `gulp` commands.
 
-    - #### imagemin
+  - #### imagemin
 
-        To minify images.
+    To minify images.
 
-        default: `true`
-        options: boolean (`true` / `false`)
+    default: `true`
+    options: boolean (`true` / `false`)
 
-    - #### sass
+  - #### sass
 
-        To compile Sass.
+    To compile Sass.
 
-        default: `true`
-        options: boolean (`true` / `false`)
+    default: `true`
+    options: boolean (`true` / `false`)
 
-    - #### server
+  - #### server
 
-        To compile sources via Jekyll and to keep browsers in sync with file changes via Browsersync.
+    To compile sources via Jekyll and to keep browsers in sync with file changes via Browsersync.
 
-        default: `true`
-        options: boolean (`true` / `false`)
+    default: `true`
+    options: boolean (`true` / `false`)
 
-    - #### webpack
+  - #### webpack
 
-        To bundle JavaScript files.
+    To bundle JavaScript files.
 
-        default: `true`
-        options: boolean (`true` / `false`)
+    default: `true`
+    options: boolean (`true` / `false`)
 
-    - #### deploly
+  - #### deploly
 
-        Deploys using `gulp-rsync` to chosen server.
+    Deploys using `gulp-rsync` to chosen server.
 
-        default: `flase`
-        options: boolean (`true` / `false`)
+    default: `flase`
+    options: boolean (`true` / `false`)
 
 - ### paths
 
-    Settings about paths.
+  Settings about paths.
 
-    - #### dest
+  - #### dest
 
-        The destination directory for the whole project.
+    The destination directory for the whole project.
 
-        default: `"_site"`
-        options: string
+    default: `"_site"`
+    options: string
 
-    - #### posts
+  - #### posts
 
-        The directory of posts source files.
+    The directory of posts source files.
 
-        default: `"_posts"`
-        options: string
+    default: `"_posts"`
+    options: string
 
-    - #### assets
+  - #### assets
 
-        The directory to gather all assets.
+    The directory to gather all assets.
 
-        default: `"./assets"`
-        options: string
-        example: `"./"` (directly under the theme direcotry)
+    default: `"./assets"`
+    options: string
+    example: `"./"` (directly under the theme direcotry)
 
-    - #### css
+  - #### css
 
-        The CSS destination directory for Sass.
+    The CSS destination directory for Sass.
 
-        default: `"css"`
-        options: string
-        example: `"stylesheets"`
+    default: `"css"`
+    options: string
+    example: `"stylesheets"`
 
-    - #### js
+  - #### js
 
-        The JavaScript destination directory for Browserify.
+    The JavaScript destination directory for Browserify.
 
-        default: `"js"`
-        options: string
-        example: `"javascripts"`
+    default: `"js"`
+    options: string
+    example: `"javascripts"`
 
-    - #### images
+  - #### images
 
-        The destination directory of compressed image files for imagemin.
+    The destination directory of compressed image files for imagemin.
 
-        default: `"images"`
-        options: string
-        example: `"img"`
+    default: `"images"`
+    options: string
+    example: `"img"`
 
-    - #### sass
+  - #### sass
 
-        The directory of Sass files.
+    The directory of Sass files.
 
-        default: `"_sass"`
-        options: string
-        example: `"src/sass"`
+    default: `"_sass"`
+    options: string
+    example: `"src/sass"`
 
-    - #### jsSrc
+  - #### jsSrc
 
-        The directory of JavaScript source files to bundle up by Browserify.
+    The directory of JavaScript source files to bundle up by Browserify.
 
-        default: `"_js"`
-        options: string
-        example: `"src/js`"
+    default: `"_js"`
+    options: string
+    example: `"src/js`"
 
-    - #### imagesSrc
+  - #### imagesSrc
 
-        The directory of image source files to compress.
+    The directory of image source files to compress.
 
-        default: `"_images"`
-        options: string
-        example: `"src/images"`
+    default: `"_images"`
+    options: string
+    example: `"src/images"`
 
 - ### jekyll
 
-    Jekyll settings.
+  Jekyll settings.
 
-    - #### config
+  - #### config
 
-        Jekyll config files.
+    Jekyll config files.
 
-        - ##### default
+    - ##### default
 
-            The default Jekyll config file(s).
+      The default Jekyll config file(s).
 
-            default: `"_config.yml"`
-            options: string (`"FILE1[,FILE2,...]"`)
-            example: `"_config1.yml,_config2.yml"`
+      default: `"_config.yml"`
+      options: string (`"FILE1[,FILE2,...]"`)
+      example: `"_config1.yml,_config2.yml"`
 
-        - ##### development
+    - ##### development
 
-            Development mode config file(s) to override default settings.
+      Development mode config file(s) to override default settings.
 
-            default: `""`
-            options: string (`"FILE1[,FILE2,...]"`)
-            example: `"_config_development"`
+      default: `""`
+      options: string (`"FILE1[,FILE2,...]"`)
+      example: `"_config_development"`
 
-        - ##### production
+    - ##### production
 
-            Production mode config file(s) to override default settings.
+      Production mode config file(s) to override default settings.
 
-            default: `""`
-            options: string (`"FILE1[,FILE2,...]"`)
-            example: `"_config_production"`
+      default: `""`
+      options: string (`"FILE1[,FILE2,...]"`)
+      example: `"_config_production"`
 
 - ### sass
 
-    Sass settings.
+  Sass settings.
 
-    - #### outputStyle
+  - #### outputStyle
 
-        The output style of Sass.
+    The output style of Sass.
 
-        default: `"compressed"`
-        options: `"expanded"`, `"nested"`, `"compact"`, `"compressed"`
+    default: `"compressed"`
+    options: `"expanded"`, `"nested"`, `"compact"`, `"compressed"`
 
 - ### autoprefixer
 
-    Autoprefixer settings.
+  Autoprefixer settings.
 
-    - #### browsers
+  - #### browsers
 
-        List of browsers, which are supported in your theme.
+    List of browsers, which are supported in your theme.
 
-        default: `["> 1%", "last 2 versions", "Firefox ESR"]`
-        options: array. See [Browserslist docs](https://github.com/ai/browserslist#queries) for available queries.
-        example: `["> 5%", "last 2 versions", "IE 8"]`
+    default: `["> 1%", "last 2 versions", "Firefox ESR"]`
+    options: array. See [Browserslist docs](https://github.com/ai/browserslist#queries) for available queries.
+    example: `["> 5%", "last 2 versions", "IE 8"]`
 
 - ### js
 
-    JavaScript settings.
+  JavaScript settings.
 
-    - #### entry
+  - #### entry
 
-        File name(s) of JavaScript entry points.
+    File name(s) of JavaScript entry points.
 
-        default: `["main.js"]`
-        options: array
-        example: `["pluginA.js", "pluginB.js", "main.js"]`
+    default: `["main.js"]`
+    options: array
+    example: `["pluginA.js", "pluginB.js", "main.js"]`
 
 - ### deploy
 
-    Deployment settings.
+  Deployment settings.
 
-    uses any of the [`gulp-rsync`](https://www.npmjs.com/package/gulp-rsync) parameters
-    - #### remote
+  uses any of the [`gulp-rsync`](https://www.npmjs.com/package/gulp-rsync) parameters
 
-        server IP or ServerName _(if using ssh agentforwarding)_
-    - #### root
+  - #### remote
 
-        path to web root index of your choosen webserver
-    - #### exlude
+    server IP or ServerName _(if using ssh agentforwarding)_
 
-        excluding files/folder inside of the `_site` folder - this is editable with the Jekyll settings
-    - #### dryrun
+  - #### root
 
-        does a dryrun to make sure there are no configuration errors - set to `false` to deploy to your production _(remote)_ server.
+    path to web root index of your choosen webserver
 
-        default: `true`  options: `true` or `false`
+  - #### exlude
+
+    excluding files/folder inside of the `_site` folder - this is editable with the Jekyll settings
+
+  - #### dryrun
+
+    does a dryrun to make sure there are no configuration errors - set to `false` to deploy to your production _(remote)_ server.
+
+    default: `true` options: `true` or `false`
