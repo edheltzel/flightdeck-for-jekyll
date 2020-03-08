@@ -62,6 +62,7 @@
     "gulp-rsync": "^0.0.8",
     "gulp-sass": "^4.0.1",
     "gulp-watch": "^5.0.0",
+    "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^8.0.0",
     "natives": "^1.1.6",
     "require-dir": "^1.0.0",
