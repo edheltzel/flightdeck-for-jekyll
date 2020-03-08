@@ -1,7 +1,7 @@
 {
   "name": "flightdeck",
   "version": "0.9.8",
-  "description": "Flight Deck is an opinionated starter project for Jekyll that uses modern front-end tooling.",
+  "description": "Flightdeck is an opinionated starter project for Jekyll that uses modern front-end tooling.",
   "main": "gulpfile.js",
   "scripts": {
     "preinstall": "bundle config set path 'vendor/bundle' install",
