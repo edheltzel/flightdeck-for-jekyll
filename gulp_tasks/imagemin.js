@@ -4,6 +4,7 @@ const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const plumber = require('gulp-plumber');
 const pngquant = require('imagemin-pngquant');
+const mozjpeg = require('imagemin-mozjpeg');
 
 gulp.task('imagemin', function() {
   return gulp
@@ -14,7 +15,7 @@ gulp.task('imagemin', function() {
       imagemin({
         progressive: config.imagemin.progressive,
         svgoPlugins: config.imagemin.svgoPlugins,
-        use: [pngquant()],
+        use: [pngquant(), mozjpeg()],
       })
     )
     .pipe(gulp.dest(config.assets + '/' + config.imagemin.dest));
