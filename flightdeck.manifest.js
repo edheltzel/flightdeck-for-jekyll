@@ -27,6 +27,21 @@ module.exports = {
     ],
   },
 
+  deploy: {
+    // Server IP ie: root@192.168.0.1 OR ServerName if you use agentforwarding
+    remote: '',
+    // Path to web root ie: /var/www/html
+    root: '',
+    exclude: [
+      // Excluding files/folders inside of the _site folder
+      '.DS_Store',
+      '*.lock',
+      '.git',
+    ],
+    // set to false if deploying to production
+    dryrun: true,
+  },
+
   eslintLoader: {
     enforce: 'pre',
     test: /\.js$/,
@@ -72,18 +87,4 @@ module.exports = {
     },
   },
 
-  deploy: {
-    // Server IP ie: root@192.168.0.1 OR ServerName if you use agentforwarding
-    remote: '',
-    // Path to web root ie: /var/www/html
-    root: '',
-    exclude: [
-      // Excluding files/folders inside of the _site folder
-      '.DS_Store',
-      '*.lock',
-      '.git',
-    ],
-    // set to false if deploying to production
-    dryrun: true,
-  },
 };
