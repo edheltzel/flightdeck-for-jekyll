@@ -5,9 +5,7 @@
     "**/_site/": true,
     ".bundle/": true
   },
-  "files.associations": {
-    "*.html": "jekyll"
-  },
+  "files.associations": {},
   "search.exclude": {
     "**/.sass-cache/": true,
     "**/.jekyll-cache/": true,
