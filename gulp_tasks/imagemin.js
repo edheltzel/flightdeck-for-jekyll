@@ -25,9 +25,25 @@ gulp.task('imagemin', function() {
     .pipe(gulp.dest(config.assets + '/' + config.imagemin.dest));
 });
 
+// SVG Config
+var svgSettings = {
+  mode: {
+    symbol: {
+      // symbol mode to build the SVG
+      render: {
+        css: false, // CSS output option for icon sizing
+        scss: false, // SCSS output option for icon sizing
+      },
+      dest: 'sprite', // destination folder
+      prefix: '.svg--%s', // BEM-style prefix if styles rendered
+      sprite: 'sprite.svg', //generated sprite name
+      example: true, // Build a sample page, please!
+    },
+  },
+};
 gulp.task('svg', () =>
   gulp
     .src(config.assets + '/' + config.svgSprite.src + '*.svg')
-    .pipe(svgSprite(config.svgSprite.settings))
+    .pipe(svgSprite(svgSettings))
     .pipe(gulp.dest(config.assets + '/' + config.svgSprite.dest))
 );

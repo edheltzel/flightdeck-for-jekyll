@@ -66,31 +66,6 @@ module.exports = {
   svgSprite: {
     src: '_images/svg',
     dest: 'images/svg',
-    settings: [
-      {
-        shape: {
-          dimension: {
-            // Set maximum dimensions
-            maxWidth: 32,
-            maxHeight: 32,
-          },
-          spacing: {
-            // Add padding
-            padding: 10,
-          },
-        },
-        mode: {
-          view: {
-            // Activate the «view» mode
-            bust: false,
-            render: {
-              scss: true, // Activate Sass output (with default options)
-            },
-          },
-          symbol: true, // Activate the «symbol» mode
-        },
-      },
-    ],
   },
 
   jekyll: {
