@@ -3,8 +3,6 @@ const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const plumber = require('gulp-plumber');
-const pngquant = require('imagemin-pngquant');
-const mozjpeg = require('imagemin-mozjpeg');
 const svgSprite = require('gulp-svg-sprite');
 
 gulp.task('imagemin', function() {
@@ -13,11 +11,16 @@ gulp.task('imagemin', function() {
     .pipe(plumber())
     .pipe(newer(config.assets + '/' + config.imagemin.dest))
     .pipe(
-      imagemin({
-        progressive: config.imagemin.progressive,
-        svgoPlugins: config.imagemin.svgoPlugins,
-        use: [pngquant(), mozjpeg()],
-      })
+      imagemin([
+        imagemin.gifsicle({ interlaced: config.imagemin.interlaced }),
+        imagemin.mozjpeg([config.imagemin.mozjpeg]),
+        imagemin.optipng({
+          optimizationLevel: config.imagemin.optimizationLevel,
+        }),
+        // imagemin.svgo({
+        //   plugins: [config.imagemin.svgoPlugins],
+        // }),
+      ])
     )
     .pipe(gulp.dest(config.assets + '/' + config.imagemin.dest));
 });
@@ -26,15 +29,7 @@ gulp.task('svg', () =>
   gulp
     .src(config.assets + '/' + config.svgSprite.src + '*.svg')
     .pipe(
-      svgSprite({
-        mode: {
-          inline: true,
-          symbol: true,
-        },
-        svg: {
-          xmlDeclaration: false,
-        },
-      })
+      svgSprite(config.svgSprite.mode)
     )
     .pipe(gulp.dest(config.assets + '/' + config.svgSprite.dest))
 );

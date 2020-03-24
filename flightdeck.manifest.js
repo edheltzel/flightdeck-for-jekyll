@@ -52,13 +52,27 @@ module.exports = {
   imagemin: {
     src: '_images',
     dest: 'images',
-    progressive: true,
-    svgoPlugins: [{ removeViewBox: false }],
+    interlaced: false,
+    mozjpeg: [
+      {
+        quality: 75,
+        progressive: true,
+      },
+    ],
+    optimizationLevel: 5,
+    svgoPlugins: [{ removeViewBox: false }, { cleanupIDs: false }],
   },
 
   svgSprite: {
     src: '_images/svg',
     dest: 'images/svg',
+    mode:{
+      view:{
+        bust: false,
+        render:{scss: true}
+      },
+      symbol: true
+    }
   },
 
   jekyll: {
