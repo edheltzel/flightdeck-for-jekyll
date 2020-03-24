@@ -56,6 +56,11 @@ module.exports = {
     svgoPlugins: [{ removeViewBox: false }],
   },
 
+  svgSprite: {
+    src: '_images/svg',
+    dest: 'images/svg',
+  }
+
   jekyll: {
     config: {
       default: '_config.yml',

@@ -61,6 +61,7 @@
     "gulp-postcss": "^8.0.0",
     "gulp-rsync": "^0.0.8",
     "gulp-sass": "^4.0.1",
+    "gulp-svg-sprite": "^1.5.0",
     "gulp-watch": "^5.0.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^8.0.0",

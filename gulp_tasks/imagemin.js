@@ -5,6 +5,7 @@ const newer = require('gulp-newer');
 const plumber = require('gulp-plumber');
 const pngquant = require('imagemin-pngquant');
 const mozjpeg = require('imagemin-mozjpeg');
+const svgSprite = require('gulp-svg-sprite');
 
 gulp.task('imagemin', function() {
   return gulp
@@ -20,3 +21,20 @@ gulp.task('imagemin', function() {
     )
     .pipe(gulp.dest(config.assets + '/' + config.imagemin.dest));
 });
+
+gulp.task('svg', () =>
+  gulp
+    .src(config.assets + '/' + config.svgSprite.src + '*.svg')
+    .pipe(
+      svgSprite({
+        mode: {
+          inline: true,
+          symbol: true,
+        },
+        svg: {
+          xmlDeclaration: false,
+        },
+      })
+    )
+    .pipe(gulp.dest(config.assets + '/' + config.svgSprite.dest))
+);
