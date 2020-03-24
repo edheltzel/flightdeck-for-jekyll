@@ -28,8 +28,6 @@ gulp.task('imagemin', function() {
 gulp.task('svg', () =>
   gulp
     .src(config.assets + '/' + config.svgSprite.src + '*.svg')
-    .pipe(
-      svgSprite(config.svgSprite.mode)
-    )
+    .pipe(svgSprite(config.svgSprite.settings))
     .pipe(gulp.dest(config.assets + '/' + config.svgSprite.dest))
 );
