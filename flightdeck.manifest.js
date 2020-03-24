@@ -59,7 +59,7 @@ module.exports = {
   svgSprite: {
     src: '_images/svg',
     dest: 'images/svg',
-  }
+  },
 
   jekyll: {
     config: {
@@ -91,5 +91,4 @@ module.exports = {
       rules: [],
     },
   },
-
 };
