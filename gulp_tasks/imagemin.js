@@ -5,6 +5,7 @@ const newer = require('gulp-newer');
 const plumber = require('gulp-plumber');
 const svgSymbols = require('gulp-svg-symbols');
 const svgmin = require('gulp-svgmin');
+const rename = require('gulp-rename');
 
 gulp.task('imagemin', () => {
   gulp
@@ -40,5 +41,6 @@ gulp.task('svg', () =>
         },
       })
     )
+    .pipe(rename(config.svgSprite.filename))
     .pipe(gulp.dest(config.assets + '/' + config.svgSprite.dest))
 );

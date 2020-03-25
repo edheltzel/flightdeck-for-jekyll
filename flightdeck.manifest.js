@@ -61,12 +61,13 @@ module.exports = {
       },
     ],
     optimizationLevel: 5,
-    svgoPlugins: [{ removeViewBox: false }, { cleanupIDs: false }],
+    //svgoPlugins: [{ removeViewBox: false }, { cleanupIDs: false }],
   },
 
   svgSprite: {
     src: '_images/svg',
     dest: 'images/svg',
+    filename: '_all-icons.svg',
   },
 
   jekyll: {
