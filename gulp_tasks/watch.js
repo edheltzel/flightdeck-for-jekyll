@@ -5,7 +5,7 @@ const watch = require('gulp-watch');
 gulp.task('watch', function() {
   if (config.tasks.imagemin) {
     watch(config.assets + '/' + config.imagemin.src + '/**/*', function() {
-      gulp.start('imagemin');
+      gulp.start('imagemin', 'svg');
     });
   }
 
@@ -28,7 +28,7 @@ gulp.task('watch', function() {
         config.jekyll.data + '/**/*',
         config.assets + '/' + config.sass.dest + '/**/*',
         config.assets + '/' + config.js.dest + '/**/*',
-        config.assets + '/' + config.imagemin.dest + '/**/*'
+        config.assets + '/' + config.imagemin.dest + '/**/*',
       ],
       function() {
         gulp.start('browser-reload');
