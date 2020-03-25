@@ -3,10 +3,11 @@ const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const plumber = require('gulp-plumber');
-const svgSprite = require('gulp-svg-sprite');
+const svgSymbols = require('gulp-svg-symbols');
+const svgmin = require('gulp-svgmin');
 
-gulp.task('imagemin', function() {
-  return gulp
+gulp.task('imagemin', () => {
+  gulp
     .src(config.assets + '/' + config.imagemin.src + '/**/*')
     .pipe(plumber())
     .pipe(newer(config.assets + '/' + config.imagemin.dest))
@@ -17,33 +18,27 @@ gulp.task('imagemin', function() {
         imagemin.optipng({
           optimizationLevel: config.imagemin.optimizationLevel,
         }),
-        // imagemin.svgo({
-        //   plugins: [config.imagemin.svgoPlugins],
-        // }),
       ])
     )
     .pipe(gulp.dest(config.assets + '/' + config.imagemin.dest));
 });
 
-// SVG Config
-var svgSettings = {
-  mode: {
-    symbol: {
-      // symbol mode to build the SVG
-      render: {
-        css: false, // CSS output option for icon sizing
-        scss: false, // SCSS output option for icon sizing
-      },
-      dest: 'sprite', // destination folder
-      prefix: '.svg--%s', // BEM-style prefix if styles rendered
-      sprite: 'sprite.svg', //generated sprite name
-      example: true, // Build a sample page, please!
-    },
-  },
-};
+// SVG Sprites
 gulp.task('svg', () =>
   gulp
-    .src(config.assets + '/' + config.svgSprite.src + '*.svg')
-    .pipe(svgSprite(svgSettings))
+    .src(config.assets + '/' + config.svgSprite.src + '/*.svg')
+    .pipe(plumber())
+    .pipe(newer(config.assets + '/' + config.imagemin.dest))
+    .pipe(svgmin())
+    .pipe(
+      svgSymbols({
+        templates: ['default-svg'],
+        svgAttrs: {
+          width: 0,
+          height: 0,
+          display: 'none',
+        },
+      })
+    )
     .pipe(gulp.dest(config.assets + '/' + config.svgSprite.dest))
 );

@@ -5,6 +5,7 @@ module.exports = {
     browsersync: true,
     eslint: true,
     imagemin: true,
+    svg: true,
     sass: true,
     watch: true,
     webpack: true,
