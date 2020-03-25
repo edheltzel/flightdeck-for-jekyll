@@ -5,6 +5,7 @@ module.exports = {
     browsersync: true,
     eslint: true,
     imagemin: true,
+    svg: true,
     sass: true,
     watch: true,
     webpack: true,
@@ -27,6 +28,21 @@ module.exports = {
     ],
   },
 
+  deploy: {
+    // Server IP ie: root@192.168.0.1 OR ServerName if you use agentforwarding
+    remote: '',
+    // Path to web root ie: /var/www/html
+    root: '',
+    exclude: [
+      // Excluding files/folders inside of the _site folder
+      '.DS_Store',
+      '*.lock',
+      '.git',
+    ],
+    // set to false if deploying to production
+    dryrun: true,
+  },
+
   eslintLoader: {
     enforce: 'pre',
     test: /\.js$/,
@@ -37,8 +53,21 @@ module.exports = {
   imagemin: {
     src: '_images',
     dest: 'images',
-    progressive: true,
-    svgoPlugins: [{ removeViewBox: false }],
+    interlaced: false,
+    mozjpeg: [
+      {
+        quality: 75,
+        progressive: true,
+      },
+    ],
+    optimizationLevel: 5,
+    //svgoPlugins: [{ removeViewBox: false }, { cleanupIDs: false }],
+  },
+
+  svgSprite: {
+    src: '_images/svg',
+    dest: 'images/svg',
+    filename: '_all-icons.svg',
   },
 
   jekyll: {
@@ -70,20 +99,5 @@ module.exports = {
     module: {
       rules: [],
     },
-  },
-
-  deploy: {
-    // Server IP ie: root@192.168.0.1 OR ServerName if you use agentforwarding
-    remote: '',
-    // Path to web root ie: /var/www/html
-    root: '',
-    exclude: [
-      // Excluding files/folders inside of the _site folder
-      '.DS_Store',
-      '*.lock',
-      '.git',
-    ],
-    // set to false if deploying to production
-    dryrun: true,
   },
 };
