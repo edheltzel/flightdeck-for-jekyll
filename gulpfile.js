@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use strict';
 
 const config     = require('./flightdeck.manifest.js');

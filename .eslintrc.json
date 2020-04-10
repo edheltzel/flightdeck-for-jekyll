@@ -17,5 +17,13 @@
     "browser": true,
     "es6": true,
     "node": true
-  }
+  },
+  "ignorePatterns": [
+    "gulpfile.js",
+    "node_modules/",
+    "vendor/",
+    ".vscode/",
+    ".jekyll-cache/",
+    "_site/"
+  ]
 }
