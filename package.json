@@ -4,7 +4,7 @@
   "description": "Flightdeck is an opinionated starter project for Jekyll that uses modern front-end tooling.",
   "main": "gulpfile.js",
   "scripts": {
-    "preinstall": "bundle config set path 'vendor/bundle' install",
+    "preinstall": "bundle install --path vendor/bundle",
     "start": "bundle exec gulp",
     "test": "bundle exec gulp test",
     "browsersync": "bundle exec gulp browsersync",
