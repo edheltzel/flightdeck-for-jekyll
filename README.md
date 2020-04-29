@@ -36,6 +36,11 @@ To install this project, you'll need the following things installed on your mach
    # make sure you run bundle install before npm install
    ```
 
+```shell
+cd flightdeck
+yarn
+```
+
 ## Usage
 
 **Note:** you can replace `npm` with `yarn`
@@ -75,6 +80,10 @@ To display all available commands just run:
 
 ```shell
 npm run
+```
+
+```sheel
+yarn run
 ```
 
 ### Jekyll
