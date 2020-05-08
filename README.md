@@ -32,7 +32,14 @@ To install this project, you'll need the following things installed on your mach
    ```shell
    cd flightdeck
    npm install
+   # you might run into an issue with bundler and your ruby version
+   # make sure you run bundle install before npm install
    ```
+
+```shell
+cd flightdeck
+yarn
+```
 
 ## Usage
 
@@ -73,6 +80,10 @@ To display all available commands just run:
 
 ```shell
 npm run
+```
+
+```sheel
+yarn run
 ```
 
 ### Jekyll
