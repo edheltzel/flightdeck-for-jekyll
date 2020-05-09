@@ -18,6 +18,11 @@
     "es6": true,
     "node": true
   },
+  "settings":{
+    "react":{
+      "version": "999.999.999" // resolves warning about React version
+    }
+  },
   "ignorePatterns": [
     "gulpfile.js",
     "node_modules/",
