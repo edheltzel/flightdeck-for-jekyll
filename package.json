@@ -68,7 +68,7 @@
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-rsync": "^0.0.8",
+    "gulp-rsync": "^0.0.9",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-svg-symbols": "^3.2.3",
