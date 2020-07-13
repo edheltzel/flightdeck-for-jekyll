@@ -80,7 +80,7 @@
     "vinyl-named": "^1.1.0",
     "webpack": "^4.41.1",
     "webpack-stream": "^5.0.0",
-    "yargs": "^14.2.0"
+    "yargs": "^15.4.1"
   },
   "dependencies": {}
 }
