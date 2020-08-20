@@ -1,1 +1,2 @@
 incremental: false
+disable_disk_cache: true
