@@ -28,7 +28,8 @@ gaCode: # UA-XXXXXXXX-XX
 
 # Build settings
 markdown: kramdown
-incremental: true
+incremental: false
+disable_disk_cache: true
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
