@@ -1,5 +1,4 @@
 /node_modules/**/*
-/gulp_tasks/
 /.jekyll-cache/
 /vendor/
 /_site/**/*
