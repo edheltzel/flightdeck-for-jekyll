@@ -7,7 +7,9 @@
     "preinstall": "bundle install --path vendor/bundle",
     "start": "run-p watch:jekyll watch:parcel bs:start",
     "clean": "run-s clean:jekyll clean:depends",
+    "watch:images": "parcel watch assets/images/*",
     "watch:jekyll": "bundle exec jekyll server -l -o",
+    "bs:start": "browser-sync start --config bs.config.js",
     "clean:jekyll": "run-s bundle exec jekyll clean",
     "clean:depends": "rm -rf node_modules yarn.lock package-lock.json Gemfile.lock"
   },
@@ -29,7 +31,7 @@
   "author": "Ginfuru",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ginfuru/Flightdeck/issues"
+    "url": " https://github.com/ginfuru/Flightdeck/issues"
   },
   "homepage": "https://github.com/ginfuru/Flightdeck/",
   "devDependencies": {
