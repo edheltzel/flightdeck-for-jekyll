@@ -1,7 +1,7 @@
 {
   "files.exclude": {
     "**/.sass-cache/": true,
-    "**/_site/": true,
+    "**/_site/": false,
     ".bundle": true
   },
   "search.exclude": {
