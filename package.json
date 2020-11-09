@@ -24,11 +24,6 @@
     "clean": "bundle exec jekyll clean && rm -rf .cache",
     "clean:depends": "rm -rf node_modules yarn.lock package-lock.json Gemfile.lock"
   },
-  "browserslist": [
-    "> 1%",
-    "last 4 versions",
-    "Firefox ESR"
-  ],
   "repository": "https://github.com/ginfuru/Flightdeck.git",
   "keywords": [
     "Autoprefixer",
@@ -47,9 +42,9 @@
   "homepage": "https://github.com/ginfuru/Flightdeck/",
   "devDependencies": {
     "@babel/core": "^7.12.3",
+    "babel": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.6",
-    "node-sass": "^5.0.0",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-imagemin": "^4.0.1",
