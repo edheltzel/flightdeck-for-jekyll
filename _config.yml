@@ -19,8 +19,8 @@ description: >
   Flightdeck is a scaffold and starter project for Jekyll that uses an opinionated modern front-end workflow.
 baseurl: '' # the subpath of your site, e.g. /blog
 url: '' # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: ginfuru
-github_username: ginfuru
+twitter_username: flight-deck
+github_username: flight-deck
 
 # SEO
 #image: /assets/images/open_graph_image.png
