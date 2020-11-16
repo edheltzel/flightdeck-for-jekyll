@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "preinstall": "bundle install --path vendor/bundle",
-    "start": "run-p jekyll watch:parcel bs:start",
+    "start": "run-p jekyll watch:parcel bs:delay",
     "jekyll": "bundle exec jekyll build --watch",
     "watch:parcel": "run-p watch:css watch:js watch:images",
     "watch:css": "parcel watch assets/css/app.scss --out-dir _site/assets/css",
@@ -19,9 +19,12 @@
     "build:js": "parcel build assets/js/bundle.js --out-dir _site/assets/js",
     "build:images": "parcel build assets/images/* --out-dir _site/assets/images",
     "bs:start": "browser-sync start --config .browsersyncrc",
+    "bs:delay": "run-s delay:message delay bs:start",
     "svg": "svg-sprite-generate -d assets/svgs -o assets/icons",
+    "delay": "sleep 5",
+    "delay:message": "echo '\u001b[33mBrowsersync will launch after Assets finish...\u001b[0m'" ,
     "flush": "run-s clean clean:depends",
-    "clean": "bundle exec jekyll clean && rm -rf .cache",
+    "clean": "bundle exec jekyll clean && rm -rf .cache .parcel-cache",
     "clean:depends": "rm -rf node_modules yarn.lock package-lock.json Gemfile.lock"
   },
   "repository": "https://github.com/ginfuru/Flightdeck.git",
