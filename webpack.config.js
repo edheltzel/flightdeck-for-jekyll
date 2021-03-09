@@ -1,16 +1,9 @@
+const config = require('./flightdeck.manifest.js');
 const path = require("path");
 module.exports = {
-  mode: "production",
+  mode: config.webpack.mode,
   output: {
     filename: "bundle.js"
   },
-  module: {
-    rules: [
-      {
-        test: /\.js?$/,
-        include: [path.resolve(__dirname, "./assets/js")],
-        loader: "babel-loader"
-      }
-    ]
-  }
+  module: config.webpack.module.rules
 };

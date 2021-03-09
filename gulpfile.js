@@ -23,22 +23,23 @@ const webpackstream = require("webpack-stream");
 function browserSync(done) {
   browsersync.init({
     server: {
-      baseDir: "./_site/"
+      baseDir: config.jekyll.dest
     },
-    port: 3000
+    port: config.port
   });
   done();
 }
 
 // BrowserSync Reload
 function browserSyncReload(done) {
+  browsersync.notify('🛠 Rebuilt Jekyll')
   browsersync.reload();
   done();
 }
 
 // Clean assets
 function clean() {
-  return del(["./_site/assets/"]);
+  return del([config.jekyll.dest + "/assets/"]);
 }
 
 // Optimize Images
@@ -49,7 +50,7 @@ function images() {
     .pipe(
       imagemin([
         imagemin.gifsicle({ interlaced: config.imagemin.interlaced }),
-        imagemin.mozjpeg([ config.imagemin.mozjpeg ]),
+        imagemin.mozjpeg([config.imagemin.mozjpeg]),
         imagemin.optipng({
           optimizationLevel: config.imagemin.optimizationLevel,
         }),
@@ -68,13 +69,13 @@ function images() {
 // CSS task
 function css() {
   return gulp
-    .src("./assets/scss/**/*.scss")
+    .src(config.assets + '/' + config.sass.src + '/**/*')
     .pipe(plumber())
     .pipe(sass({ outputStyle: "expanded" }))
-    .pipe(gulp.dest("./_site/assets/css/"))
+    .pipe(gulp.dest(config.assets + '/' + config.sass.dest))
     .pipe(rename({ suffix: ".min" }))
     .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(gulp.dest("./_site/assets/css/"))
+    .pipe(gulp.dest(config.assets + '/' + config.sass.dest))
     .pipe(browsersync.stream());
 }
 
