@@ -1,6 +1,5 @@
 "use strict";
-const config = require('./flightdeck.manifest.js');
-
+const config = require('./flightdeck.manifest');
 // Load plugins
 const autoprefixer = require("autoprefixer");
 const browsersync = require("browser-sync").create();
@@ -50,7 +49,10 @@ function images() {
     .pipe(
       imagemin([
         imagemin.gifsicle({ interlaced: config.imagemin.interlaced }),
-        imagemin.mozjpeg([config.imagemin.mozjpeg]),
+        imagemin.mozjpeg({
+          quality: config.imagemin.mozjpeg.quality,
+          progressive: config.imagemin.mozjpeg.progressive
+        }),
         imagemin.optipng({
           optimizationLevel: config.imagemin.optimizationLevel,
         }),
@@ -71,7 +73,7 @@ function css() {
   return gulp
     .src(config.assets + '/' + config.sass.src + '/**/*')
     .pipe(plumber())
-    .pipe(sass({ outputStyle: "expanded" }))
+    .pipe(sass({ outputStyle: config.sass.outputStyle }).on('error', sass.logError))
     .pipe(gulp.dest(config.assets + '/' + config.sass.dest))
     .pipe(rename({ suffix: ".min" }))
     .pipe(postcss([autoprefixer(), cssnano()]))
@@ -97,7 +99,7 @@ function scripts() {
       .pipe(plumber())
       .pipe(webpackstream(webpackconfig, webpack))
       // folder only, filename is specified in webpack config
-      .pipe(gulp.dest('.' + config.jekyll.dest + config.assets + config.js.dest))
+      .pipe(gulp.dest('.' + config.jekyll.dest + '/assets/' + config.js.dest))
       .pipe(browsersync.stream())
   );
 }
