@@ -5,7 +5,7 @@ module.exports = {
   assets: './assets',
 
   imagemin: {
-    src: '_images',
+    src: 'images',
     dest: 'images',
     interlaced: false,
     mozjpeg:{
@@ -27,12 +27,12 @@ module.exports = {
   },
 
   js: {
-    src: '_js',
+    src: 'js',
     dest: 'js',
   },
 
   sass: {
-    src: '_sass',
+    src: 'scss',
     dest: 'css',
     outputStyle: 'compressed', //nested, expanded, compact, compressed
   },
