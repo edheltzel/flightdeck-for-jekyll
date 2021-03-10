@@ -1,34 +1,15 @@
 {
-  "extends": [
-    "airbnb",
-    "prettier"
-  ],
-  "plugins": [
-    "prettier"
-  ],
-  "rules": {
-    "prettier/prettier": [
-      "error"
-    ],
-    "no-var": "warn",
-    "require-jsdoc": "off"
-  },
   "env": {
     "browser": true,
-    "es6": true,
-    "node": true
+    "node": true,
+    "es6": true
   },
-  "settings":{
-    "react":{
-      "version": "999.999.999" // resolves warning about React version
-    }
+  "extends": "eslint:recommended",
+  "rules": {
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"]
   },
-  "ignorePatterns": [
-    "gulpfile.js",
-    "node_modules/",
-    "vendor/",
-    ".vscode/",
-    ".jekyll-cache/",
-    "_site/"
-  ]
+  "parserOptions": {
+    "sourceType": "module"
+  }
 }
