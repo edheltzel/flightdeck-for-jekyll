@@ -2,10 +2,23 @@
 <p><img src="https://d.pr/free/i/FDUErn+" alt="Flightdeck Logo"></p>
 <h1>Flightdeck</h1>
 <h4>An opinionated starter project for <a href="http://jekyllrb.com/">Jekyll</a> that uses modern front-end tooling.</h4>
-
 [![release](https://img.shields.io/github/release/ginfuru/Flightdeck.svg?style=for-the-badge&logo=github&logoColor=white&colorA=101119&colorB=6D57FF)](https://github.com/ginfuru/Flightdeck/releases/latest) [![jekyll](https://img.shields.io/badge/Jekyll-v3.36+-373277.svg?style=for-the-badge&logo=jekyll&logoColor=white&colorA=101119&colorB=7273D6)](https://github.com/jekyll/jekyll/releases/latest) [![license](https://img.shields.io/badge/License-MIT-373277.svg?style=for-the-badge&l&logoColor=white&colorA=101119&colorB=42557B)](https://github.com/ginfuru/Flightdeck/blob/master/LICENSE)
 
 </div>
+
+## What's inside the Flightdeck
+
+- [Jekyll](https://jekyllrb.com)
+- [Gulp](http://gulpjs.com/)
+- [Sass](http://sass-lang.com/)
+- [PostCSS](http://postcss.org/)
+  - [Autoprefixer](https://github.com/postcss/autoprefixer)
+  - [CSSNano](https://github.com/cssnano/cssnano)
+- [Webpack](https://webpack.github.io/)
+- [Imagemin](https://github.com/imagemin/imagemin)
+- [Browsersync](https://www.browsersync.io/)
+
+
 
 ## Prerequisites
 
@@ -13,49 +26,55 @@ To install this project, you'll need the following things installed on your mach
 
 1. [Jekyll](http://jekyllrb.com/) & [Bundler](https://bundler.io/) - `$ gem install jekyll bundler`
 2. [NodeJS](http://nodejs.org) - use the installer, Homebrew, etc.
-3. [CloudCanoon](https://docs.cloudcannon.com/) - Give the client an interface to manage their site with a simple CMS. _**(Suggested for Clients)**_
+3. [Yarn](https://classic.yarnpkg.com/lang/en/) - a package manager for Node 
+4. [CloudCanoon](https://docs.cloudcannon.com/) - Give the client an interface to manage their site with a simple CMS. _**(Suggested for Client editing)**_
+5. [rsync](https://rsync.samba.org/) - a very basic understand of rysnc if you choose to to deploy to a remote server. 
 
 > ### Optional Editor settings
 >
 > Although your editor is a very personal thing - we'd suggest that you'd consider using [Visual Studio Code](https://code.visualstudio.com/) with the [Jekyll Snippets Extension](https://marketplace.visualstudio.com/items?itemName=ginfuru.vscode-jekyll-snippets) - with the power of IntelliSense you'll get snippets to speed up your Jekyll work development as well as syntax highlighting for Liquid.
 
-## Local Development & Installation
+## Install & Local Development
 
-1. Clone this repo, or download it into a directory of your choice.
+#### Quick Start
+
+> NOTE: If you'd rather use `npm` over `yarn` – just replace the `yarn` commands with `npm`
+
+To get started quickly, you'll need to follow the steps below:
+
+1. Clone this repo 
 
    ```shell
-   git clone https://github.com/ginfuru/Flightdeck.git
+   git clone https://github.com/flight-deck/Flightdeck.git YOUR_PROJECT_NAME
    ```
 
-2. Inside the directory, run `npm install` -> **FYI** you can use `yarn` in place of `npm`
+2. Navigate to YOUR_PROJECT_NAME
 
    ```shell
-   cd flightdeck
-   npm install
-   # you might run into an issue with bundler and your ruby version
-   # make sure you run bundle install before npm install
+   cd YOUR_PROJECT_NAME
+   yarn install
    ```
 
-```shell
-cd flightdeck
-yarn
-```
+3. Start the server
+
+   ```shell
+   yarn start
+   ```
+
+4. Happy hacking!
+
+
+
 
 ## Usage
-
-**Note:** you can replace `npm` with `yarn`
 
 ### Start Development
 
 This will give you file watching, browser synchronisation, auto-rebuild, CSS injecting etc.
 
 ```shell
-npm start
+yarn start
 ```
-
-#### Seeing Warnings
-
-If you're seeing JSON warnings ref [issue #1](https://github.com/ginfuru/Flightdeck/issues/1) on what should be done to fix this.
 
 ### Production Build
 
@@ -63,15 +82,15 @@ This will set the `JEKYLL_ENV` to `production` and use the production config fil
 You can easily deploy your site build with the command.
 
 ```shell
-npm run build
+yarn build
 ```
 
 ### Deploy
 
-You can set your server deployment options inside of `flightdeck.manifest.js` If you wish to deploy after the build process has completed.
+You can set your server deployment options inside of `.liftoffrc` If you wish to deploy after the build process has completed. If you'd like to do a dry-run of what is being deplyed you cans execute `yarn deploy:test`
 
 ```shell
-npm run deploy
+yarn deploy
 ```
 
 ## Want more?
@@ -79,26 +98,57 @@ npm run deploy
 To display all available commands just run:
 
 ```shell
+yarn run
+```
+OR 
+
+```sheel
 npm run
 ```
 
-```sheel
-yarn run
+
+
+There are several options for running the npm scripts that do specific tasks controlled by [Gulp](http://gulpjs.com/) or help you clean things.
+
+```json
+  "scripts": {
+    "preinstall": "bundle install --path vendor/bundle",
+    "start": "bundle exec gulp",
+    "imagemin": "bundle exec gulp images",
+    "jekyll": "bundle exec gulp jekyll",
+    "sass": "bundle exec gulp css",
+    "js": "bundle exec gulp js",
+    "build": "bundle exec gulp build --jekyllEnv='production'",
+    "deploy:test": "./.liftoffrc ready",
+    "deploy": "./.liftoffrc ready go",
+    "clean": "npm run clean:ruby & npm run clean:node",
+    "clean:ruby": "rm -rf vendor/ .bundle/ Gemfile.lock",
+    "clean:node": "rm -rf node_modules yarn.lock package-lock.json",
+    "clean:site": "rm -rf _site/ .jekyll-cache",
+    "purge": "npm run clean:ruby & npm run clean:node & npm run clean:site",
+    "fresh": "npm run clean:ruby & npm run clean:node & npm run clean:site && yarn run install"
+  },
 ```
 
-### Jekyll
+- `preinstall` is triggered while executing `yarn` or `yarn install` – this will install all the Ruby Gems needed to setup Jekyll.
+- `yarn start` triggers the default task giving everything you need for local development – file watching, browser synchronisation, css injection, auto rebuild of Jekyll liquid templates/data/config files, etc.
+- `yarn imagemin` triggers ONLY the imagemin task for image optimizations and compressions.
+  - please note that we have purposely left out `svgo` for a number of reason when using svg sprites.
+- `yarn jekyll` triggers ONLY the jekyll task for (re)building Jekyll templates, date, and config files
+- `yarn sass` triggers ONLY the css tasks to recompile all Scss, generate inline sourcemaps for CSS debugging, runs PostCSS for Autoprefixer and CSSNano (minification).
+- `yarn js` triggers ONLY the js task to allow Webpack to bundle up your Javascript files into a `bundle.js`
+- `yarn build` triggers the build process and passes the environment variable for Jekyll to produce a production ready site.
+- `yarn deploy:test` triggers [Liftoff prelauch check](https://github.com/flight-deck/Flightdeck-liftoff#usage) - which is configrable by editing `.liftoffrc`
+- `yarn deploy` triggers [Liftoff deployment](https://github.com/flight-deck/Flightdeck-liftoff#usage) - which is configrable by editing `.liftoffrc`
+- `yarn clean` scrubs your project and removes all ruby based files and node based files – so you can do a fresh `yarn install` 
+  - This leaves the `_site` directory alone
+- `yarn clean:ruby` scrubs your project of all ruby based files – `vendor/ .bundle/ Gemfile.lock`
+- `yarn clean:node` scrubs your project of all node based files – `node_modles yarn.lock package-lock.json`
+- `yarn clean:site` scrubs your project of all Jekyll generated files – `_site/ .jekyll-cache`
+- `yarn purge`  scrubs your project and removes all ruby based files and node based files and also includes all the Jekyll generated files – so you can do a fresh `yarn install`
+- `yarn fresh ` does the same as `yarn purge` but includes the `yarn install ` after cleaning out files.
 
-As this is just a Jekyll project, you can use any of the commands listed in their [docs](https://jekyllrb.com/docs/usage/)
 
-## What's inside the Flightdeck
-
-- [gulp](http://gulpjs.com/)
-- [Sass](http://sass-lang.com/)
-- [PostCSS](http://postcss.org/)
-  - [Autoprefixer](https://github.com/postcss/autoprefixer)
-- [Webpack](https://webpack.github.io/)
-- [imagemin](https://github.com/imagemin/imagemin)
-- [Browsersync](https://www.browsersync.io/)
 
 ## Configurations and Defaults
 
@@ -109,118 +159,15 @@ You can change the configurations by editing `flightdeck.manifest.js`.
   default: `4000`
   options: integer
 
-- ### tasks
+- ### assets
 
-  Tasks to run when you exec `yarn start` or `gulp` commands.
+  The directory to gather all assets.
 
-  - #### imagemin
+  default: `"./assets"`
+  options: string
+  example: `"./"` (directly under the theme direcotry)
 
-    To minify images.
-
-    default: `true`
-    options: boolean (`true` / `false`)
-
-  - #### sass
-
-    To compile Sass.
-
-    default: `true`
-    options: boolean (`true` / `false`)
-
-  - #### server
-
-    To compile sources via Jekyll and to keep browsers in sync with file changes via Browsersync.
-
-    default: `true`
-    options: boolean (`true` / `false`)
-
-  - #### webpack
-
-    To bundle JavaScript files.
-
-    default: `true`
-    options: boolean (`true` / `false`)
-
-  - #### deploly
-
-    Deploys using `gulp-rsync` to chosen server.
-
-    default: `flase`
-    options: boolean (`true` / `false`)
-
-- ### paths
-
-  Settings about paths.
-
-  - #### dest
-
-    The destination directory for the whole project.
-
-    default: `"_site"`
-    options: string
-
-  - #### posts
-
-    The directory of posts source files.
-
-    default: `"_posts"`
-    options: string
-
-  - #### assets
-
-    The directory to gather all assets.
-
-    default: `"./assets"`
-    options: string
-    example: `"./"` (directly under the theme direcotry)
-
-  - #### css
-
-    The CSS destination directory for Sass.
-
-    default: `"css"`
-    options: string
-    example: `"stylesheets"`
-
-  - #### js
-
-    The JavaScript destination directory for Browserify.
-
-    default: `"js"`
-    options: string
-    example: `"javascripts"`
-
-  - #### images
-
-    The destination directory of compressed image files for imagemin.
-
-    default: `"images"`
-    options: string
-    example: `"img"`
-
-  - #### sass
-
-    The directory of Sass files.
-
-    default: `"_sass"`
-    options: string
-    example: `"src/sass"`
-
-  - #### jsSrc
-
-    The directory of JavaScript source files to bundle up by Browserify.
-
-    default: `"_js"`
-    options: string
-    example: `"src/js`"
-
-  - #### imagesSrc
-
-    The directory of image source files to compress.
-
-    default: `"_images"`
-    options: string
-    example: `"src/images"`
+  
 
 - ### jekyll
 
@@ -253,10 +200,22 @@ You can change the configurations by editing `flightdeck.manifest.js`.
       default: `""`
       options: string (`"FILE1[,FILE2,...]"`)
       example: `"_config_production"`
+    
+  - **dest**
+
+    default: `_site`
 
 - ### sass
 
   Sass settings.
+
+  - **src**
+
+    default: `scss`
+
+  - **dest**
+
+    default: `css`
 
   - #### outputStyle
 
@@ -265,50 +224,48 @@ You can change the configurations by editing `flightdeck.manifest.js`.
     default: `"compressed"`
     options: `"expanded"`, `"nested"`, `"compact"`, `"compressed"`
 
-- ### autoprefixer
-
-  Autoprefixer settings.
-
-  - #### browsers
-
-    List of browsers, which are supported in your theme.
-
-    default: `["> 1%", "last 2 versions", "Firefox ESR"]`
-    options: array. See [Browserslist docs](https://github.com/ai/browserslist#queries) for available queries.
-    example: `["> 5%", "last 2 versions", "IE 8"]`
-
 - ### js
 
   JavaScript settings.
 
-  - #### entry
+  - #### src
 
-    File name(s) of JavaScript entry points.
+    default: `js`
 
-    default: `["main.js"]`
-    options: array
-    example: `["pluginA.js", "pluginB.js", "main.js"]`
+  - **dest**
+  
+    default: `js`
 
-- ### deploy
+- #### imagemine
 
-  Deployment settings.
+  - **src**
 
-  uses any of the [`gulp-rsync`](https://www.npmjs.com/package/gulp-rsync) parameters
+    default: `images`
 
-  - #### remote
+  - **dest**
 
-    server IP or ServerName _(if using ssh agentforwarding)_
+    default: `images`
 
-  - #### root
+  The destination directory of compressed image files for imagemin.
 
-    path to web root index of your choosen webserver
+  default: `"images"`
+  options: string
+  example: `"img"`
 
-  - #### exlude
+  - **interlaced**
 
-    excluding files/folder inside of the `_site` folder - this is editable with the Jekyll settings
+    default: `false`
 
-  - #### dryrun
+  - **mozjpeg**
 
-    does a dryrun to make sure there are no configuration errors - set to `false` to deploy to your production _(remote)_ server.
+    - **quality**
 
-    default: `true` options: `true` or `false`
+      default: `75`
+
+    - **progressive**
+
+      default: `true`
+
+  - **optimzationLevel**
+
+    default: `5`
