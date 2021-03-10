@@ -1,4 +1,3 @@
-const config = require("./flightdeck.manifest.js")
 const path = require("path");
 
 module.exports = {
@@ -10,7 +9,7 @@ module.exports = {
     rules: [
       {
         test: /\.js?$/,
-        include: [path.resolve(__dirname, config.assets + config.js.dest )],
+        include: [path.resolve(__dirname, "./assets/js")],
         loader: "babel-loader"
       }
     ]
