@@ -16,17 +16,20 @@ module.exports = {
   sass: {
     src: 'scss',
     dest: 'css',
+    watchPath: '/scss/**/*',
     outputStyle: 'compressed', //nested, expanded, compact, compressed
   },
 
   js: {
     src: 'js',
     dest: 'js',
+    watchPath: '/js/**/*',
   },
 
   imagemin: {
     src: 'images',
     dest: 'images',
+    watchPath: '/images/**/*',
     interlaced: false,
     mozjpeg:{
       quality: 75,

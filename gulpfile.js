@@ -106,8 +106,8 @@ function jekyll() {
 
 // Watch files
 function watchFiles() {
-  gulp.watch(config.assets + "/scss/**/*", css);
-  gulp.watch(config.assets + "/js/**/*", gulp.series(scriptsLint, scripts));
+  gulp.watch(config.assets + config.sass.watchPath, css);
+  gulp.watch(config.assets + config.js.watchPath, gulp.series(scriptsLint, scripts));
   gulp.watch(
     [
       "./_includes/**/*",
@@ -120,7 +120,7 @@ function watchFiles() {
     ],
     gulp.series(jekyll, browserSyncReload)
   );
-  gulp.watch(config.assets + "/images/**/*", images);
+  gulp.watch(config.assets + config.imagemin.watchPath, images);
 }
 
 // define complex tasks
