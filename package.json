@@ -7,10 +7,10 @@
   "homepage": "https://github.com/flight-deck/Flightdeck/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ginfuru/Flightdeck.git"
+    "url": "https://github.com/flight-deck/Flightdeck.git"
   },
   "bugs": {
-    "url": "https://github.com/ginfuru/Flightdeck/issues"
+    "url": "https://github.com/flight-deck/Flightdeck/issues"
   },
   "keywords": [
     "Autoprefixer",
@@ -20,7 +20,10 @@
     "Jekyll",
     "PostCSS",
     "Sass",
-    "Webpack"
+    "Webpack",
+    "Starter Project",
+    "Flightdeck",
+    "static site generator"
   ],
   "scripts": {
     "preinstall": "bundle install --path vendor/bundle",
@@ -32,12 +35,12 @@
     "build": "bundle exec gulp build --jekyllEnv='production'",
     "deploy:test": "./.liftoffrc ready",
     "deploy": "./.liftoffrc ready go",
-    "clean": "yarn clean:ruby & yarn clean:node",
+    "clean": "npm run clean:ruby & npm run clean:node",
     "clean:ruby": "rm -rf vendor/ .bundle/ Gemfile.lock",
     "clean:node": "rm -rf node_modules yarn.lock package-lock.json",
     "clean:site": "rm -rf _site/ .jekyll-cache",
-    "purge": "yarn clean:ruby & yarn clean:node & yarn clean:site",
-    "fresh": "yarn clean:ruby & yarn clean:node & yarn clean:site && yarn install"
+    "purge": "npm run clean:ruby & npm run clean:node & npm run clean:site",
+    "fresh": "npm run clean:ruby & npm run clean:node & npm run clean:site && yarn run install"
   },
   "browserslist": [
     "> 1%",
