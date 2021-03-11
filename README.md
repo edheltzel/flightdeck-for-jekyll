@@ -18,6 +18,7 @@
 - [Webpack](https://webpack.github.io/)
 - [Imagemin](https://github.com/imagemin/imagemin)
 - [Browsersync](https://www.browsersync.io/)
+- [Flightdeck Liftoff](https://github.com/flight-deck/Flightdeck-Liftoff) for deployments
 
 
 
