@@ -15,7 +15,6 @@
 - [PostCSS](http://postcss.org/)
   - [Autoprefixer](https://github.com/postcss/autoprefixer)
   - [CSSNano](https://github.com/cssnano/cssnano)
-- [Webpack](https://webpack.github.io/)
 - [Imagemin](https://github.com/imagemin/imagemin)
 - [Browsersync](https://www.browsersync.io/)
 - [Flightdeck Liftoff](https://github.com/flight-deck/Flightdeck-Liftoff) for deployments
@@ -138,7 +137,7 @@ There are several options for running the npm scripts that do specific tasks con
   - please note that we have purposely left out `svgo` for a number of reason when using svg sprites.
 - `yarn jekyll` triggers ONLY the jekyll task for (re)building Jekyll templates, date, and config files
 - `yarn sass` triggers ONLY the css tasks to recompile all Scss, generate inline sourcemaps for CSS debugging, runs PostCSS for Autoprefixer and CSSNano (minification).
-- `yarn js` triggers ONLY the js task to allow Webpack to bundle up your Javascript files into a `bundle.js`
+- `yarn js` triggers ONLY the js task to concat and minify your Javascript files into a `bundle.js` or `bundle.min.js` for production builds
 - `yarn build` triggers the build process and passes the environment variable for Jekyll to produce a production ready site.
 - `yarn deploy:test` triggers [Liftoff prelauch check](https://github.com/flight-deck/Flightdeck-liftoff#usage) - which is configrable by editing `.liftoffrc`
 - `yarn deploy` triggers [Liftoff deployment](https://github.com/flight-deck/Flightdeck-liftoff#usage) - which is configrable by editing `.liftoffrc`
