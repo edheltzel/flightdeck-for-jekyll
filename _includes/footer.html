@@ -34,4 +34,4 @@
 
 </footer>
 
-<script src="{{ "/assets/js/main.js" | relative_url }}" type="text/javascript"></script>
+<script src="{%- if jeyll.environment == 'production' -%}{{ "/assets/js/bundle.min.js" | relative_url }}{%- else -%}{{ "/assets/js/bundle.js" | relative_url }}{%- endif -%}" type="text/javascript"></script>

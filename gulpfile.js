@@ -3,6 +3,7 @@ const config = require('./flightdeck.manifest');
 // Load plugins
 const autoprefixer = require("autoprefixer");
 const browsersync = require("browser-sync").create();
+const concat = require("gulp-concat");
 const cp = require("child_process");
 const cssnano = require("cssnano");
 const del = require("del");
@@ -15,9 +16,7 @@ const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
 const sass = require("gulp-dart-sass");
 const sourcemaps = require("gulp-sourcemaps");
-const webpack = require("webpack");
-const webpackconfig = require("./webpack.config.js");
-const webpackstream = require("webpack-stream");
+const uglify = require('gulp-uglify');
 
 // BrowserSync
 function browserSync(done) {
@@ -64,7 +63,7 @@ function images() {
 // CSS task
 function css() {
   return gulp
-    .src(config.assets + '/' + config.sass.src + '/**/*')
+    .src(config.assets + '/' + config.sass.src)
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: config.sass.outputStyle}).on('error', sass.logError))
@@ -92,8 +91,11 @@ function scripts() {
     gulp
       .src([config.assets + '/js/**/*'])
       .pipe(plumber())
-      .pipe(webpackstream(webpackconfig, webpack))
-      // folder only, filename is specified in webpack config
+      .pipe(sourcemaps.init())
+      .pipe(concat(config.js.entry))
+      .pipe(sourcemaps.write())
+      .pipe(uglify())
+      .pipe(rename({ suffix: ".min" }))
       .pipe(gulp.dest(config.jekyll.dest + '/assets/' + config.js.dest))
       .pipe(browsersync.stream())
   );
