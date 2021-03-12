@@ -67,7 +67,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.1",
     "postcss": "^8.2.8",
-    "webpack": "^4.26.1",
+    "webpack": "^5.25.0",
     "webpack-stream": "^5.1.1"
   }
 }
