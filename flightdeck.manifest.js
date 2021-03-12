@@ -14,7 +14,7 @@ module.exports = {
   },
 
   sass: {
-    src: 'scss',
+    src: '/scss/**/*.scss',
     dest: 'css',
     watchPath: '/scss/**/*',
     outputStyle: 'compressed', //nested, expanded, compact, compressed
@@ -24,6 +24,7 @@ module.exports = {
     src: 'js',
     dest: 'js',
     watchPath: '/js/**/*',
+    entry: 'bundle.js'
   },
 
   imagemin: {
