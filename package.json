@@ -39,8 +39,8 @@
     "clean:ruby": "rm -rf vendor/ .bundle/ Gemfile.lock",
     "clean:node": "rm -rf node_modules yarn.lock package-lock.json",
     "clean:site": "rm -rf _site/ .jekyll-cache",
-    "purge": "npm run clean:ruby & npm run clean:node & npm run clean:site",
-    "fresh": "npm run clean:ruby & npm run clean:node & npm run clean:site && yarn run install"
+    "clean:all": "npm run clean:ruby & npm run clean:node & npm run clean:site",
+    "purge": "npm run clean:all && yarn install"
   },
   "browserslist": [
     "> 1%",
@@ -55,18 +55,13 @@
     "fibers": "^5.0.0",
     "gulp": "^4.0.0",
     "gulp-bundle-assets": "^2.29.0",
-    "gulp-concat": "^2.6.1",
     "gulp-dart-sass": "^1.0.2",
     "gulp-eslint": "^6.0.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-newer": "^1.4.0",
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^9.0.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-uglify": "^3.0.2",
+    "gulp-terser": "^2.0.1",
     "postcss": "^8.2.8"
-  },
-  "dependencies": {
-    "gulp-sourcemaps": "^3.0.0"
   }
 }

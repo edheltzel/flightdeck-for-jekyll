@@ -1,22 +1,21 @@
-"use strict";
+'use strict';
 const config = require('./flightdeck.manifest');
 // Load plugins
-const autoprefixer = require("autoprefixer");
-const browsersync = require("browser-sync").create();
-const concat = require("gulp-concat");
-const cp = require("child_process");
-const cssnano = require("cssnano");
-const del = require("del");
-const eslint = require("gulp-eslint");
-const gulp = require("gulp");
-const imagemin = require("gulp-imagemin");
-const newer = require("gulp-newer");
-const plumber = require("gulp-plumber");
-const postcss = require("gulp-postcss");
-const rename = require("gulp-rename");
-const sass = require("gulp-dart-sass");
-const sourcemaps = require("gulp-sourcemaps");
-const uglify = require('gulp-uglify');
+const {dest, src, watch, series, parallel} = require('gulp');
+const argv = require('yargs').argv;
+const autoprefixer = require('autoprefixer');
+const browsersync = require('browser-sync').create();
+const cp = require('child_process');
+const cssnano = require('cssnano');
+const del = require('del');
+const eslint = require('gulp-eslint');
+const imagemin = require('gulp-imagemin');
+const newer = require('gulp-newer');
+const plumber = require('gulp-plumber');
+const postcss = require('gulp-postcss');
+const sass = require('gulp-dart-sass');
+const terser = require('gulp-terser');
+const siteAssets = config.jekyll.dest + '/assets/';
 
 // BrowserSync
 function browserSync(done) {
@@ -31,54 +30,43 @@ function browserSync(done) {
 
 // BrowserSync Reload
 function browserSyncReload(done) {
-  browsersync.notify('🛠 Site Rebuilt')
   browsersync.reload();
   done();
 }
 
 // Clean assets
 function cleanAssets() {
-  return del([config.jekyll.dest + "/assets/"]);
+  return del(siteAssets);
 }
 
 // Optimize Images
 function images() {
-  return gulp
-    .src(config.assets + '/' + config.imagemin.src + '/**/*')
-    .pipe(newer(config.jekyll.dest + '/assets/' + config.imagemin.dest))
+  return src(config.assets + config.imagemin.src)
+    .pipe(newer(siteAssets + config.imagemin.dest))
     .pipe(
       imagemin([
         imagemin.gifsicle({ interlaced: config.imagemin.interlaced }),
-        imagemin.mozjpeg({
-          quality: config.imagemin.mozjpeg.quality,
-          progressive: config.imagemin.mozjpeg.progressive
-        }),
+        imagemin.mozjpeg(config.imagemin.mozjpeg),
         imagemin.optipng({
           optimizationLevel: config.imagemin.optimizationLevel,
         })
       ])
     )
-    .pipe(gulp.dest(config.jekyll.dest + '/assets/' + config.imagemin.dest));}
+    .pipe(dest(siteAssets + config.imagemin.dest));}
 
 // CSS task
 function css() {
-  return gulp
-    .src(config.assets + '/' + config.sass.src)
+  return src(config.assets + config.sass.src, {sourcemaps: true})
     .pipe(plumber())
-    .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: config.sass.outputStyle}).on('error', sass.logError))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(config.jekyll.dest + '/assets/' + config.sass.dest))
-    .pipe(rename({ suffix: ".min" }))
     .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(gulp.dest(config.jekyll.dest + '/assets/' + config.sass.dest))
+    .pipe(dest(siteAssets + config.sass.dest, {sourcemaps: '.'}))
     .pipe(browsersync.stream());
 }
 
 // Lint scripts
 function scriptsLint() {
-  return gulp
-    .src([config.assets + '/js/**/*.js', './gulpfile.js', '!node_modules/**'])
+  return src([config.assets + config.js.src, './gulpfile.js', '!node_modules/**'])
     .pipe(plumber())
     .pipe(eslint())
     .pipe(eslint.format())
@@ -87,48 +75,37 @@ function scriptsLint() {
 
 // Transpile, concatenate and minify scripts
 function scripts() {
-  return (
-    gulp
-      .src([config.assets + '/js/**/*'])
+  return src(config.assets + config.js.src, {sourcemaps: true})
       .pipe(plumber())
-      .pipe(sourcemaps.init())
-      .pipe(concat(config.js.entry))
-      .pipe(sourcemaps.write())
-      .pipe(uglify())
-      .pipe(rename({ suffix: ".min" }))
-      .pipe(gulp.dest(config.jekyll.dest + '/assets/' + config.js.dest))
-      .pipe(browsersync.stream())
-  );
+      .pipe(terser())
+      .pipe(dest(siteAssets + config.js.dest, {sourcemaps: '.'}))
+      .pipe(browsersync.stream());
 }
 
 // Jekyll
-function jekyll() {
-  return cp.spawn("bundle", ["exec", "jekyll", "build"], { stdio: "inherit" });
+function jekyll(done) {
+  let jekyllConfig = config.jekyll.config.default;
+  if (argv.jekyllEnv == 'production') {
+    process.env.JEKYLL_ENV = 'production';
+    jekyllConfig += config.jekyll.config.production ? ',' + config.jekyll.config.production : '';
+  } else {
+    jekyllConfig += config.jekyll.config.development ? ',' + config.jekyll.config.development : '';
+  }
+  return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config', jekyllConfig ], { stdio: 'inherit' }).on('close', done);
 }
 
 // Watch files
 function watchFiles() {
-  gulp.watch(config.assets + config.sass.watchPath, css);
-  gulp.watch(config.assets + config.js.watchPath, gulp.series(scriptsLint, scripts));
-  gulp.watch(
-    [
-      "./_includes/**/*",
-      "./_layouts/**/*",
-      "./_pages/**/*",
-      "./_posts/**/*",
-      "./_projects/**/*",
-      "./_data/**/*",
-      "./_config*.yml"
-    ],
-    gulp.series(jekyll, browserSyncReload)
-  );
-  gulp.watch(config.assets + config.imagemin.watchPath, images);
+  watch(config.assets + config.sass.src, css);
+  watch(config.assets + config.js.src, series(scriptsLint, scripts));
+  watch(config.jekyll.watch, series(jekyll, browserSyncReload));
+  watch(config.assets + config.imagemin.src, images);
 }
 
 // define complex tasks
-const js = gulp.series(scriptsLint, scripts);
-const build = gulp.series(cleanAssets, gulp.parallel(css, images, jekyll, js));
-const watch = gulp.parallel(watchFiles, browserSync);
+const js = series(scriptsLint, scripts);
+const build = series(jekyll, css, js, images);
+const monitor = parallel(watchFiles, browserSync);
 
 // export tasks
 exports.images = images;
@@ -137,5 +114,5 @@ exports.js = js;
 exports.jekyll = jekyll;
 exports.cleanAssets = cleanAssets;
 exports.build = build;
-exports.watch = watch;
-exports.default = gulp.series(build, watch);
+exports.monitor = monitor;
+exports.default = series(build, monitor);
