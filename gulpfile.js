@@ -52,7 +52,7 @@ function images() {
         })
       ])
     )
-    .pipe(dest(siteAssets + config.imagemin.dest));}
+    .pipe(dest(config.assets + config.imagemin.dest));}
 
 // CSS task
 function css() {
@@ -60,7 +60,7 @@ function css() {
     .pipe(plumber())
     .pipe(sass({outputStyle: config.sass.outputStyle}).on('error', sass.logError))
     .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(dest(siteAssets + config.sass.dest, {sourcemaps: '.'}))
+    .pipe(dest(config.assets + config.sass.dest, {sourcemaps: '.'}))
     .pipe(browsersync.stream());
 }
 
@@ -78,7 +78,7 @@ function scripts() {
   return src(config.assets + config.js.src, {sourcemaps: true})
       .pipe(plumber())
       .pipe(terser())
-      .pipe(dest(siteAssets + config.js.dest, {sourcemaps: '.'}))
+      .pipe(dest(config.assets + config.js.dest, {sourcemaps: '.'}))
       .pipe(browsersync.stream());
 }
 
@@ -104,7 +104,7 @@ function watchFiles() {
 
 // define complex tasks
 const js = series(scriptsLint, scripts);
-const build = series(jekyll, css, js, images);
+const build = series(cleanAssets, parallel(jekyll, css, js, images));
 const monitor = parallel(watchFiles, browserSync);
 
 // export tasks
