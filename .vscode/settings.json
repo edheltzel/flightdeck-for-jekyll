@@ -19,10 +19,4 @@
     ".vscode/**": true,
     ".bundle/": true,
   },
-  "workbench.colorCustomizations": {
-    "titleBar.activeBackground": "#5c28fa",
-    "titleBar.activeForeground": "#c8ddfc",
-    "titleBar.inactiveBackground": "#0060ff5D",
-    "titleBar.inactiveForeground": "#cdec4c",
-  },
 }
