@@ -205,14 +205,14 @@ You can change the configurations by editing `flightdeck.manifest.js`.
   - **dest**
 
     default: `_site`
-
+    Note: you'll need to reference [Jekyll Docs](https://jekyllrb.com/docs/configuration/options/)
 - ### sass
 
   Sass settings.
 
   - **src**
 
-    default: `scss`
+    default: `_sass/**/*.scss`
 
   - **dest**
 
@@ -231,7 +231,7 @@ You can change the configurations by editing `flightdeck.manifest.js`.
 
   - #### src
 
-    default: `js`
+    default: `js/**/*`
 
   - **dest**
   
@@ -241,17 +241,15 @@ You can change the configurations by editing `flightdeck.manifest.js`.
 
   - **src**
 
-    default: `images`
+    default: `images/**/*`
 
   - **dest**
 
     default: `images`
-
-  The destination directory of compressed image files for imagemin.
-
-  default: `"images"`
+    The destination directory of compressed image files for imagemin.
+  
   options: string
-  example: `"img"`
+  example: `img`
 
   - **interlaced**
 
@@ -269,4 +267,4 @@ You can change the configurations by editing `flightdeck.manifest.js`.
 
   - **optimzationLevel**
 
-    default: `5`
+    default: `2`

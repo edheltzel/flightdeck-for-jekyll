@@ -15,7 +15,8 @@ const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss');
 const sass = require('gulp-dart-sass');
 const terser = require('gulp-terser');
-const siteAssets = config.jekyll.dest + '/assets/';
+
+const buildDest = config.jekyll.dest + '/assets/';
 
 // BrowserSync
 function browserSync(done) {
@@ -23,36 +24,41 @@ function browserSync(done) {
     server: {
       baseDir: config.jekyll.dest
     },
-    port: config.port
+    port: config.port,
+    notify: config.bs.notify
   });
   done();
 }
 
 // BrowserSync Reload
 function browserSyncReload(done) {
+  browsersync.notify('🛠 Site Rebuilt', 1000);
   browsersync.reload();
   done();
 }
 
 // Clean assets
 function cleanAssets() {
-  return del(siteAssets);
+  return del(buildDest);
 }
 
 // Optimize Images
 function images() {
   return src(config.assets + config.imagemin.src)
-    .pipe(newer(siteAssets + config.imagemin.dest))
+    .pipe(newer(buildDest + config.imagemin.dest))
     .pipe(
       imagemin([
         imagemin.gifsicle({ interlaced: config.imagemin.interlaced }),
         imagemin.mozjpeg(config.imagemin.mozjpeg),
         imagemin.optipng({
           optimizationLevel: config.imagemin.optimizationLevel,
-        })
-      ])
+        }),
+
+      ],
+      {verbose: true}
+      )
     )
-    .pipe(dest(config.assets + config.imagemin.dest));}
+    .pipe(dest(buildDest + config.imagemin.dest));}
 
 // CSS task
 function css() {
@@ -60,13 +66,13 @@ function css() {
     .pipe(plumber())
     .pipe(sass({outputStyle: config.sass.outputStyle}).on('error', sass.logError))
     .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(dest(config.assets + config.sass.dest, {sourcemaps: '.'}))
+    .pipe(dest(buildDest + config.sass.dest, {sourcemaps: '.'}))
     .pipe(browsersync.stream());
 }
 
 // Lint scripts
 function scriptsLint() {
-  return src([config.assets + config.js.src, './gulpfile.js', '!node_modules/**'])
+  return src([config.assets + config.js.src, './gulpfile.js', '!node_modules/**', '!*.map*'])
     .pipe(plumber())
     .pipe(eslint())
     .pipe(eslint.format())
@@ -78,7 +84,7 @@ function scripts() {
   return src(config.assets + config.js.src, {sourcemaps: true})
       .pipe(plumber())
       .pipe(terser())
-      .pipe(dest(config.assets + config.js.dest, {sourcemaps: '.'}))
+      .pipe(dest(buildDest + config.js.dest, {sourcemaps: '.'}))
       .pipe(browsersync.stream());
 }
 

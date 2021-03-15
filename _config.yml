@@ -27,6 +27,7 @@ github_username: edheltzel
 gaCode: # UA-XXXXXXXX-XX
 
 # Build settings
+keep_files: [assets]
 markdown: kramdown
 plugins:
   - jekyll-feed

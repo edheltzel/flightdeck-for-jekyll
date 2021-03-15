@@ -3,6 +3,10 @@ module.exports = {
   port: 4000,
   assets: './assets/',
 
+  bs: {
+    nofity: true
+  },
+
   sass: {
     src: '_sass/**/*.scss',
     dest: 'css',
@@ -10,20 +14,20 @@ module.exports = {
   },
 
   js: {
-    src: '_js/**/*',
+    src: 'js/**/*',
     dest: 'js',
     entry: 'bundle.js'
   },
 
   imagemin: {
-    src: '_images/**/*',
+    src: 'images/**/*',
     dest: 'images',
     interlaced: false,
   mozjpeg:{
       quality: 75,
       progressive: true,
     },
-    optimizationLevel: 5,
+    optimizationLevel: 2,
   },
 
   jekyll: {
