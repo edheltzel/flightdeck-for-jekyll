@@ -23,6 +23,7 @@ module.exports = {
     src: 'images/**/*',
     dest: 'images',
     interlaced: false,
+    verbose: false,
   mozjpeg:{
       quality: 75,
       progressive: true,
@@ -38,13 +39,13 @@ module.exports = {
     },
     dest: '_site',
     watch: [
-      '_includes/**/*',
-      '_layouts/**/*',
-      '_pages/**/*',
-      '_posts/**/*',
-      '_collections/**/*',
-      '_data/**/*',
-      '_config*yml',
+      './_includes/**/*',
+      './_layouts/**/*',
+      './_pages/**/*',
+      './_posts/**/*',
+      './_collections/**/*',
+      './_data/**/*',
+      './_config*yml',
       '*.html',
       '*.md',
       '*.markdown'

@@ -27,27 +27,27 @@ github_username: edheltzel
 gaCode: # UA-XXXXXXXX-XX
 
 # Build settings
-keep_files: [assets]
 markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
+# When clobbering the site destination, keep the selected files.
+keep_files:
+  - assets
+
+# Exclude directories and/or files from the conversion.
 exclude:
-  - flightdeck.manifest.js
-  - Gemfile
-  - Gemfile.lock
-  - gulp_tasks
-  - gulpfile.js
   - LICENSE
+  - README.md
+  - flightdeck.manifest.js
+  - gulpfile.js
   - node_modules
   - npm-debug.log
-  - package-lock.json # for those that use npm
   - package.json
-  - README.md
-  - vendor
+  - package-lock.json # for those that use npm
   - yarn.lock # for those that use yarn
+  - Gemfile
+  - Gemfile.lock
+  - vendor

@@ -25,7 +25,7 @@ function browserSync(done) {
       baseDir: config.jekyll.dest
     },
     port: config.port,
-    notify: config.bs.notify
+    notify: config.bs.nofity
   });
   done();
 }
@@ -55,7 +55,7 @@ function images() {
         }),
 
       ],
-      {verbose: true}
+      {verbose: config.imagemin.verbose}
       )
     )
     .pipe(dest(buildDest + config.imagemin.dest));}
