@@ -265,6 +265,6 @@ You can change the configurations by editing `flightdeck.manifest.js`.
 
       default: `true`
 
-  - **optimzationLevel**
+  - **optimizationLevel**
 
     default: `2`
