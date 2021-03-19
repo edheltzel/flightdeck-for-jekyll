@@ -28,7 +28,7 @@ To install this project, you'll need the following things installed on your mach
 1. [Jekyll](http://jekyllrb.com/) & [Bundler](https://bundler.io/) - `$ gem install jekyll bundler`
 2. [NodeJS](http://nodejs.org) - use the installer, Homebrew, etc.
 3. [Yarn](https://classic.yarnpkg.com/lang/en/) - a package manager for Node 
-4. [CloudCanoon](https://docs.cloudcannon.com/) - Give the client an interface to manage their site with a simple CMS. _**(Suggested for Client editing)**_
+4. [Cloudcanon](https://docs.cloudcannon.com/) - Give the client an interface to manage their site with a simple CMS. _**(Suggested for Client editing)**_
 5. [rsync](https://rsync.samba.org/) - a very basic understand of rysnc if you choose to to deploy to a remote server. 
 
 > ### Optional Editor settings
