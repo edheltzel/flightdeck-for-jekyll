@@ -4,13 +4,13 @@
   "description": "Flightdeck is an opinionated starter project for Jekyll that uses modern front-end tooling.",
   "author": "Ed Heltzel",
   "license": "MIT",
-  "homepage": "https://github.com/flight-deck/Flightdeck/",
+  "homepage": "https://github.com/flight-deck/flightdeck-jekyll",
   "repository": {
     "type": "git",
-    "url": "https://github.com/flight-deck/Flightdeck.git"
+    "url": "https://github.com/flight-deck/flightdeck-jekyll.git"
   },
   "bugs": {
-    "url": "https://github.com/flight-deck/Flightdeck/issues"
+    "url": "https://github.com/flight-deck/flightdeck-jekyll/issues"
   },
   "keywords": [
     "Autoprefixer",
@@ -20,7 +20,6 @@
     "Jekyll",
     "PostCSS",
     "Sass",
-    "Webpack",
     "Starter Project",
     "Flightdeck",
     "static site generator"
