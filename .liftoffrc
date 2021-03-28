@@ -2,8 +2,8 @@
 ################## CHANGE ME ########################
 TO_DEPLOY="./_site" #Build path of Jekyll - default: _site
 USER="root" #SERVER user goes here - if not root
-REMOTE="159.89.184.8" #SERVER IP goes here
-REMOTE_PATH="/home/runcloud/webapps/test" #PATH on REMOTE SERVER
+REMOTE="192.168.0.1" #SERVER IP goes here
+REMOTE_PATH="/www/html/public" #PATH on REMOTE SERVER
 REMOTE2="$REMOTE"
 REMOTE_PATH2="$REMOTE_PATH"
 EXCLUDE=('.*')
