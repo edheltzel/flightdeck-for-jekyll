@@ -5,25 +5,6 @@
   "author": "Ed Heltzel",
   "license": "MIT",
   "homepage": "https://github.com/flight-deck/flightdeck-jekyll",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/flight-deck/flightdeck-jekyll.git"
-  },
-  "bugs": {
-    "url": "https://github.com/flight-deck/flightdeck-jekyll/issues"
-  },
-  "keywords": [
-    "Autoprefixer",
-    "Browsersync",
-    "gulp",
-    "imagemin",
-    "Jekyll",
-    "PostCSS",
-    "Sass",
-    "Starter Project",
-    "Flightdeck",
-    "static site generator"
-  ],
   "scripts": {
     "preinstall": "bundle install --path vendor/bundle",
     "start": "bundle exec gulp",
@@ -42,8 +23,8 @@
     "purge": "npm run clean:all && yarn install"
   },
   "browserslist": [
-    "> 1%",
-    "last 4 versions",
+    "> 0.5%",
+    "last 2 versions",
     "Firefox ESR"
   ],
   "devDependencies": {
