@@ -105,7 +105,7 @@ function watchFiles() {
   watch(config.assets + config.sass.src, css);
   watch(config.assets + config.js.src, series(scriptsLint, scripts));
   watch(config.jekyll.watch, series(jekyll, browserSyncReload));
-  watch(config.assets + config.imagemin.src, images);
+  watch(config.assets + config.imagemin.src, series(images, jekyll, browserSyncReload));
 }
 
 // define complex tasks
