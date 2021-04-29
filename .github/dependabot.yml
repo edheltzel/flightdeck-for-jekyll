@@ -1,0 +1,70 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "10:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: cssnano
+    versions:
+    - 5.0.0
+    - 5.0.1
+  - dependency-name: webpack
+    versions:
+    - 5.18.0
+    - 5.19.0
+    - 5.20.0
+    - 5.20.1
+    - 5.20.2
+    - 5.21.2
+    - 5.22.0
+    - 5.23.0
+    - 5.24.0
+    - 5.24.1
+    - 5.24.2
+    - 5.24.3
+    - 5.24.4
+    - 5.25.0
+  - dependency-name: del
+    versions:
+    - 6.0.0
+  - dependency-name: autoprefixer
+    versions:
+    - 10.2.5
+  - dependency-name: gulp-rename
+    versions:
+    - 2.0.0
+  - dependency-name: gulp-postcss
+    versions:
+    - 9.0.0
+  - dependency-name: eslint
+    versions:
+    - 7.20.0
+    - 7.21.0
+    - 7.6.0
+  - dependency-name: webpack-stream
+    versions:
+    - 6.1.2
+  - dependency-name: yargs
+    versions:
+    - 16.2.0
+  - dependency-name: gulp-sourcemaps
+    versions:
+    - 3.0.0
+  - dependency-name: eslint-plugin-react-hooks
+    versions:
+    - 4.2.0
+  - dependency-name: gulp-svgmin
+    versions:
+    - 3.0.0
+  - dependency-name: gulp-rsync
+    versions:
+    - 0.0.9
+  - dependency-name: gulp
+    versions:
+    - 4.0.2
+  - dependency-name: eslint-loader
+    versions:
+    - 4.0.2
