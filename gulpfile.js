@@ -67,6 +67,7 @@ function css() {
     .pipe(sass({outputStyle: config.sass.outputStyle}).on('error', sass.logError))
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(dest(buildDest + config.sass.dest, {sourcemaps: '.'}))
+    .pipe(dest('assets/css'))
     .pipe(browsersync.stream());
 }
 
