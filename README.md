@@ -148,7 +148,7 @@ There are several options for running the npm scripts that do specific tasks con
 - `yarn clean:site` scrubs your project of all Jekyll generated files – `_site/ .jekyll-cache`
 - `yarn purge`  scrubs your project and removes all ruby based files and node based files and also includes all the Jekyll generated files – so you can do a fresh `yarn install`
 - `yarn fresh ` does the same as `yarn purge` but includes the `yarn install ` after cleaning out files.
-
+  - **PLEASE NOTE** if you use this specific command you will need to edit the `package.json` and change `yarn install` to `npm install` if you are NOT using yarn. 
 
 
 ## Configurations and Defaults
