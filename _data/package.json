@@ -1,30 +1,10 @@
 {
   "name": "flightdeck",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Flightdeck is an opinionated starter project for Jekyll that uses modern front-end tooling.",
   "author": "Ed Heltzel",
   "license": "MIT",
-  "homepage": "https://github.com/flight-deck/Flightdeck/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/flight-deck/Flightdeck.git"
-  },
-  "bugs": {
-    "url": "https://github.com/flight-deck/Flightdeck/issues"
-  },
-  "keywords": [
-    "Autoprefixer",
-    "Browsersync",
-    "gulp",
-    "imagemin",
-    "Jekyll",
-    "PostCSS",
-    "Sass",
-    "Webpack",
-    "Starter Project",
-    "Flightdeck",
-    "static site generator"
-  ],
+  "homepage": "https://github.com/flight-deck/flightdeck-jekyll",
   "scripts": {
     "preinstall": "bundle install --path vendor/bundle",
     "start": "bundle exec gulp",
@@ -35,16 +15,16 @@
     "build": "bundle exec gulp build --jekyllEnv='production'",
     "deploy:test": "./.liftoffrc ready",
     "deploy": "./.liftoffrc ready go",
-    "clean": "npm run clean:ruby & npm run clean:node",
+    "clean": "npm run clean:ruby && npm run clean:node",
     "clean:ruby": "rm -rf vendor/ .bundle/ Gemfile.lock",
     "clean:node": "rm -rf node_modules yarn.lock package-lock.json",
     "clean:site": "rm -rf _site/ .jekyll-cache",
-    "clean:all": "npm run clean:ruby & npm run clean:node & npm run clean:site",
+    "clean:all": "npm run clean:ruby && npm run clean:node && npm run clean:site",
     "purge": "npm run clean:all && yarn install"
   },
   "browserslist": [
-    "> 1%",
-    "last 4 versions",
+    "> 0.5%",
+    "last 2 versions",
     "Firefox ESR"
   ],
   "devDependencies": {

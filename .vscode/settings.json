@@ -2,7 +2,7 @@
   "files.exclude": {
     "**/.sass-cache/": true,
     ".jekyll-cache/": true,
-    // "**/_site/": true,
+    "**/_site/": true,
     ".bundle": true,
     "node_modules/": true,
     "vendor/": true

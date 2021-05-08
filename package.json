@@ -15,11 +15,11 @@
     "build": "bundle exec gulp build --jekyllEnv='production'",
     "deploy:test": "./.liftoffrc ready",
     "deploy": "./.liftoffrc ready go",
-    "clean": "npm run clean:ruby & npm run clean:node",
+    "clean": "npm run clean:ruby && npm run clean:node",
     "clean:ruby": "rm -rf vendor/ .bundle/ Gemfile.lock",
     "clean:node": "rm -rf node_modules yarn.lock package-lock.json",
     "clean:site": "rm -rf _site/ .jekyll-cache",
-    "clean:all": "npm run clean:ruby & npm run clean:node & npm run clean:site",
+    "clean:all": "npm run clean:ruby && npm run clean:node && npm run clean:site",
     "purge": "npm run clean:all && yarn install"
   },
   "browserslist": [
