@@ -103,33 +103,48 @@ yarn run
 ```
 OR 
 
-```sheel
+```shell
 npm run
 ```
 
-
-
 There are several options for running the npm scripts that do specific tasks controlled by [Gulp](http://gulpjs.com/) or help you clean things.
 
-```json
-  "scripts": {
-    "preinstall": "bundle install --path vendor/bundle",
-    "start": "bundle exec gulp",
-    "imagemin": "bundle exec gulp images",
-    "jekyll": "bundle exec gulp jekyll",
-    "sass": "bundle exec gulp css",
-    "js": "bundle exec gulp js",
-    "build": "bundle exec gulp build --jekyllEnv='production'",
-    "deploy:test": "./.liftoffrc ready",
-    "deploy": "./.liftoffrc ready go",
-    "clean": "npm run clean:ruby & npm run clean:node",
-    "clean:ruby": "rm -rf vendor/ .bundle/ Gemfile.lock",
-    "clean:node": "rm -rf node_modules yarn.lock package-lock.json",
-    "clean:site": "rm -rf _site/ .jekyll-cache",
-    "purge": "npm run clean:ruby & npm run clean:node & npm run clean:site",
-    "fresh": "npm run clean:ruby & npm run clean:node & npm run clean:site && yarn run install"
-  },
+```shell
+Lifecycle scripts included in flightdeck:
+  preinstall
+    bundle install --path vendor/bundle
+  start
+    bundle exec gulp
+
+available via `npm run-script`:
+  imagemin
+    bundle exec gulp images
+  jekyll
+    bundle exec gulp jekyll
+  sass
+    bundle exec gulp css
+  js
+    bundle exec gulp js
+  build
+    bundle exec gulp build --jekyllEnv='production'
+  deploy:test
+    ./.liftoffrc ready
+  deploy
+    ./.liftoffrc ready go
+  clean
+    npm run clean:ruby && npm run clean:node
+  clean:ruby
+    rm -rf vendor/ .bundle/ Gemfile.lock
+  clean:node
+    rm -rf node_modules yarn.lock package-lock.json
+  clean:site
+    rm -rf _site/ .jekyll-cache
+  clean:all
+    npm run clean:ruby && npm run clean:node && npm run clean:site
+  purge
+    npm run clean:all && yarn install
 ```
+
 
 - `preinstall` is triggered while executing `yarn` or `yarn install` – this will install all the Ruby Gems needed to setup Jekyll.
 - `yarn start` triggers the default task giving everything you need for local development – file watching, browser synchronisation, css injection, auto rebuild of Jekyll liquid templates/data/config files, etc.
