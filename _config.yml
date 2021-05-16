@@ -18,26 +18,26 @@ email: client-email@client_domain.com
 description: Flightdeck is a scaffold & starter project for Jekyll that uses an opinionated workflow.
 baseurl: '' # the subpath of your site, e.g. /blog
 url: '' # the base hostname & protocol for your site, e.g. http://example.com
-instagram_username: edheltzel
-github_username: edheltzel
 
-#flightdeck
-flightdeck:
-  homepage: 'https://github.com/flight-deck/flightdeck-jekyll'
-# SEO
+### SEO
 #image: /assets/images/open_graph_image.png
+social:
+  - twitter: flightdeck
+  - instagram: edheltzel
+  - github: edheltzel
+
+
 gaCode: # UA-XXXXXXXX-XX
 
-# Build settings
+### Build settings
 markdown: kramdown
 plugins:
   - jekyll-sitemap
 
-# When clobbering the site destination, keep the selected files.
-keep_files:
+keep_files: # When clobbering the site destination, keep the selected files.
   - assets
 
-# Exclude directories and/or files from the conversion.
+### Exclude directories and/or files from the conversion.
 exclude:
   - LICENSE
   - README.md
