@@ -25,14 +25,14 @@ social:
   twitter: github
   instagram: github
   github: github
-#rss:
+
+include_rss_feed: false
 
 gaCode: # UA-XXXXXXXX-XX
 
 ### Build settings
 markdown: kramdown
-plugins:
-  - jekyll-sitemap
+# plugins:
 
 keep_files: # When clobbering the site destination, keep the selected files.
   - assets
