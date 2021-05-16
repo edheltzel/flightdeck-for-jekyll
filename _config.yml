@@ -20,15 +20,13 @@ baseurl: '' # the subpath of your site, e.g. /blog
 url: '' # the base hostname & protocol for your site, e.g. http://example.com
 
 ### SEO
-#image: /assets/images/open_graph_image.png
 social:
   twitter: github
   instagram: github
   github: github
 
-include_rss_feed: false
-
 gaCode: # UA-XXXXXXXX-XX
+include_rss_feed: false
 
 ### Build settings
 markdown: kramdown

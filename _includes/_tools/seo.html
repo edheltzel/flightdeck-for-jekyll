@@ -28,10 +28,8 @@
 <link rel="icon" href="/assets/images/favicons/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/images/favicons/apple-touch-icon.png"><!-- 180×180 -->
 <link rel="manifest" href="/flightdeck.webmanifest">
-<meta name="theme-color" content="#FF00FF">
+<meta name="theme-color" content="#5755d9">
 
-{% if site.include_rss_feed == true %}
-<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-{% endif %}
+{% if site.include_rss_feed == true %}<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">{% endif %}
 <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ "/sitemap.xml" | prepend: site.baseurl | prepend: site.url }}" />
 <!-- END FLIGHTDECK SEO -->
