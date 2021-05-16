@@ -3,45 +3,35 @@
 {% assign pagecontent_description = page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | strip_html | strip_newlines | replace: '  ', ' ' | truncate: 160 %}
 <meta name="description" content="{%- if pagecontent_description.size > 50 -%}{{ pagecontent_description }}{%- else -%}{{ site.description }}{%- endif -%}">
 
-<link rel="shortcut icon" type="image/png" href="/img/icon-196x196.png">
-<link rel="shortcut icon" sizes="196x196" href="/img/icon-196x196.png">
-<link rel="apple-touch-icon" href="/img/icon-196x196.png">
-
 <!-- Facebook Meta Tags -->
 <meta property="og:title" content="{{ page.title }}"/>
 {%- if page.image -%}<meta property="og:image" content="{{ page.image }}"/>{%- endif -%}
 <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
-<meta property="og:type" content="article">
-<meta property="og:image" content="{{ site.url }}{{ page.image }}"/>
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ site.url }}{{ page.image | default: '/assets/images/favicons/open_graph_fallback.jpg'}}"/>
 <meta property="og:site_name" content="{{ site.title }}"/>
 <meta property="og:description" content="{%- if pagecontent_description.size > 50 -%}{{ pagecontent_description }}{%- else -%}{{ site.description }}{%- endif -%}"/>
 
-  <!-- Twitter Meta Tags -->
+{% if site.social.twitter %}
+<!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@{{ site.twitter_url }}">
+<meta name="twitter:site" content="@{{site.social.twitter}}">
 <meta name="twitter:title" content="{{ page.title }}" />
-{%- if page.image -%}<meta name="twitter:image" content="{{ site.url }}{{ page.image }}" />{%- endif -%}
+<meta name="twitter:image" content="{{ site.url }}{{ page.featured_image | default: '/assets/images/favicons/open_graph_fallback.jpg' }}" />
 <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
-<meta name="twitter:description" content="{%- if pagecontent_description.size > 10 -%}{{ pagecontent_description }}{%- else -%}{{ site.description }}{%- endif -%}" />
-
-<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-
-<meta property="og:url" content="https://westonandassociates.com">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Weston & Associates LLC Tanks. Domes. Liners.™">
-<meta property="og:description" content="Weston & Associates LLC is a specialty consultant for both the liquid and dry bulk storage tank industry.">
-<meta property="og:image" content="">
-
-
-
-
-<link rel="icon" href="/favicon.ico">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="manifest" href="/my.webmanifest">
-<meta name="theme-color" content="#FF00FF">
+<meta name="twitter:description" content="{% if pagecontent_description.size > 50 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}" />
+{% endif %}
 
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+<link rel="icon" href="/favicon.ico"><!-- 32×32 -->
+<link rel="icon" href="/assets/images/favicons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/images/favicons/apple-touch-icon.png"><!-- 180×180 -->
+<link rel="manifest" href="/flightdeck.webmanifest">
+<meta name="theme-color" content="#FF00FF">
+
+{% if site.include_rss_feed == true %}
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+{% endif %}
 <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ "/sitemap.xml" | prepend: site.baseurl | prepend: site.url }}" />
 <!-- END FLIGHTDECK SEO -->

@@ -39,9 +39,9 @@
       </a>
     </li>
   {%- endif -%}
-  {%- if site.instagram.user-%}
+  {%- if site.social.instagram -%}
     <li>
-      <a href="https://instagram.com/{{ site.instagram| cgi_escape | escape }}">
+      <a href="https://instagram.com/{{ site.social.instagram| cgi_escape | escape }}">
         <svg class="svg-icon">
           <use xlink:href="{{ '/assets/images/minima-social-icons.svg#instagram' | relative_url }}"></use>
         </svg>
