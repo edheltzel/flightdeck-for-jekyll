@@ -2,10 +2,13 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- seo -%}
+{%- comment -%} Includes meta tags for open graph and SEO {%- endcomment -%}
+  {%- include _tools/seo.html -%}
+
   <link rel="stylesheet" href="{%- if jeyll.environment == 'production' -%}{{ "/assets/css/app.min.css" | relative_url }}{%- else -%}{{ "/assets/css/app.css" | relative_url }}{%- endif -%}">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  {%- if jekyll.environment == 'production' and site.gaCode -%}
+
+{%- comment -%}  Includes Google Analytics for production builds {%- endcomment -%}
+  {% if jekyll.environment == 'production' and site.gaCode %}
     {%- include _tools/google-analytics.html -%}
-  {%- endif -%}
+  {% endif %}
 </head>
