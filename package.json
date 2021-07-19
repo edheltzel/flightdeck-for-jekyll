@@ -20,7 +20,7 @@
     "clean:node": "rm -rf node_modules yarn.lock package-lock.json",
     "clean:site": "rm -rf _site/ .jekyll-cache",
     "clean:all": "npm run clean:ruby && npm run clean:node && npm run clean:site",
-    "purge": "npm run clean:all && yarn install"
+    "purge": "npm run clean:all && npm install"
   },
   "browserslist": [
     "> 0.5%",
