@@ -1,7 +1,7 @@
 {
   "name": "Flightdeck - Jekyll + Parcel",
   "version": "0.9.9",
-  "description": "Flightdeck is an opinionated starter project for Jekyll that uses Gulp and Parcel.",
+  "description": "Flightdeck is an opinionated starter project for Jekyll that uses Parcel.",
   "author": "Ed Heltzel <ed@rainyday.media>",
   "license": "MIT",
   "homepage": "",
