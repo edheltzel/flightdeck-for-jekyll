@@ -1,8 +1,10 @@
 {
-  "name": "flightdeck",
+  "name": "Flightdeck - Jekyll + Parcel",
   "version": "0.9.9",
-  "description": "Flightdeck is an opinionated starter project for Jekyll that uses modern front-end tooling.",
-  "main": "gulpfile.js",
+  "description": "Flightdeck is an opinionated starter project for Jekyll that uses Gulp and Parcel.",
+  "author": "Ed Heltzel <ed@rainyday.media>",
+  "license": "MIT",
+  "homepage": "",
   "scripts": {
     "preinstall": "bundle install --path vendor/bundle",
     "start": "run-p jekyll watch:parcel bs:delay",
@@ -18,30 +20,20 @@
     "build:postcss": "npx postcss _site/assets/css/app.css --use autoprefixer -d .",
     "build:js": "parcel build assets/js/bundle.js --out-dir _site/assets/js",
     "build:images": "parcel build assets/images/* --out-dir _site/assets/images",
-    "bs:start": "browser-sync start --config browser-sync.config.js",
+    "bs:start": "browser-sync start --config .bs-config.js",
     "bs:delay": "run-s delay:message bs:start",
     "svg": "svg-sprite-generate -d assets/svgs -o assets/icons",
     "delay:message": "echo '\u001b[33mBrowsersync will launch after Assets finish...\u001b[0m'",
-    "flush": "run-s clean clean:depends",
-    "clean": "bundle exec jekyll clean && rm -rf .cache .parcel-cache",
-    "clean:depends": "rm -rf node_modules yarn.lock package-lock.json Gemfile.lock"
+
+    "deploy:test": "./.liftoffrc ready",
+    "deploy": "./.liftoffrc ready go",
+    "clean": "npm run clean:ruby & npm run clean:node",
+    "clean:ruby": "rm -rf vendor/ .bundle/ Gemfile.lock",
+    "clean:node": "rm -rf node_modules yarn.lock package-lock.json",
+    "clean:site": "rm -rf _site/ .jekyll-cache && bundle exec jekyll clean",
+    "clean:all": "npm run clean:ruby & npm run clean:node & npm run clean:site",
+    "purge": "npm run clean:all && npm install"
   },
-  "repository": "https://github.com/ginfuru/Flightdeck.git",
-  "keywords": [
-    "Autoprefixer",
-    "Browsersync",
-    "Imagemin",
-    "Jekyll",
-    "Parcel",
-    "PostCSS",
-    "Sass"
-  ],
-  "author": "Ginfuru",
-  "license": "MIT",
-  "bugs": {
-    "url": " https://github.com/ginfuru/Flightdeck/issues"
-  },
-  "homepage": "https://github.com/ginfuru/Flightdeck/",
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "babel": "^6.23.0",
