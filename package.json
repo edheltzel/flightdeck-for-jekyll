@@ -1,6 +1,6 @@
 {
   "name": "Flightdeck - Jekyll + Parcel",
-  "version": "0.9.9",
+  "version": "0.1.0",
   "description": "Flightdeck is an opinionated starter project for Jekyll that uses Parcel.",
   "author": "Ed Heltzel <ed@rainyday.media>",
   "license": "MIT",
