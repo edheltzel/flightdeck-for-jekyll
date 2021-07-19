@@ -1,6 +1,6 @@
 {
   "name": "Flightdeck - Jekyll + Parcel",
-  "version": "0.9.9",
+  "version": "0.1.0",
   "description": "Flightdeck is an opinionated starter project for Jekyll that uses Parcel.",
   "author": "Ed Heltzel <ed@rainyday.media>",
   "license": "MIT",
@@ -24,7 +24,6 @@
     "bs:delay": "run-s delay:message bs:start",
     "svg": "svg-sprite-generate -d assets/svgs -o assets/icons",
     "delay:message": "echo '\u001b[33mBrowsersync will launch after Assets finish...\u001b[0m'",
-
     "deploy:test": "./.liftoffrc ready",
     "deploy": "./.liftoffrc ready go",
     "clean": "npm run clean:ruby & npm run clean:node",
