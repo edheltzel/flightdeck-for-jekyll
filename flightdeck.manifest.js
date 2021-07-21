@@ -43,6 +43,7 @@ module.exports = {
       './_includes/**/*',
       './_layouts/**/*',
       './_posts/**/*',
+      './admin/**/*',
       './collections/**/*',
       './_config*yml',
       '*.html',
