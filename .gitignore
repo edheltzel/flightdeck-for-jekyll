@@ -31,3 +31,5 @@ doc/
 # Gem Yarn NPM
 *.lock
 *-lock.json
+
+web/*
