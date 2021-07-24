@@ -1,0 +1,17 @@
+The Humans behind this project:
+
+/***** THE TEAM *****/
+Designer:
+Github:
+Twitter:
+Location:
+
+Developer:
+Github:
+Twitter:
+Location:
+
+Some Info:
+
+Standards: HTML, CSS - SCSS flavor, JavaScript
+Software: Jekyll, Git, VIM/Visual Studio Code, iTerm2
