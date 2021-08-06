@@ -1,0 +1,43 @@
+# Sass
+*.scssc
+
+# Sublime Text
+sftp-config.json
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+/.bundle
+/vendor
+
+# Node.js
+node_modules/
+# Logfiles and tempfiles
+*.log
+/log/*
+!/log/.keep
+/tmp
+
+# Other unneeded files
+doc/
+*.swp
+*~
+.project
+.DS_Store
+.idea
+.secret
+# Gem Yarn NPM
+*.lock
+*-lock.json
+.DS_Store
+applet
+application.linux-arm64
+application.linux-armv6hf
+application.linux32
+application.linux64
+application.windows32
+application.windows64
+application.macosx
+out
