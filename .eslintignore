@@ -1,7 +1,7 @@
 /.jekyll-cache/**
 /.vscode/**
 /node_modules/**
-/gulp_tasks/**
+/_site/**
 /vendor/**
 postcss.config.js
 gulpfile.js
