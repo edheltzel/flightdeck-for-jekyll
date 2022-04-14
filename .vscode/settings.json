@@ -1,22 +1,22 @@
 {
   "files.exclude": {
-    "**/.sass-cache/": true,
-    ".jekyll-cache/": true,
-    "**/_site/": true,
-    ".bundle": true,
-    "node_modules/": true,
-    "vendor/": true
+    // "**/.sass-cache/": true,
+    // ".jekyll-cache/": true,
+    // "**/_site/": true,
+    // ".bundle": true,
+    // "node_modules/": true,
+    // "vendor/": true
   },
   "search.exclude": {
     "node_modules/": true,
     "vendor/": true,
     "_site/**": true,
     "**/css/*": true,
-    "*.lock": true,
+    "*lock*": true,
     "**/.sass-cache/": true,
     "**/.publish/": true,
     ".jekyll-cache/**": true,
-    ".vscode/**": true,
+    ".vscode/**": false,
     ".bundle/": true,
   },
   "liquid.format": false,

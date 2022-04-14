@@ -15,12 +15,12 @@
     "build": "bundle exec gulp build --jekyllEnv='production'",
     "deploy:test": "./.liftoffrc ready",
     "deploy": "./.liftoffrc ready go",
-    "clean": "npm run clean:ruby && npm run clean:node",
-    "clean:ruby": "rm -rf vendor/ .bundle/ Gemfile.lock",
-    "clean:node": "rm -rf node_modules yarn.lock package-lock.json",
-    "clean:site": "rm -rf _site/ .jekyll-cache",
-    "clean:all": "npm run clean:ruby && npm run clean:node && npm run clean:site",
-    "purge": "npm run clean:all && npm install"
+    "clean": "pnpm run clean:ruby && pnpm run clean:node",
+    "clean:ruby": "(rm -rf vendor/ .bundle/ Gemfile.lock || del vendor/ .bundle/ Gemfile.lock)",
+    "clean:site": "(rm -rf _site/ .jekyll-cache || del _site/ .jekyll-cache)",
+    "clean:node": "(rm -rf node_modules yarn.lock package-lock.json pnpm-lock.yaml || del node_modules yarn.lock package-lock.json pnpm-lock.yaml)",
+    "clean:all": "pnpm run clean:ruby && pnpm run clean:site && pnpm run clean:node",
+    "purge": "pnpm run clean:all && echo \"\\033[32m🧹 All Clean ✨\"\"\\033[0m Run \"\"\\033[33mpnpm install\"\"\\033[0m to start fresh 🤩\""
   },
   "browserslist": [
     "> 0.5%",
@@ -32,6 +32,7 @@
     "browser-sync": "^2.26.3",
     "cssnano": "^5.0.2",
     "del": "^6.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "fibers": "^5.0.0",
     "gulp": "^4.0.0",
     "gulp-dart-sass": "^1.0.2",
@@ -42,5 +43,9 @@
     "gulp-postcss": "^9.0.0",
     "gulp-terser": "^2.0.1",
     "postcss": "^8.2.8"
+  },
+  "dependencies": {
+    "eslint": "^8.13.0",
+    "prettier": "^2.6.2"
   }
 }

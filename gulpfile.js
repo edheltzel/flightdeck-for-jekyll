@@ -1,7 +1,7 @@
 'use strict';
 const config = require('./flightdeck.manifest');
 // Load plugins
-const {dest, src, watch, series, parallel} = require('gulp');
+const { dest, src, watch, series, parallel } = require('gulp');
 const argv = require('yargs').argv;
 const autoprefixer = require('autoprefixer');
 const browsersync = require('browser-sync').create();
@@ -55,18 +55,19 @@ function images() {
         }),
 
       ],
-      {verbose: config.imagemin.verbose}
+        { verbose: config.imagemin.verbose }
       )
     )
-    .pipe(dest(buildDest + config.imagemin.dest));}
+    .pipe(dest(buildDest + config.imagemin.dest));
+}
 
 // CSS task
 function css() {
-  return src(config.assets + config.sass.src, {sourcemaps: true})
+  return src(config.assets + config.sass.src, { sourcemaps: true })
     .pipe(plumber())
-    .pipe(sass({outputStyle: config.sass.outputStyle}).on('error', sass.logError))
+    .pipe(sass({ outputStyle: config.sass.outputStyle }).on('error', sass.logError))
     .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(dest(buildDest + config.sass.dest, {sourcemaps: '.'}))
+    .pipe(dest(buildDest + config.sass.dest, { sourcemaps: '.' }))
     .pipe(dest('assets/css'))
     .pipe(browsersync.stream());
 }
@@ -82,11 +83,11 @@ function scriptsLint() {
 
 // Transpile, concatenate and minify scripts
 function scripts() {
-  return src(config.assets + config.js.src, {sourcemaps: true})
-      .pipe(plumber())
-      .pipe(terser())
-      .pipe(dest(buildDest + config.js.dest, {sourcemaps: '.'}))
-      .pipe(browsersync.stream());
+  return src(config.assets + config.js.src, { sourcemaps: true })
+    .pipe(plumber())
+    .pipe(terser())
+    .pipe(dest(buildDest + config.js.dest, { sourcemaps: '.' }))
+    .pipe(browsersync.stream());
 }
 
 // Jekyll
@@ -98,7 +99,7 @@ function jekyll(done) {
   } else {
     jekyllConfig += config.jekyll.config.development ? ',' + config.jekyll.config.development : '';
   }
-  return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config', jekyllConfig ], { stdio: 'inherit' }).on('close', done);
+  return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config', jekyllConfig], { stdio: 'inherit' }).on('close', done);
 }
 
 // Watch files
@@ -110,7 +111,7 @@ function watchFiles() {
 }
 
 // define complex tasks
-const js = series(scriptsLint, scripts);
+const js = series(scripts);
 const build = series(cleanAssets, parallel(jekyll, css, js, images));
 const monitor = parallel(watchFiles, browserSync);
 
