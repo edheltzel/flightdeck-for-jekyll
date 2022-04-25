@@ -25,7 +25,7 @@ function browserSync(done) {
       baseDir: config.jekyll.dest
     },
     port: config.port,
-    notify: config.bs.nofity
+    notify: config.bs.notify
   });
   done();
 }

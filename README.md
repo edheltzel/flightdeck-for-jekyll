@@ -27,9 +27,10 @@ To install this project, you'll need the following things installed on your mach
 
 1. [Jekyll](http://jekyllrb.com/) & [Bundler](https://bundler.io/) - `$ gem install jekyll bundler`
 2. [NodeJS](http://nodejs.org) - use the installer, Homebrew, etc.
-3. [Yarn](https://classic.yarnpkg.com/lang/en/) - a package manager for Node 
+3. ~~[Yarn](https://classic.yarnpkg.com/lang/en/) - a package manager for Node~~
+3. [pnpm](https://pnpm.io/) - Fast, disk space efficient package manager for Node~~
 4. [Cloudcannon](https://docs.cloudcannon.com/) - Give the client an interface to manage their site with a simple CMS. _**(Suggested for Client editing)**_
-5. [rsync](https://rsync.samba.org/) - a very basic understand of rysnc if you choose to to deploy to a remote server. 
+5. [rsync](https://rsync.samba.org/) - a very basic understand of rysnc if you choose to to deploy to a remote server.
 
 > ### Optional Editor settings
 >
@@ -39,27 +40,27 @@ To install this project, you'll need the following things installed on your mach
 
 #### Quick Start
 
-> NOTE: If you'd rather use `npm` over `yarn` – just replace the `yarn` commands with `npm`
+> NOTE: If you'd rather use `npm` or `yarn` – just replace the `pnpm` command and all should work.
 
 To get started quickly, you'll need to follow the steps below:
 
-1. Clone this repo 
+1. Clone this repo
 
    ```shell
-   git clone https://github.com/flight-deck/Flightdeck.git YOUR_PROJECT_NAME
+   git clone https://github.com/flight-deck/Flightdeck.git newFlightdeckProject
    ```
 
-2. Navigate to YOUR_PROJECT_NAME
+2. Navigate to newFlightdeckProject
 
    ```shell
-   cd YOUR_PROJECT_NAME
-   yarn install
+   cd newFlightdeckProject
+   pnpm install
    ```
 
 3. Start the server
 
    ```shell
-   yarn start
+   pnpm start
    ```
 
 4. Happy hacking!
@@ -71,10 +72,10 @@ To get started quickly, you'll need to follow the steps below:
 
 ### Start Development
 
-This will give you file watching, browser synchronisation, auto-rebuild, CSS injecting etc.
+This will give you file watching, browser synchronization, auto-rebuild (hot reloading), CSS injection etc.
 
 ```shell
-yarn start
+pnpm start
 ```
 
 ### Production Build
@@ -83,15 +84,15 @@ This will set the `JEKYLL_ENV` to `production` and use the production config fil
 You can easily deploy your site build with the command.
 
 ```shell
-yarn build
+pnpm build
 ```
 
 ### Deploy
 
-You can set your server deployment options inside of `.liftoffrc` If you wish to deploy after the build process has completed. If you'd like to do a dry-run of what is being deplyed you cans execute `yarn deploy:test`
+You can set your server deployment options inside of `.liftoffrc` If you wish to deploy after the build process has completed. If you'd like to do a dry-run of what is being deplyed you cans execute `pnpm deploy:test`
 
 ```shell
-yarn deploy
+pnpm deploy
 ```
 
 ## Want more?
@@ -99,12 +100,7 @@ yarn deploy
 To display all available commands just run:
 
 ```shell
-yarn run
-```
-OR 
-
-```shell
-npm run
+pnpm run
 ```
 
 There are several options for running the npm scripts that do specific tasks controlled by [Gulp](http://gulpjs.com/) or help you clean things.
@@ -136,7 +132,7 @@ available via `npm run-script`:
   clean:ruby
     rm -rf vendor/ .bundle/ Gemfile.lock
   clean:node
-    rm -rf node_modules yarn.lock package-lock.json
+    rm -rf node_modules yarn.lock package-lock.json pnpm-lock.yaml
   clean:site
     rm -rf _site/ .jekyll-cache
   clean:all
@@ -146,29 +142,34 @@ available via `npm run-script`:
 ```
 
 
-- `preinstall` is triggered while executing `yarn` or `yarn install` – this will install all the Ruby Gems needed to setup Jekyll.
-- `yarn start` triggers the default task giving everything you need for local development – file watching, browser synchronisation, css injection, auto rebuild of Jekyll liquid templates/data/config files, etc.
-- `yarn imagemin` triggers ONLY the imagemin task for image optimizations and compressions.
+- `preinstall` is triggered while executing `pnpm` or `pnpm install` – this will install all the Ruby Gems needed to setup Jekyll.
+- `pnpm start` triggers the default task giving everything you need for local development – file watching, browser synchronization, css injection, auto rebuild of Jekyll liquid templates/data/config files, etc.
+- `pnpm imagemin` triggers ONLY the imagemin task for image optimizations and compressions.
   - please note that we have purposely left out `svgo` for a number of reason when using svg sprites.
-- `yarn jekyll` triggers ONLY the jekyll task for (re)building Jekyll templates, date, and config files
-- `yarn sass` triggers ONLY the css tasks to recompile all Scss, generate inline sourcemaps for CSS debugging, runs PostCSS for Autoprefixer and CSSNano (minification).
-- `yarn js` triggers ONLY the js task to concat and minify your Javascript files into a `bundle.js` or `bundle.min.js` for production builds
-- `yarn build` triggers the build process and passes the environment variable for Jekyll to produce a production ready site.
-- `yarn deploy:test` triggers [Liftoff prelauch check](https://github.com/flight-deck/Flightdeck-liftoff#usage) - which is configrable by editing `.liftoffrc`
-- `yarn deploy` triggers [Liftoff deployment](https://github.com/flight-deck/Flightdeck-liftoff#usage) - which is configrable by editing `.liftoffrc`
-- `yarn clean` scrubs your project and removes all ruby based files and node based files – so you can do a fresh `yarn install` 
+- `pnpm jekyll` triggers ONLY the jekyll task for (re)building Jekyll templates, date, and config files
+- `pnpm sass` triggers ONLY the css tasks to recompile all Scss, generate inline sourcemaps for CSS debugging, runs PostCSS for Autoprefixer and CSSNano (minification).
+- `pnpm js` triggers ONLY the js task to concat and minify your Javascript files into a `bundle.js` or `bundle.min.js` for production builds
+- `pnpm build` triggers the build process and passes the environment variable for Jekyll to produce a production ready site.
+- `pnpm deploy:test` triggers [Liftoff prelauch check](https://github.com/flight-deck/Flightdeck-liftoff#usage) - which is configurable by editing `.liftoffrc`
+- `pnpm deploy` triggers [Liftoff deployment](https://github.com/flight-deck/Flightdeck-liftoff#usage) - which is configurable by editing `.liftoffrc`
+- `pnpm clean` scrubs your project and removes all ruby based files and node based files – so you can do a fresh `yarn install`
   - This leaves the `_site` directory alone
-- `yarn clean:ruby` scrubs your project of all ruby based files – `vendor/ .bundle/ Gemfile.lock`
-- `yarn clean:node` scrubs your project of all node based files – `node_modles yarn.lock package-lock.json`
-- `yarn clean:site` scrubs your project of all Jekyll generated files – `_site/ .jekyll-cache`
-- `yarn purge`  scrubs your project and removes all ruby based files and node based files and also includes all the Jekyll generated files – so you can do a fresh `yarn install`
+- `pnpm clean:ruby` scrubs your project of all ruby based files – `vendor/ .bundle/ Gemfile.lock`
+- `pnpm clean:node` scrubs your project of all node based files – `node_modules yarn.lock package-lock.json pnpm-lock.yaml`
+- `pnpm clean:site` scrubs your project of all Jekyll generated files – `_site/ .jekyll-cache`
+- `pnpm purge`  scrubs your project and removes all ruby based files and node based files and also includes all the Jekyll generated files – so you can do a fresh `pnpm install`
 - `yarn fresh ` does the same as `yarn purge` but includes the `yarn install ` after cleaning out files.
-  - **PLEASE NOTE** if you use this specific command you will need to edit the `package.json` and change `yarn install` to `npm install` if you are NOT using yarn. 
+  - **PLEASE NOTE** if you use this specific command you will need to edit the `package.json` and change `pnpm install` to `yarn/npm install` if you are NOT using pnpm.
 
 
 ## Configurations and Defaults
 
 You can change the configurations by editing `flightdeck.manifest.js`.
+
+Remember this is just a Jekyll site using the Minima theme, so anything related to Jekyll or Liquid specific you'll need to reference the documentation for these projects:
+- [ Jekyll ](https://jekyllrb.com/docs/)
+- [ Liquid ](https://shopify.github.io/liquid/)
+- [ Minima theme ](https://github.com/jekyll/minima)
 
 - ### port
 
@@ -181,9 +182,9 @@ You can change the configurations by editing `flightdeck.manifest.js`.
 
   default: `"./assets"`
   options: string
-  example: `"./"` (directly under the theme direcotry)
+  example: `"./"` (directly under the theme directory)
 
-  
+
 
 - ### jekyll
 
@@ -216,7 +217,7 @@ You can change the configurations by editing `flightdeck.manifest.js`.
       default: `""`
       options: string (`"FILE1[,FILE2,...]"`)
       example: `"_config_production"`
-    
+
   - **dest**
 
     default: `_site`
@@ -249,10 +250,10 @@ You can change the configurations by editing `flightdeck.manifest.js`.
     default: `js/**/*`
 
   - **dest**
-  
+
     default: `js`
 
-- #### imagemine
+- #### imagemin
 
   - **src**
 
@@ -262,7 +263,7 @@ You can change the configurations by editing `flightdeck.manifest.js`.
 
     default: `images`
     The destination directory of compressed image files for imagemin.
-  
+
   options: string
   example: `img`
 

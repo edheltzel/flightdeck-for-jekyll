@@ -74,4 +74,13 @@
       "no_semicolon": true
     }
   },
+  "cSpell.ignoreWords": [
+    "liftoffrc",
+    "preinstall"
+  ],
+  "cSpell.words": [
+    "browsersync",
+    "gulpfile",
+    "mozjpeg"
+  ],
 }
