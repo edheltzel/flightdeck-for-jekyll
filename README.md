@@ -1,5 +1,5 @@
 <div align="center">
-<p><img src="https://d.pr/free/i/FDUErn+" alt="Flightdeck Logo"></p>
+<p><img src="https://rdm.sfo2.digitaloceanspaces.com/flightdeck/v3-flightdeck__logo--purple-haze-600x528.png" alt="Flightdeck Logo"></p>
 <h1>Flightdeck</h1>
 <h4>An opinionated starter project for <a href="http://jekyllrb.com/">Jekyll</a> that uses modern front-end tooling.</h4>
 
