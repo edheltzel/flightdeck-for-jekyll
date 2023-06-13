@@ -35,7 +35,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "fibers": "^5.0.0",
     "gulp": "^4.0.0",
-    "gulp-dart-sass": "^1.0.2",
+    "gulp-dart-sass": "^1.1.0",
     "gulp-eslint": "^6.0.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-newer": "^1.4.0",
