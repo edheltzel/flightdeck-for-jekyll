@@ -33,7 +33,7 @@
     "cssnano": "^5.0.2",
     "del": "^6.0.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "fibers": "^5.0.0",
+    "fibers": "^5.0.3",
     "gulp": "^4.0.0",
     "gulp-dart-sass": "^1.0.2",
     "gulp-eslint": "^6.0.0",
