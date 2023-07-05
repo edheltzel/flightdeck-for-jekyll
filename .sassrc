@@ -1,6 +1,0 @@
-{
-  "includePaths": ["node_modules"],
-  "outputStyle": "expanded",
-  "sourceMap": true,
-  "outFile": "/assets/css/app.css"
-}
