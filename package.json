@@ -26,12 +26,8 @@
     "delay:message": "echo '\u001b[33mBrowsersync will launch after Assets finish...\u001b[0m'",
     "deploy:test": "./.liftoffrc ready",
     "deploy": "./.liftoffrc ready go",
-    "clean": "npm run clean:ruby & npm run clean:node",
-    "clean:ruby": "rm -rf vendor/ .bundle/ Gemfile.lock",
-    "clean:node": "rm -rf node_modules yarn.lock package-lock.json pnpm-lock.yaml .cache/",
-    "clean:site": "rm -rf _site/ .jekyll-cache && bundle exec jekyll clean",
-    "clean:all": "npm run clean:ruby & npm run clean:node & npm run clean:site",
-    "purge": "npm run clean:all"
+    "clean": "./.scrub.sh site",
+    "purge": "./.scrub.sh purge"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
