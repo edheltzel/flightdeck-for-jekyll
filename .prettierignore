@@ -1,7 +1,0 @@
-/node_modules/**/*
-/.jekyll-cache/
-/vendor/
-/_site/**/*
-
-.node-version
-*.lock
