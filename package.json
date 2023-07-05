@@ -4,10 +4,10 @@
   "description": "Flightdeck is an opinionated starter project for Jekyll that uses Parcel.",
   "author": "Ed Heltzel <ed@rainyday.media>",
   "license": "MIT",
-  "homepage": "",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "preinstall": "bundle install --path vendor/bundle",
-    "start": "run-p jekyll watch:parcel bs:delay",
+    "start": "run-p jekyll watch:parcel",
     "jekyll": "bundle exec jekyll build --watch",
     "watch:parcel": "run-p watch:css watch:js watch:images",
     "watch:css": "parcel watch assets/css/app.scss --out-dir _site/assets/css",
@@ -20,28 +20,15 @@
     "build:postcss": "npx postcss _site/assets/css/app.css --use autoprefixer -d .",
     "build:js": "parcel build assets/js/bundle.js --out-dir _site/assets/js",
     "build:images": "parcel build assets/images/* --out-dir _site/assets/images",
-    "bs:start": "browser-sync start --config .bs-config.js",
-    "bs:delay": "run-s delay:message bs:start",
-    "svg": "svg-sprite-generate -d assets/svgs -o assets/icons",
-    "delay:message": "echo '\u001b[33mBrowsersync will launch after Assets finish...\u001b[0m'",
-    "deploy:test": "./.liftoffrc ready",
-    "deploy": "./.liftoffrc ready go",
     "clean": "./.scrub.sh site",
     "purge": "./.scrub.sh purge"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "babel": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
-    "browser-sync": "^2.24.6",
+    "browserlist": "^1.0.1",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-imagemin": "^4.0.1",
-    "prettier": "^2.1.2",
-    "sass": "^1.29.0",
-    "stylelint": "^13.7.2",
-    "stylelint-prettier": "^1.1.2",
-    "svg-sprite-generator": "^0.0.7"
-  },
-  "dependencies": {}
+    "sass": "^1.63.6",
+    "sharp": "^0.32.1"
+  }
 }
