@@ -1,34 +1,29 @@
 {
   "name": "flightdeck-for-jekyll-with-parcel",
   "version": "0.1.0",
-  "description": "Flightdeck is an opinionated starter project for Jekyll that uses Parcel.",
+  "description": "Flightdeck is an opinionated Jamstack starter project for Jekyll with ParcelJS.",
   "author": "Ed Heltzel <ed@rainyday.media>",
   "license": "MIT",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "preinstall": "bundle install --path vendor/bundle",
-    "start": "run-p jekyll watch:parcel",
-    "jekyll": "bundle exec jekyll build --watch",
-    "watch:parcel": "run-p watch:css watch:js watch:images",
-    "watch:css": "parcel watch assets/css/app.scss --out-dir _site/assets/css",
-    "watch:js": "parcel watch assets/js/bundle.js --out-dir _site/assets/js",
-    "watch:images": "parcel watch assets/images/* --out-dir _site/assets/images",
-    "build": "run-s clean prod:*",
-    "prod:jekyll": "bundle exec jekyll build JEKYLL_ENV=production",
-    "prod:parcel": "run-p build:css build:js build:images build:postcss",
-    "build:css": "parcel build assets/css/app.scss --out-dir _site/assets/css",
-    "build:postcss": "npx postcss _site/assets/css/app.css --use autoprefixer -d .",
-    "build:js": "parcel build assets/js/bundle.js --out-dir _site/assets/js",
-    "build:images": "parcel build assets/images/* --out-dir _site/assets/images",
+    "start": "run-p dev:parcel dev:jekyll",
+    "dev:jekyll": "bundle exec jekyll server --livereload",
+    "dev:parcel": "run-p watch:assets",
+    "watch:assets": "parcel watch './assets/images/**/*.*' ./assets/js/app.js ./assets/styles/style.scss --dist-dir ./dist/assets",
+    "build": "run-s clean build:jekyll build:parcel",
+    "build:jekyll": "bundle exec jekyll build JEKYLL_ENV=production",
+    "build:parcel": "parcel build './assets/images/**/*.*' ./assets/js/app.js ./assets/styles/style.scss --dist-dir ./_site/assets",
     "clean": "./.scrub.sh site",
     "purge": "./.scrub.sh purge"
   },
   "devDependencies": {
+    "@parcel/config-default": "^2.9.3",
+    "@parcel/transformer-sass": "2.9.3",
     "browserlist": "^1.0.1",
     "npm-run-all": "^4.1.5",
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-imagemin": "^4.0.1",
+    "parcel": "^2.9.3",
     "sass": "^1.63.6",
-    "sharp": "^0.32.1"
+    "sharp": "^0.31.3"
   }
 }
