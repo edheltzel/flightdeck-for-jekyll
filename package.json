@@ -10,7 +10,7 @@
     "start": "run-p dev:parcel dev:jekyll",
     "dev:jekyll": "bundle exec jekyll server --livereload",
     "dev:parcel": "run-p watch:assets",
-    "watch:assets": "parcel watch './assets/images/**/*.*' ./assets/js/app.js ./assets/styles/style.scss --dist-dir ./dist/assets",
+    "watch:assets": "parcel watch './assets/images/**/*.*' ./assets/js/app.js ./assets/styles/style.scss --dist-dir ./_site/assets",
     "build": "run-s clean build:jekyll build:parcel",
     "build:jekyll": "bundle exec jekyll build JEKYLL_ENV=production",
     "build:parcel": "parcel build './assets/images/**/*.*' ./assets/js/app.js ./assets/styles/style.scss --dist-dir ./_site/assets",
