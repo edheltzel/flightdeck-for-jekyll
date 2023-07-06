@@ -20,4 +20,7 @@
     "titleBar.inactiveBackground": "#0060ff5D",
     "titleBar.inactiveForeground": "#cdec4c",
   },
+  "cSpell.words": [
+    "livereload"
+  ],
 }
