@@ -1,19 +1,23 @@
+# Node.js
+node_modules/
+*.lock
+*-lock.json
+
+# Parcel JS
+.cache/
+.parcel-cache/
+
 # Sass
 *.scssc
-
-# Sublime Text
-sftp-config.json
+.sass-cache/
 
 # Jekyll
 _site/
-.sass-cache/
 .jekyll-cache/
 .jekyll-metadata
 /.bundle
 /vendor
 
-# Node.js
-node_modules/
 # Logfiles and tempfiles
 *.log
 /log/*
@@ -28,6 +32,3 @@ doc/
 .DS_Store
 .idea
 .secret
-# Gem Yarn NPM
-*.lock
-*-lock.json
