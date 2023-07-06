@@ -5,5 +5,8 @@
       "@parcel/optimizer-esbuild",
       "..."
     ]
+  },
+  "extensionOverrides": {
+    ".jpg": ".jpg"
   }
 }
