@@ -1,6 +1,6 @@
 {
   "name": "flightdeck-for-jekyll-with-parcel",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Flightdeck is an opinionated Jamstack starter project for Jekyll with ParcelJS.",
   "author": "Ed Heltzel <ed@rainyday.media>",
   "license": "MIT",
