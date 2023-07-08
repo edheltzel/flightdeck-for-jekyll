@@ -13,6 +13,8 @@
     "*.lock": true,
     "node_modules/": true,
     ".bundle/": true,
+    "assets/styles/**": true,
+    "assets/js/**": true,
   },
   "workbench.colorCustomizations": {
     "titleBar.activeBackground": "#5c28fa",
