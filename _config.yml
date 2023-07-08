@@ -23,10 +23,16 @@ github_username: edheltzel
 instagram_username: edheltzel
 gaCode: # UA-XXXXXXXX-XX
 
-###### Build settings ######
-incremental: false
+###### Local Dev ######
 disable_disk_cache: true
-markdown: kramdown
+livereload: true
+keep_files: [assets]
+include:
+  - assets/styles
+  - assets/js
+  - assets/images
+
+###### Build settings ######
 collections_dir: collections
 collections:
   pages:
@@ -34,16 +40,18 @@ collections:
     permalink: /:name/ # uses file name as permalink
   posts:
     output: true
+incremental: true
+markdown: kramdown
 
 
 
 plugins:
-  # - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
 # The following items will be ignored and NOT copied to `dist` by default.
 exclude:
-  - assets # parcel handles this
+  - assets/styles # parcel handles this
+  - assets/js # parcel handles this
   - node_modules
   - vendor
   - sharp.config.json
