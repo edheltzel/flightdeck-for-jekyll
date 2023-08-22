@@ -1,19 +1,19 @@
-const config = require('./flightdeck.manifest');
+const config = require("./flightdeck.manifest");
 // Load plugins
-const { dest, src, watch, series, parallel } = require('gulp');
-const argv = require('yargs').argv;
-const autoprefixer = require('autoprefixer');
-const browsersync = require('browser-sync').create();
-const cp = require('child_process');
-const cssnano = require('cssnano');
-const del = require('del');
-const eslint = require('gulp-eslint');
-const imagemin = require('gulp-imagemin');
-const newer = require('gulp-newer');
-const plumber = require('gulp-plumber');
-const postcss = require('gulp-postcss');
-const sass = require('gulp-dart-sass');
-const terser = require('gulp-terser');
+const { dest, src, watch, series, parallel } = require("gulp");
+const argv = require("yargs").argv;
+const autoprefixer = require("autoprefixer");
+const browsersync = require("browser-sync").create();
+const cp = require("child_process");
+const cssnano = require("cssnano");
+const del = require("del");
+const eslint = require("gulp-eslint");
+const imagemin = require("gulp-imagemin");
+const newer = require("gulp-newer");
+const plumber = require("gulp-plumber");
+const postcss = require("gulp-postcss");
+const sass = require("gulp-dart-sass");
+const terser = require("gulp-terser");
 
 const buildDest = `${config.jekyll.dest}/assets/`;
 
@@ -21,17 +21,17 @@ const buildDest = `${config.jekyll.dest}/assets/`;
 function browserSync(done) {
   browsersync.init({
     server: {
-      baseDir: config.jekyll.dest
+      baseDir: config.jekyll.dest,
     },
     port: config.port,
-    notify: config.bs.notify
+    notify: config.bs.notify,
   });
   done();
 }
 
 // BrowserSync Reload
 function browserSyncReload(done) {
-  browsersync.notify('🛠 Site Rebuilt', 1000);
+  browsersync.notify("🛠 Site Rebuilt", 1000);
   browsersync.reload();
   done();
 }
@@ -46,16 +46,16 @@ function images() {
   return src(config.assets + config.imagemin.src)
     .pipe(newer(buildDest + config.imagemin.dest))
     .pipe(
-      imagemin([
-        imagemin.gifsicle({ interlaced: config.imagemin.interlaced }),
-        imagemin.mozjpeg(config.imagemin.mozjpeg),
-        imagemin.optipng({
-          optimizationLevel: config.imagemin.optimizationLevel,
-        }),
-
-      ],
-        { verbose: config.imagemin.verbose }
-      )
+      imagemin(
+        [
+          imagemin.gifsicle({ interlaced: config.imagemin.interlaced }),
+          imagemin.mozjpeg(config.imagemin.mozjpeg),
+          imagemin.optipng({
+            optimizationLevel: config.imagemin.optimizationLevel,
+          }),
+        ],
+        { verbose: config.imagemin.verbose },
+      ),
     )
     .pipe(dest(buildDest + config.imagemin.dest));
 }
@@ -64,16 +64,16 @@ function images() {
 function css() {
   return src(config.assets + config.sass.src, { sourcemaps: true })
     .pipe(plumber())
-    .pipe(sass({ outputStyle: config.sass.outputStyle }).on('error', sass.logError))
+    .pipe(sass({ outputStyle: config.sass.outputStyle }).on("error", sass.logError))
     .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(dest(buildDest + config.sass.dest, { sourcemaps: '.' }))
-    .pipe(dest('assets/css'))
+    .pipe(dest(buildDest + config.sass.dest, { sourcemaps: "." }))
+    .pipe(dest("assets/css"))
     .pipe(browsersync.stream());
 }
 
 // Lint scripts
 function scriptsLint() {
-  return src([config.assets + config.js.src, './gulpfile.js', '!node_modules/**', '!*.map*'])
+  return src([config.assets + config.js.src, "./gulpfile.js", "!node_modules/**", "!*.map*"])
     .pipe(plumber())
     .pipe(eslint())
     .pipe(eslint.format())
@@ -85,20 +85,22 @@ function scripts() {
   return src(config.assets + config.js.src, { sourcemaps: true })
     .pipe(plumber())
     .pipe(terser())
-    .pipe(dest(buildDest + config.js.dest, { sourcemaps: '.' }))
+    .pipe(dest(buildDest + config.js.dest, { sourcemaps: "." }))
     .pipe(browsersync.stream());
 }
 
 // Jekyll
 function jekyll(done) {
   let jekyllConfig = config.jekyll.config.default;
-  if (argv.jekyllEnv === 'production') {
-    process.env.JEKYLL_ENV = 'production';
-    jekyllConfig += `${config.jekyll.config.production ? `,${config.jekyll.config.production}` : ''}`;
+  if (argv.jekyllEnv === "production") {
+    process.env.JEKYLL_ENV = "production";
+    jekyllConfig += `${config.jekyll.config.production ? `,${config.jekyll.config.production}` : ""}`;
   } else {
-    jekyllConfig += `${config.jekyll.config.development ? `,${config.jekyll.config.development}` : ''}`;
+    jekyllConfig += `${config.jekyll.config.development ? `,${config.jekyll.config.development}` : ""}`;
   }
-  return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config', jekyllConfig], { stdio: 'inherit' }).on('close', done);
+  return cp
+    .spawn("bundle", ["exec", "jekyll", "build", "--config", jekyllConfig], { stdio: "inherit" })
+    .on("close", done);
 }
 
 // Watch files
