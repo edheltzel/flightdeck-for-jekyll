@@ -18,6 +18,7 @@
 - [Imagemin](https://github.com/imagemin/imagemin)
 - [Browsersync](https://www.browsersync.io/)
 - [Flightdeck Liftoff](https://github.com/flight-deck/Flightdeck-Liftoff) for deployments
+  - includes support for `.env` (see: env_example)
 
 
 
