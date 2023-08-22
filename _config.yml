@@ -50,3 +50,4 @@ exclude:
   - Gemfile.lock
   - vendor
   - rome.json
+  - env_example

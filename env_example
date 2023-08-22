@@ -1,0 +1,3 @@
+USER=myuser
+REMOTE=1.2.3.4
+REMOTE_PATH=/var/www/html/my-site
