@@ -1,4 +1,3 @@
-'use strict';
 const config = require('./flightdeck.manifest');
 // Load plugins
 const { dest, src, watch, series, parallel } = require('gulp');
@@ -16,7 +15,7 @@ const postcss = require('gulp-postcss');
 const sass = require('gulp-dart-sass');
 const terser = require('gulp-terser');
 
-const buildDest = config.jekyll.dest + '/assets/';
+const buildDest = `${config.jekyll.dest}/assets/`;
 
 // BrowserSync
 function browserSync(done) {
@@ -93,11 +92,11 @@ function scripts() {
 // Jekyll
 function jekyll(done) {
   let jekyllConfig = config.jekyll.config.default;
-  if (argv.jekyllEnv == 'production') {
+  if (argv.jekyllEnv === 'production') {
     process.env.JEKYLL_ENV = 'production';
-    jekyllConfig += config.jekyll.config.production ? ',' + config.jekyll.config.production : '';
+    jekyllConfig += `${config.jekyll.config.production ? `,${config.jekyll.config.production}` : ''}`;
   } else {
-    jekyllConfig += config.jekyll.config.development ? ',' + config.jekyll.config.development : '';
+    jekyllConfig += `${config.jekyll.config.development ? `,${config.jekyll.config.development}` : ''}`;
   }
   return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config', jekyllConfig], { stdio: 'inherit' }).on('close', done);
 }
