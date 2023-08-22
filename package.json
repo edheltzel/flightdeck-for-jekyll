@@ -5,11 +5,7 @@
   "author": "Ed Heltzel",
   "license": "MIT",
   "homepage": "https://github.com/flight-deck/flightdeck-for-jekyll",
-  "browserslist": [
-    "> 0.5%",
-    "last 2 versions",
-    "Firefox ESR"
-  ],
+  "browserslist": ["> 0.5%", "last 2 versions", "Firefox ESR"],
   "devDependencies": {
     "autoprefixer": "^10.4.15",
     "browser-sync": "^2.29.3",
@@ -35,6 +31,8 @@
     "lint": "rome check .",
     "lint:fix": "rome check . --apply",
     "lint:fix:suggested": "rome check . --apply-suggested",
+    "deploy:test": "./.liftoff.sh ready",
+    "deploy": "./.liftoff.sh ready go",
     "clean": "./.scrub.sh site",
     "purge": "./.scrub.sh purge"
   }
