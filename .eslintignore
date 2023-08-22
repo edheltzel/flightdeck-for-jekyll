@@ -1,9 +1,0 @@
-/.jekyll-cache/**
-/.vscode/**
-/node_modules/**
-/_site/**
-/vendor/**
-postcss.config.js
-gulpfile.js
-flightdeck.manifest.js
-!.eslintrc.js
