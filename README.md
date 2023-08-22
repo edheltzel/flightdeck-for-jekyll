@@ -27,14 +27,15 @@ To install this project, you'll need the following things installed on your mach
 
 1. [Jekyll](http://jekyllrb.com/) & [Bundler](https://bundler.io/) - `$ gem install jekyll bundler`
 2. [NodeJS](http://nodejs.org) - use the installer, Homebrew, etc.
-3. ~~[Yarn](https://classic.yarnpkg.com/lang/en/) - a package manager for Node~~
-3. [pnpm](https://pnpm.io/) - Fast, disk space efficient package manager for Node~~
-4. [Cloudcannon](https://docs.cloudcannon.com/) - Give the client an interface to manage their site with a simple CMS. _**(Suggested for Client editing)**_
-5. [rsync](https://rsync.samba.org/) - a very basic understand of rysnc if you choose to to deploy to a remote server.
+3. [pnpm](https://pnpm.io/) - Fast, disk space efficient package manager for Node
 
-> ### Optional Editor settings
->
-> Although your editor is a very personal thing - we'd suggest that you'd consider using [Visual Studio Code](https://code.visualstudio.com/) with the [Jekyll Snippets Extension](https://marketplace.visualstudio.com/items?itemName=ginfuru.vscode-jekyll-snippets) - with the power of IntelliSense you'll get snippets to speed up your Jekyll work development as well as syntax highlighting for Liquid.
+### Visual Studio Code Extensions (optional)
+
+If you use [Visual Studio Code](https://code.visualstudio.com/) as your editor its highly recommended to includes these extensions to your mix:
+
+- [Rome](https://marketplace.visualstudio.com/items?itemName=rome.rome)
+- [Jekyll Snippets](https://marketplace.visualstudio.com/items?itemName=ginfuru.vscode-jekyll-snippets)
+- [Liquid](https://marketplace.visualstudio.com/items?itemName=sissel.shopify-liquid)
 
 ## Install & Local Development
 
@@ -65,9 +66,6 @@ To get started quickly, you'll need to follow the steps below:
 
 4. Happy hacking!
 
-
-
-
 ## Usage
 
 ### Start Development
@@ -75,7 +73,7 @@ To get started quickly, you'll need to follow the steps below:
 This will give you file watching, browser synchronization, auto-rebuild (hot reloading), CSS injection etc.
 
 ```shell
-pnpm start
+pnpm run start
 ```
 
 ### Production Build
@@ -84,15 +82,7 @@ This will set the `JEKYLL_ENV` to `production` and use the production config fil
 You can easily deploy your site build with the command.
 
 ```shell
-pnpm build
-```
-
-### Deploy
-
-You can set your server deployment options inside of `.liftoffrc` If you wish to deploy after the build process has completed. If you'd like to do a dry-run of what is being deplyed you cans execute `pnpm deploy:test`
-
-```shell
-pnpm deploy
+pnpm run build
 ```
 
 ## Want more?
@@ -106,181 +96,45 @@ pnpm run
 There are several options for running the npm scripts that do specific tasks controlled by [Gulp](http://gulpjs.com/) or help you clean things.
 
 ```shell
-Lifecycle scripts included in flightdeck:
+Lifecycle scripts:
   preinstall
     bundle install --path vendor/bundle
   start
     bundle exec gulp
 
-available via `npm run-script`:
-  imagemin
-    bundle exec gulp images
-  jekyll
-    bundle exec gulp jekyll
-  sass
-    bundle exec gulp css
-  js
-    bundle exec gulp js
+Commands available via "pnpm run":
   build
     bundle exec gulp build --jekyllEnv='production'
-  deploy:test
-    ./.liftoffrc ready
-  deploy
-    ./.liftoffrc ready go
+  format
+    rome format .
+  format:fix
+    rome format . --write
+  lint
+    rome check .
+  lint:fix
+    rome check . --apply
+  lint:fix:suggested
+    rome check . --apply-suggested
   clean
-    npm run clean:ruby && npm run clean:node
-  clean:ruby
-    rm -rf vendor/ .bundle/ Gemfile.lock
-  clean:node
-    rm -rf node_modules yarn.lock package-lock.json pnpm-lock.yaml
-  clean:site
-    rm -rf _site/ .jekyll-cache
-  clean:all
-    npm run clean:ruby && npm run clean:node && npm run clean:site
+    ./.scrub.sh site
   purge
-    npm run clean:all && yarn install
+    ./.scrub.sh purge
 ```
 
 
 - `preinstall` is triggered while executing `pnpm` or `pnpm install` – this will install all the Ruby Gems needed to setup Jekyll.
 - `pnpm start` triggers the default task giving everything you need for local development – file watching, browser synchronization, css injection, auto rebuild of Jekyll liquid templates/data/config files, etc.
-- `pnpm imagemin` triggers ONLY the imagemin task for image optimizations and compressions.
-  - please note that we have purposely left out `svgo` for a number of reason when using svg sprites.
-- `pnpm jekyll` triggers ONLY the jekyll task for (re)building Jekyll templates, date, and config files
-- `pnpm sass` triggers ONLY the css tasks to recompile all Scss, generate inline sourcemaps for CSS debugging, runs PostCSS for Autoprefixer and CSSNano (minification).
-- `pnpm js` triggers ONLY the js task to concat and minify your Javascript files into a `bundle.js` or `bundle.min.js` for production builds
 - `pnpm build` triggers the build process and passes the environment variable for Jekyll to produce a production ready site.
-- `pnpm deploy:test` triggers [Liftoff prelauch check](https://github.com/flight-deck/Flightdeck-liftoff#usage) - which is configurable by editing `.liftoffrc`
-- `pnpm deploy` triggers [Liftoff deployment](https://github.com/flight-deck/Flightdeck-liftoff#usage) - which is configurable by editing `.liftoffrc`
-- `pnpm clean` scrubs your project and removes all ruby based files and node based files – so you can do a fresh `yarn install`
-  - This leaves the `_site` directory alone
-- `pnpm clean:ruby` scrubs your project of all ruby based files – `vendor/ .bundle/ Gemfile.lock`
-- `pnpm clean:node` scrubs your project of all node based files – `node_modules yarn.lock package-lock.json pnpm-lock.yaml`
-- `pnpm clean:site` scrubs your project of all Jekyll generated files – `_site/ .jekyll-cache`
-- `pnpm purge`  scrubs your project and removes all ruby based files and node based files and also includes all the Jekyll generated files – so you can do a fresh `pnpm install`
-- `yarn fresh ` does the same as `yarn purge` but includes the `yarn install ` after cleaning out files.
-  - **PLEASE NOTE** if you use this specific command you will need to edit the `package.json` and change `pnpm install` to `yarn/npm install` if you are NOT using pnpm.
-
+- `pnpm clean` scrubs all `_site` specific files (see `.scrub.sh` >> `DEVFILES`)
+- `pnpm purge`  scrubs all gems and node packages ( see `.scrub.sh` >> `NODEFILES & RUBYFILES`  )
+  - note: you will need to re-run `pnpm install`.
 
 ## Configurations and Defaults
-
-You can change the configurations by editing `flightdeck.manifest.js`.
 
 Remember this is just a Jekyll site using the Minima theme, so anything related to Jekyll or Liquid specific you'll need to reference the documentation for these projects:
 - [ Jekyll ](https://jekyllrb.com/docs/)
 - [ Liquid ](https://shopify.github.io/liquid/)
 - [ Minima theme ](https://github.com/jekyll/minima)
 
-- ### port
-
-  default: `4000`
-  options: integer
-
-- ### assets
-
-  The directory to gather all assets.
-
-  default: `"./assets"`
-  options: string
-  example: `"./"` (directly under the theme directory)
-
-
-
-- ### jekyll
-
-  Jekyll settings.
-
-  - #### config
-
-    Jekyll config files.
-
-    - ##### default
-
-      The default Jekyll config file(s).
-
-      default: `"_config.yml"`
-      options: string (`"FILE1[,FILE2,...]"`)
-      example: `"_config1.yml,_config2.yml"`
-
-    - ##### development
-
-      Development mode config file(s) to override default settings.
-
-      default: `""`
-      options: string (`"FILE1[,FILE2,...]"`)
-      example: `"_config_development"`
-
-    - ##### production
-
-      Production mode config file(s) to override default settings.
-
-      default: `""`
-      options: string (`"FILE1[,FILE2,...]"`)
-      example: `"_config_production"`
-
-  - **dest**
-
-    default: `_site`
-    Note: you'll need to reference [Jekyll Docs](https://jekyllrb.com/docs/configuration/options/)
-- ### sass
-
-  Sass settings.
-
-  - **src**
-
-    default: `_sass/**/*.scss`
-
-  - **dest**
-
-    default: `css`
-
-  - #### outputStyle
-
-    The output style of Sass.
-
-    default: `"compressed"`
-    options: `"expanded"`, `"nested"`, `"compact"`, `"compressed"`
-
-- ### js
-
-  JavaScript settings.
-
-  - #### src
-
-    default: `js/**/*`
-
-  - **dest**
-
-    default: `js`
-
-- #### imagemin
-
-  - **src**
-
-    default: `images/**/*`
-
-  - **dest**
-
-    default: `images`
-    The destination directory of compressed image files for imagemin.
-
-  options: string
-  example: `img`
-
-  - **interlaced**
-
-    default: `false`
-
-  - **mozjpeg**
-
-    - **quality**
-
-      default: `75`
-
-    - **progressive**
-
-      default: `true`
-
-  - **optimizationLevel**
-
-    default: `2`
+### Flightdeck Manifest
+You can change the any of the configuration options in `flightdeck.manifest.js` which affects the `gulpfile.js`.
