@@ -1,30 +1,30 @@
-const path = require('path');
+const path = require("path");
 module.exports = {
   port: 4000,
-  assets: './assets/',
+  assets: "./assets/",
 
   bs: {
-    nofity: true
+    nofity: true,
   },
 
   sass: {
-    src: '_sass/**/*.scss',
-    dest: 'css',
-    outputStyle: 'compressed',
+    src: "_sass/**/*.scss",
+    dest: "css",
+    outputStyle: "compressed",
   },
 
   js: {
-    src: 'js/**/*',
-    dest: 'js',
-    entry: 'bundle.js'
+    src: "js/**/*",
+    dest: "js",
+    entry: "bundle.js",
   },
 
   imagemin: {
-    src: 'images/**/*',
-    dest: 'images',
+    src: "images/**/*",
+    dest: "images",
     interlaced: false,
     verbose: false,
-  mozjpeg:{
+    mozjpeg: {
       quality: 75,
       progressive: true,
     },
@@ -33,22 +33,22 @@ module.exports = {
 
   jekyll: {
     config: {
-      default: '_config.yml',
-      development: '_config_development.yml',
-      production: '',
+      default: "_config.yml",
+      development: "_config_development.yml",
+      production: "",
     },
-    dest: '_site',
+    dest: "_site",
     watch: [
-      './_data/**/*',
-      './_includes/**/*',
-      './_layouts/**/*',
-      './_posts/**/*',
-      './admin/**/*',
-      './collections/**/*',
-      './_config*yml',
-      '*.html',
-      '*.md',
-      '*.markdown'
-    ]
+      "./_data/**/*",
+      "./_includes/**/*",
+      "./_layouts/**/*",
+      "./_posts/**/*",
+      "./admin/**/*",
+      "./collections/**/*",
+      "./_config*yml",
+      "*.html",
+      "*.md",
+      "*.markdown",
+    ],
   },
 };
