@@ -7,7 +7,8 @@
     "enabled": true,
     "rules": {
       "recommended": true
-    }
+    },
+    "ignore": ["./vendor", "./.bundle", "./node_modules", "./.vscode", "./_site", "./dist"]
   },
   "formatter": {
     "enabled": true,
