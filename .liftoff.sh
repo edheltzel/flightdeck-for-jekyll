@@ -1,9 +1,15 @@
 #!/bin/bash
+
+# Load environment variables from .env file
+if [ -f ./.env ]; then
+  export $(cat ./.env | sed 's/#.*//g' | xargs)
+fi
+
 ################## CHANGE ME ########################
 TO_DEPLOY="./_site" #Build path of Jekyll - default: _site
-USER="root" #SERVER user goes here - if not root
-REMOTE="192.168.0.1" #SERVER IP goes here
-REMOTE_PATH="/www/html/public" #PATH on REMOTE SERVER
+USER="$SERVER_USER" #SERVER user goes here - if not root
+REMOTE="$SERVER_IP" #SERVER IP goes here
+REMOTE_PATH="$SERVER_PATH" #PATH on REMOTE SERVER
 REMOTE2="$REMOTE"
 REMOTE_PATH2="$REMOTE_PATH"
 EXCLUDE=('.*')
