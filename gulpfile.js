@@ -6,8 +6,7 @@ const autoprefixer = require("autoprefixer")
 const browsersync = require("browser-sync").create()
 const cp = require("child_process")
 const cssnano = require("cssnano")
-const del = require("del")
-const imagemin = require("gulp-imagemin")
+const del = require("gulp-clean")
 const newer = require("gulp-newer")
 const plumber = require("gulp-plumber")
 const postcss = require("gulp-postcss")
@@ -37,15 +36,16 @@ function browserSyncReload(done) {
 
 // Clean assets
 function cleanAssets() {
-  return del(buildDest)
+  return src(buildDest, { read: false, allowEmpty: true }).pipe(del())
 }
 
 // Optimize Images
-function images() {
+async function images() {
+  const imagemin = await import("gulp-imagemin")
   return src(config.assets + config.imagemin.src)
     .pipe(newer(buildDest + config.imagemin.dest))
     .pipe(
-      imagemin(
+      imagemin.default(
         [
           imagemin.gifsicle({ interlaced: config.imagemin.interlaced }),
           imagemin.mozjpeg(config.imagemin.mozjpeg),
@@ -58,7 +58,6 @@ function images() {
     )
     .pipe(dest(buildDest + config.imagemin.dest))
 }
-
 // CSS task
 function css() {
   return src(config.assets + config.sass.src, { sourcemaps: true })
