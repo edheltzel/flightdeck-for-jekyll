@@ -1,1 +1,2 @@
-//# sourceMappingURL=bundle.js.map
+const icon = "🧪";
+console.log(`Jekyll is alive ${icon}`);
