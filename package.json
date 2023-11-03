@@ -19,7 +19,7 @@
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
     "gulp-dart-sass": "^1.1.0",
-    "gulp-imagemin": "^8.0.0",
+    "gulp-imagemin": "^9.0.0",
     "gulp-newer": "^1.4.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
