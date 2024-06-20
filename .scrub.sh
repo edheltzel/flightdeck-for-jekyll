@@ -9,6 +9,7 @@ NC='\033[0m' #no-color
 BOLD='\033[1m' #bold
 BOLDEND='\033[0m' #bold end
 
+
 TITLE="🧼 Scrubbed "
 OPTIONS="${YELLOW}site${NC}, or ${YELLOW}purge${NC}"
 OOPS="🚀💥🔥 OOPS! We need a valid option – Try using ${OPTIONS}"
@@ -17,10 +18,10 @@ MALFUNCTION="👨‍🚀 Huston... We have a problem! Make sure you use ${OPTION
 SITE="${WHITE}${BOLD}output${BOLDEND}${NC} & ${WHITE}${BOLD}all cache${BOLDEND}${NC} directories ✨"
 FRESH="${WHITE}${BOLD}node_modules${BOLDEND}${NC}, ${WHITE}${BOLD}lock files${BOLDEND}${NC}, ${SITE}"
 
-PURGE="🧹 ${GREEN}${BOLD}All Clean${BOLDEND}${NC} ✨ ${TITLE}${FRESH}${NC}\n\nRun ${YELLOW}${BOLD}npm install${BOLDEND}${NC} to start fresh 🤩"
+PURGE="🧹 ${GREEN}${BOLD}All Clean${BOLDEND}${NC} ✨ ${TITLE}${FRESH}${NC}\n\nRun ${YELLOW}${BOLD}bun install${BOLDEND}${NC} to start fresh 🤩"
 
-DEVFILES="dist/ _site/ .jekyll-cache .cache/ .pnpm-debug.log .parcel-cache/ .jampack/"
-NODEFILES="node_modules package-lock.json pnpm-lock.yaml yarn.lock bun.lockb"
+DEVFILES="dist/ _site/ .cache/ *.log"
+NODEFILES="node_modules package-lock.json pnpm-lock.yaml yarn.lock .yarn/ bun.lockb"
 RUBYFILES=".bundle/ .sass-cache/ .jekyll-metadata vendor/ Gemfile.lock"
 
 ################## DONT EDIT BELOW  👀 ########################
