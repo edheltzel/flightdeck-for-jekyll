@@ -22,7 +22,7 @@
     "gulp-imagemin": "^8.0.0",
     "gulp-newer": "^1.4.0",
     "gulp-plumber": "^1.2.1",
-    "gulp-postcss": "^9.0.1",
+    "gulp-postcss": "^10.0.0",
     "gulp-terser": "^2.1.0",
     "postcss": "^8.4.30",
     "rome": "12.1.3"
