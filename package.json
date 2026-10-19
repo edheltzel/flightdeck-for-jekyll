@@ -14,7 +14,7 @@
     "autoprefixer": "^10.4.15",
     "browser-sync": "^2.29.3",
     "cssnano": "^6.0.1",
-    "del": "^7.1.0",
+    "del": "^9.0.1",
     "fibers": "^5.0.3",
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
